@@ -14,15 +14,24 @@ As registered user I want to be able to browse other user's sequences.
 
 
 MVP:
--Hosted on heroku or bought domain
+-Hosted on heroku or purchased domain
 -Link to app in README
 -More/less info is displayed underneath a pose's picture if a button is clicked
 -Sequence can be displayed as a carousel/slideshow, or in its entirety
 -App is user-friendly on a phone (@media queries)
 -Full CRUD for sequences
 -Bootstrap styling
+-Detailed README.md
+
+Searchable tags:
+Categories (standing, inverted, balances, etc.)
+Difficulty
+Sanskrit name
+Meta title (english descriptive phrase)
 
 
 Stretch: -Have a "swap" feature that will offer an alternative for a selected pose(harder/easier than default pose)
+
+
 
 
