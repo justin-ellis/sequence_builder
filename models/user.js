@@ -1,17 +1,12 @@
-const express = require('express');
-const router = express.Router();
-const Users = require('../models/user.js');
+const mongoose = require('mongoose');
 
-router.get('/', function(req, res){
-	Users.find({}, function(err, Users){
-		res.json(Users);
-	});
+const userSchema = mongoose.Schema({
+	username: String,
+	password: String,
+		sequences: []
 });
 
-router.post('/', function(req, res){
-	Users.create(req.body, function(err, newUser){
-		res.json(newUser);
-	});
-});
+const User = mongoose.model('User', userSchema);
 
-module.exports = router;
+module.exports = User;
+

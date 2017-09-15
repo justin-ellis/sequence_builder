@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/justin-ellis/sequence_builder#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.1",
     "express": "^4.15.4",
-    "express-session": "^1.15.5"
+    "express-session": "^1.15.5",
+    "mongoose": "^4.11.11"
   }
 }
