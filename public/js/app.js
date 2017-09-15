@@ -15,18 +15,18 @@ app.controller('mainController', ['$http', function($http){
 		this.concealLogin = true;
 	};
 
-	this.getYogaPoses = function(){
-		$http({
-			method: 'GET',
-			url: '/poses'
-		}).then(
-		function(response){
-			controller.poses = response.data;
-		},
-		function(err){
-			console.log(err);
-		});
-	};
+	// this.getYogaPoses = function(){
+	// 	$http({
+	// 		method: 'GET',
+	// 		url: 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500'
+	// 	}).then(
+	// 	function(response){
+	// 		controller.poses = response.data;
+	// 	},
+	// 	function(err){
+	// 		console.log(err);
+	// 	});
+	// };
 
 	this.registerUser = function(username, password){
 		$http({
@@ -102,6 +102,6 @@ app.controller('mainController', ['$http', function($http){
 		this.hideForm = false;
 	};
 	
-	this.getYogaPoses();
+	// this.getYogaPoses();
 
 }]);
