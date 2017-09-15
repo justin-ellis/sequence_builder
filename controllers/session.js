@@ -25,6 +25,7 @@ router.post('/login', (req, res, next)=>{
 				res.json(req.session.message);
 			}
 		} else {
+			console.log('else else in bcrypt compare');
 			req.session.message = 'Username or password are incorrect';
 			res.json(req.session.message);
 		}
@@ -38,7 +39,7 @@ router.post('/register', (req, res, next)=>{
     const userDbEntry = {};
     userDbEntry.username = req.body.username;
     userDbEntry.password = passwordHash;
-    
+
     User.create(userDbEntry, (err, user) => {
       console.log(user);
 
@@ -46,12 +47,15 @@ router.post('/register', (req, res, next)=>{
       req.session.logged   = true;
       res.json(req.session.logged);
     });
-
 });
 
 router.get('/logout', function(req, res){
   req.session.destroy(function(err){
+  	if(err){
+  		console.log(err);
+  	} else {
     res.redirect('/');
+  	}
   });
 });
 

@@ -68,11 +68,20 @@ app.controller('mainController', ['$http', function($http){
 			controller.foundUser = response.data;
 			console.log(response.data);
 
-			if(response.data){
+			if(response.data != true){
+				console.log('wrong username or password');
+				controller.loggedIn = false;
+				controller.hideForm = true;
+				// this.showLogin = true;
+				// location.reload(true);
+				controller.concealLogin = false;
+				// this.displayLogin();
+			}
+			else if(response.data){
 				controller.loggedIn = true;
 				controller.hideForm = false;
+				controller.hideLogin();
 			}
-			controller.hideLogin();
 		},
 		function(err){
 			console.log(err);
