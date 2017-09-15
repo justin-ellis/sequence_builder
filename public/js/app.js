@@ -41,7 +41,7 @@ app.controller('mainController', ['$http', function($http){
 			controller.registeredUsername = '';
 			controller.registeredPassword = '';
 			controller.newUser = response.data;
-
+			console.log(response.data);
 			if(response.data){
 				controller.loggedIn = true;
 				controller.hideForm = false;
@@ -92,6 +92,7 @@ app.controller('mainController', ['$http', function($http){
 		}).then(
 		function(response){
 				controller.loggedIn = false;
+				location.reload(true);
 		},
 		function(err){
 			console.log(err);

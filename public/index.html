@@ -18,14 +18,14 @@
 	<h2>Log In</h2>
 	Username: <input type="text" ng-model="ctrl.username"/>
 	Password: <input type="text" ng-model="ctrl.password"/>
-	<input type="submit" ng-click="ctrl.hideLogin()" ng-model="ctrl.password" value="Log in"/>
+	<input type="submit" ng-click="ctrl.hideLogin()" value="Log in"/>
 </form>
 
-<form ng-if="ctrl.showLogin" ng-submit="ctrl.register()">
+<form ng-if="ctrl.showLogin" ng-submit="ctrl.registerUser()">
 	<h2>Register</h2>
 	Username: <input type="text" ng-model="ctrl.registeredUsername"/>
 	Password: <input type="text" ng-model="ctrl.registeredPassword"/>
-	<input type="submit" ng-click="ctrl.hideLogin()" ng-model="ctrl.password" value="Register"/>
+	<input type="submit" ng-click="ctrl.hideLogin()" value="Register"/>
 </form>
 </div>
 </body>
