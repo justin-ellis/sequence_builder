@@ -19,6 +19,7 @@
   "homepage": "https://github.com/justin-ellis/sequence_builder#readme",
   "dependencies": {
     "body-parser": "^1.18.1",
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "express-session": "^1.15.5"
   }
 }
