@@ -13,8 +13,6 @@
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body ng-controller="mainController as ctrl">
-{{2+2}}
-
 <div> <button ng-click="ctrl.displayLogin()">Register or Log In</button>
 <button ng-if="ctrl.loggedIn" ng-click="ctrl.logout()">Log out</button>
 </div>
@@ -53,10 +51,16 @@
 
 <div id="poseDiv" data-ng-repeat="pose in ctrl.poses | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter} | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter">
 	<ul class="list-group">
-		<li class="list-group-item list-group-item-info">Sanskrit Name: {{pose.sanskrit_name}} </li>
 		<li class="list-group-item list-group-item-info">English Name: {{pose.pose_name}} </li>
+		<li class="list-group-item list-group-item-info">Sanskrit Name: {{pose.sanskrit_name}}	
+			<button class="btn btn-default" ng-show="!isHidden" ng-click="isHidden = true">{{ctrl.showTranslation}}</button>
+			<button  class="btn btn-default" ng-show="isHidden" ng-click="isHidden = false">{{ctrl.hideTranslation}}</button> <br/>
+			<span ng-show="isHidden">{{pose.translation.join(", ")}}</span>
+		</li>
 		<li class="list-group-item" >Category: {{pose.category}} </li>
-		<li class="list-group-item">Translation: {{pose.translation.join(", ")}} </li>
+		<!-- <li class="list-group-item" >Image: {{pose.file_reference}} </li> -->
+<!-- 		<li class="list-group-item" >Description: {{pose.description.join(", ")}} </li>
+		<li class="list-group-item" >Benefits: {{pose.benefits}} </li> -->
 		<li class="list-group-item list-group-item-warning">Difficulty: {{pose.difficulty}}</li>
 	</ul>
 </div>
