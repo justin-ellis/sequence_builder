@@ -16,8 +16,13 @@ app.use(session({
 	saveUninitialized: false
 }));
 
+
+
 const usersController = require('./controllers/user.js');
 app.use('/user', usersController);
+
+const asanasController = require('./controllers/asana.js');
+app.use('/asana', asanasController);
 
 const sessionController = require('./controllers/session.js');
 app.use('/session', sessionController);
