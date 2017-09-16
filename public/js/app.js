@@ -7,6 +7,11 @@ app.controller('mainController', ['$http', function($http){
 	this.hideForm = true;
 	this.showLogin = false;
 	this.URL = 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500';
+		this.asanaDifficulties = [
+	{name: 'Beginner', difficulty: 'Beginner'},
+	{name: 'Intermediate', difficulty: 'Intermediate'},
+	{name: 'Expert', difficulty: 'Expert'}
+	];
 	
 	this.displayLogin = function(){
 		this.showLogin = true;
@@ -16,23 +21,22 @@ app.controller('mainController', ['$http', function($http){
 		this.concealLogin = true;
 	};
 
-	// this.getYogaPoses = function(){
-	// 	$http({
+	this.getYogaPoses = function(){
+		$http({
 
-	// 		method: 'GET',
-	// 		url: 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500',
-	// 		// headers: {
- //   //  'Access-Control-Allow-Origin': 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500'}
-			
-	// 	}).then(
-	// 	function(response){
-	// 		controller.poses = response.data;
-	// 		console.log(response.data);
-	// 	},
-	// 	function(err){
-	// 		console.log(err);
-	// 	});
-	// };
+			method: 'GET',
+			url: '/asana',
+			// headers: {
+   //  'Access-Control-Allow-Origin': 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500'}
+		}).then(
+		function(response){
+			controller.poses = response.data;
+			console.log(response.data);
+		},
+		function(err){
+			console.log(err);
+		});
+	};
 
 	this.registerUser = function(username, password){
 		$http({
@@ -118,6 +122,6 @@ app.controller('mainController', ['$http', function($http){
 		this.hideForm = false;
 	};
 	
-	// this.getYogaPoses();
+	this.getYogaPoses();
 
 }]);
