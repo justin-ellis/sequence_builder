@@ -34,8 +34,8 @@
 </div>
 
 
-<h4> Filter Postures:</h4>
 <div class="filterSelect">
+<h4> Filter Postures:</h4>
 <select class="selectpicker" ng-model="difficultyFilter"
 	data-ng-options="difficulty.difficulty as difficulty.name for difficulty in ctrl.asanaDifficulties">
 		<option value selected="selected">All Difficulties</option>
@@ -51,19 +51,19 @@
 
 <div id="poseDiv" data-ng-repeat="pose in ctrl.poses | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter} | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter">
 	<ul class="list-group">
-		<li class="list-group-item list-group-item-info">English Name: {{pose.pose_name}} </li>
-		<li class="list-group-item list-group-item-info">Sanskrit Name: {{pose.sanskrit_name}}	
-			<button class="btn btn-default" ng-show="!isHidden" ng-click="isHidden = true">{{ctrl.showTranslation}}</button>
-			<button  class="btn btn-default" ng-show="isHidden" ng-click="isHidden = false">{{ctrl.hideTranslation}}</button> <br/>
+		<li class="list-group-item list-group-item-info">{{pose.pose_name}} </li>
+		<li class="list-group-item list-group-item-info">Sanskrit: {{pose.sanskrit_name}}	<br/>
+
+			<button class="btn btn-default btn-sm translation" ng-show="!isHidden" ng-click="isHidden = true">{{ctrl.showTranslation}}</button>
+			<button  class="btn btn-default btn-sm translation" ng-show="isHidden" ng-click="isHidden = false">{{ctrl.hideTranslation}}</button> <br/>
 			<span ng-show="isHidden">{{pose.translation.join(", ")}}</span>
 		</li>
+		 <li  class="list-group-item"> <p class="poseInfo" ng-if="!pose.file_reference" id="scroll">{{pose.description.join(", ")}}</p><img class="posePicture" ng-if="pose.file_reference !== null" ng-src="{{pose.file_reference}}"/> </li>
 		<li class="list-group-item" >Category: {{pose.category}} </li>
-		<!-- <li class="list-group-item" >Image: {{pose.file_reference}} </li> -->
 <!-- 		<li class="list-group-item" >Description: {{pose.description.join(", ")}} </li>
 		<li class="list-group-item" >Benefits: {{pose.benefits}} </li> -->
-		<li class="list-group-item list-group-item-warning">Difficulty: {{pose.difficulty}}</li>
+		<!-- <li class="list-group-item list-group-item-warning">Difficulty: {{pose.difficulty}}</li> -->
 	</ul>
 </div>
-{{ctrl.poses}}
 </body>
 </html>

@@ -3,8 +3,8 @@ const app = angular.module('sequence-builder', []);
 app.controller('mainController', ['$http', function($http){
 	console.log('angular is here');
 	const controller = this;
-	this.showTranslation = 'Show Translation';
-	this.hideTranslation = 'Hide Translation';
+	this.showTranslation = 'Translation';
+	this.hideTranslation = 'Hide';
 	this.poses = [];
 	this.hideForm = true;
 	this.showLogin = false;

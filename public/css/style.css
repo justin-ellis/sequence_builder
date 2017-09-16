@@ -5,4 +5,32 @@ body {
 #poseDiv {
 	display: inline-block;
 	padding: 0px 10px;
+	width: 33%;
+	text-align: center;
+	/*overflow: scroll;*/
+}
+
+.posePicture{
+	height: 50%;
+	width: 50%;
+	display: inline-block;
+}
+
+.poseInfo p{
+	height: 60%;
+	width: 60%;
+	display: inline-block;
+	overflow: scroll;
+}
+
+/*#scroll {
+	overflow: scroll;
+}*/
+
+.translation {
+	
+}
+
+.filterSelect{
+	text-align: center;
 }
