@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
 
 const asanaSchema = mongoose.Schema({
-	sanskrit_name: String,
-	img: String,
-	category: String
-});
+		file_reference: String,
+    pose_name: String,
+    sanskrit_name: String,
+    translation: Array,
+    category: String,
+    difficulty: String,
+    description: Array,
+    benefits: String
+  });
+
 
 const Asana = mongoose.model('Asana', asanaSchema);
 

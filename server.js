@@ -27,6 +27,9 @@ app.use('/asana', asanasController);
 const sessionController = require('./controllers/session.js');
 app.use('/session', sessionController);
 
+const seedController = require('./controllers/seedController.js');
+app.use('/seed', seedController);
+
 const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/yoga';
 mongoose.connect(mongoUri);
 

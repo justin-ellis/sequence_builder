@@ -9,8 +9,8 @@
 <body ng-controller="mainController as ctrl">
 {{2+2}}
 
-<div> <a ng-click="ctrl.displayLogin()">Register or Log In</a>
-<a href="#" ng-if="ctrl.loggedIn" ng-click="ctrl.logout()">Log out</a>
+<div> <button ng-click="ctrl.displayLogin()">Register or Log In</button>
+<button ng-if="ctrl.loggedIn" ng-click="ctrl.logout()">Log out</button>
 </div>
 
 <div ng-hide="ctrl.concealLogin">
