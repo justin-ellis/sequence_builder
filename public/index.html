@@ -48,10 +48,10 @@
 	<ul class="list-group">
 		<li class="list-group-item" >Category: {{pose.category}} </li>
 		<li class="list-group-item list-group-item-info">Sanskrit Name: {{pose.sanskrit_name}} </li>
-		<li class="list-group-item">Translation: {{pose.translation}} </li>
+		<li class="list-group-item">Translation: {{pose.translation.join(", ")}} </li>
 		<li class="list-group-item list-group-item-info">Difficulty: {{pose.difficulty}}</li>
 	</ul>
 </div>
-
+{{ctrl.poses}}
 </body>
 </html>
