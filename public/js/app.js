@@ -7,10 +7,24 @@ app.controller('mainController', ['$http', function($http){
 	this.hideForm = true;
 	this.showLogin = false;
 	this.URL = 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500';
-		this.asanaDifficulties = [
+	this.asanaDifficulties = [
 	{name: 'Beginner', difficulty: 'Beginner'},
 	{name: 'Intermediate', difficulty: 'Intermediate'},
 	{name: 'Expert', difficulty: 'Expert'}
+	];
+	this.asanaCategories = [
+	{name: 'Standing', category: 'Standing'},
+	{name: 'Seated', category: 'Seated'},
+	{name: 'Twist', category: 'Twist'},
+	{name: 'Backbend', category: 'Backbend'},
+	{name: 'Balancing', category: 'Balancing'},
+	{name: 'Neutral', category: 'Neutral'},
+	{name: 'Prone', category: 'Prone'},
+	{name: 'Supine', category: 'Supine'},
+	{name: 'Lateral Bend', category: 'Lateral Bend'},
+	{name: 'Forward Bend', category: 'Forward Bend'},
+	{name: 'Arm and Leg Support', category: 'Arm and Leg Support'},
+	{name: 'Arm Balance and Inversion', category: 'Arm Balance and Inversion'},
 	];
 	
 	this.displayLogin = function(){

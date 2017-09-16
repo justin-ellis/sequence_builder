@@ -38,18 +38,26 @@
 
 <h4> Filter Postures:</h4>
 <div class="filterSelect">
-<select class="selectpicker" ng-model="lessonFilter"
+<select class="selectpicker" ng-model="difficultyFilter"
 	data-ng-options="difficulty.difficulty as difficulty.name for difficulty in ctrl.asanaDifficulties">
 		<option value selected="selected">All Difficulties</option>
 </select>
+
+<select class="selectpicker" ng-model="categoryFilter"
+	data-ng-options="category.category as category.name for category in ctrl.asanaCategories">
+		<option value selected="selected">All Categories</option>
+</select>
+
+<input type="text" placeholder="Downward Dog" ng-model="nameFilter">
 </div>
 
-<div data-ng-repeat="pose in ctrl.poses | filter:(!!lessonFilter || undefined) && {difficulty: lessonFilter}">
+<div id="poseDiv" data-ng-repeat="pose in ctrl.poses | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter} | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter">
 	<ul class="list-group">
-		<li class="list-group-item" >Category: {{pose.category}} </li>
 		<li class="list-group-item list-group-item-info">Sanskrit Name: {{pose.sanskrit_name}} </li>
+		<li class="list-group-item list-group-item-info">English Name: {{pose.pose_name}} </li>
+		<li class="list-group-item" >Category: {{pose.category}} </li>
 		<li class="list-group-item">Translation: {{pose.translation.join(", ")}} </li>
-		<li class="list-group-item list-group-item-info">Difficulty: {{pose.difficulty}}</li>
+		<li class="list-group-item list-group-item-warning">Difficulty: {{pose.difficulty}}</li>
 	</ul>
 </div>
 {{ctrl.poses}}
