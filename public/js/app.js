@@ -145,15 +145,27 @@ app.controller('mainController', ['$http', function($http){
 		this.hideForm = false;
 	};
 	
-	this.toggleDetails = function(){
-		this.showName = !this.showName;
-		this.showSanskrit = !this.showSanskrit;
-		this.showPicture = !this.showPicture;
-		this.showCategory = !this.showCategory;
-		this.showDescription = !this.showDescription;
-		this.showBenefits = !this.showBenefits;
-		this.showDifficulty = !this.showDifficulty;
-		console.log('clicked');
+	this.toggleDetails = function(detail){
+		switch(detail){
+			case "name":
+			this.showName = !this.showName;
+			break;
+			case "sanskrit":
+			this.showSanskrit = !this.showSanskrit;
+			break;
+			case "picture":
+			this.showPicture = !this.showPicture;
+			break;
+			case "category":
+			this.showCategory = !this.showCategory;
+			break;
+			case "description":
+			this.showDescription = !this.showDescription;
+			break;
+			case "benefits":
+			this.showBenefits = !this.showBenefits;
+			break;
+	}
 	};
 
 	this.getYogaPoses();
