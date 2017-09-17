@@ -67,7 +67,7 @@
 			<span ng-show="isHidden">{{pose.translation.join(", ")}}</span>
 		</li>
 		 <li ng-show="ctrl.showPicture" class="list-group-item"> <img class="posePicture" ng-src="{{pose.file_reference}}"/> </li>
-		 <li ng-show="ctrl.showDescription" class="list-group-item" > Description: {{pose.description.join(", ")}} </li>
+		 <li id="descScroll" ng-show="ctrl.showDescription" class="list-group-item" > Description: {{pose.description.join(", ")}} </li>
 		<li ng-show="ctrl.showCategory" class="list-group-item" >Category: {{pose.category}} </li>
 		<li ng-show="ctrl.showBenefits" class="list-group-item" >Benefits: {{pose.benefits}} </li>
 		<li ng-show="ctrl.showDifficulty" class="list-group-item list-group-item-warning">Difficulty: {{pose.difficulty}}</li>

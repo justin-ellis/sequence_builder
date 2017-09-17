@@ -16,19 +16,9 @@ body {
 	display: inline-block;
 }
 
-.poseInfo p{
-	height: 60%;
-	width: 60%;
-	display: inline-block;
+#descScroll {
+	max-height: 6em;
 	overflow: scroll;
-}
-
-/*#scroll {
-	overflow: scroll;
-}*/
-
-.translation {
-	
 }
 
 .filterSelect{
