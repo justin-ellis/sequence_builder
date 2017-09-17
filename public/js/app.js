@@ -28,6 +28,13 @@ app.controller('mainController', ['$http', function($http){
 	{name: 'Arm and Leg Support', category: 'Arm and Leg Support'},
 	{name: 'Arm Balance and Inversion', category: 'Arm Balance and Inversion'},
 	];
+		this.showName = true;
+		this.showSanskrit = true;
+		this.showPicture = true;
+		this.showCategory = true;
+		this.showDescription = false;
+		this.showBenefits = false;
+		this.showDifficulty = false;
 	
 	this.displayLogin = function(){
 		this.showLogin = true;
@@ -138,6 +145,17 @@ app.controller('mainController', ['$http', function($http){
 		this.hideForm = false;
 	};
 	
+	this.toggleDetails = function(){
+		this.showName = !this.showName;
+		this.showSanskrit = !this.showSanskrit;
+		this.showPicture = !this.showPicture;
+		this.showCategory = !this.showCategory;
+		this.showDescription = !this.showDescription;
+		this.showBenefits = !this.showBenefits;
+		this.showDifficulty = !this.showDifficulty;
+		console.log('clicked');
+	};
+
 	this.getYogaPoses();
 
 }]);
