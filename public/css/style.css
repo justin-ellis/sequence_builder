@@ -17,10 +17,18 @@ body {
 }
 
 #descScroll {
-	max-height: 6em;
+	max-height: 5em;
 	overflow: scroll;
 }
 
 .filterSelect{
 	text-align: center;
+}
+
+.showingDetails {
+	background-color: green;
+}
+
+.hidingDetails {
+	background-color: red;
 }

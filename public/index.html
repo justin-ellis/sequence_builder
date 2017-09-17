@@ -34,12 +34,12 @@
 </div>
 
 <div>
-	<button class="btn btn-default" ng-click="ctrl.toggleDetails('name')">Toggle Name</button>
-	<button class="btn btn-default" ng-click="ctrl.toggleDetails('sanskrit')">Toggle Sanskrit</button>
-	<button class="btn btn-default" ng-click="ctrl.toggleDetails('picture')">Toggle Picture</button>
-	<button class="btn btn-default" ng-click="ctrl.toggleDetails('category')">Toggle Category</button>
-	<button class="btn btn-default" ng-click="ctrl.toggleDetails('description')">Toggle Description</button>
-	<button class="btn btn-default" ng-click="ctrl.toggleDetails('benefits')">Toggle Benefits</button>
+	<button ng-class="{'showingDetails' : ctrl.showName, 'hidingDetails' : !ctrl.showName}" class="btn btn-default" ng-click="ctrl.toggleDetails('name')">Toggle Name</button>
+	<button ng-class="{'showingDetails' : ctrl.showSanskrit, 'hidingDetails' : !ctrl.showSanskrit}" class="btn btn-default" ng-click="ctrl.toggleDetails('sanskrit')">Toggle Sanskrit</button>
+	<button ng-class="{'showingDetails' : ctrl.showPicture, 'hidingDetails' : !ctrl.showPicture}" class="btn btn-default" ng-click="ctrl.toggleDetails('picture')">Toggle Picture</button>
+	<button ng-class="{'showingDetails' : ctrl.showCategory, 'hidingDetails' : !ctrl.showCategory}" class="btn btn-default" ng-click="ctrl.toggleDetails('category')">Toggle Category</button>
+	<button ng-class="{'showingDetails' : ctrl.showDescription, 'hidingDetails' : !ctrl.showDescription}" class="btn btn-default" ng-click="ctrl.toggleDetails('description')">Toggle Description</button>
+	<button ng-class="{'showingDetails' : ctrl.showBenefits, 'hidingDetails' : !ctrl.showBenefits}" class="btn btn-default" ng-click="ctrl.toggleDetails('benefits')">Toggle Benefits</button>
 </div>
 
 <div class="filterSelect">
@@ -69,7 +69,7 @@
 		 <li ng-show="ctrl.showPicture" class="list-group-item"> <img class="posePicture" ng-src="{{pose.file_reference}}"/> </li>
 		 <li id="descScroll" ng-show="ctrl.showDescription" class="list-group-item" > Description: {{pose.description.join(", ")}} </li>
 		<li ng-show="ctrl.showCategory" class="list-group-item" >Category: {{pose.category}} </li>
-		<li ng-show="ctrl.showBenefits" class="list-group-item" >Benefits: {{pose.benefits}} </li>
+		<li id="descScroll" ng-show="ctrl.showBenefits" class="list-group-item" >Benefits: {{pose.benefits}} </li>
 		<li ng-show="ctrl.showDifficulty" class="list-group-item list-group-item-warning">Difficulty: {{pose.difficulty}}</li>
 	</ul>
 </div>
