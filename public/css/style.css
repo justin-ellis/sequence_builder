@@ -26,9 +26,15 @@ body {
 }
 
 .showingDetails {
-	background-color: green;
+	background-color: #5DAF3E;
 }
 
 .hidingDetails {
-	background-color: red;
+	background-color: #DE2938;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #8B8B8B;
+    border-color: #1F1F1F; /*set the color you want here*/
 }
