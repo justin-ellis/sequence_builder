@@ -9,6 +9,11 @@ router.get('/', (req, res)=>{
 	});
 });
 
+// if (req.session.logged){
+// } else {
+// 	res.redirect somewhere
+// }
+
 router.post('/', (req, res)=>{
 	Sequence.create(req.body, (err, createdSequence)=>{
 		User.findById(req.body.userId, (err, foundUser)=>{

@@ -6,6 +6,8 @@ app.controller('mainController', ['$http', function($http){
 	this.showTranslation = 'Translation';
 	this.hideTranslation = 'Hide';
 	this.poses = [];
+	this.showToggle = "Hiding";
+	this.hideToggle = "Showing";
 	this.hideForm = true;
 	this.showLogin = false;
 	this.URL = 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500';

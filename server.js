@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const User = require('./models/user.js');
+const Sequence = require('./models/sequence.js');
 const session = require('express-session');
 const port = process.env.PORT || 3000;
 
@@ -19,7 +20,7 @@ app.use(session({
 
 
 const usersController = require('./controllers/user.js');
-app.use('/user', usersController);
+app.use('/users', usersController);
 
 const asanasController = require('./controllers/asana.js');
 app.use('/asana', asanasController);
@@ -31,7 +32,7 @@ const seedController = require('./controllers/seedController.js');
 app.use('/seed', seedController);
 
 const sequenceController = require('./controllers/sequence.js');
-app.use('/sequence', sequence);
+app.use('/sequence', sequenceController);
 
 const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/yoga';
 mongoose.connect(mongoUri);
