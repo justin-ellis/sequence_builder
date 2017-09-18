@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+const Sequence = require('./sequence.js');
 
 const userSchema = mongoose.Schema({
-	username: String,
-	password: String,
-		sequences: []
+	username: {type: String, required: true, unique: true},
+	password: {type: String, required: true},
+		sequences: [Sequence.schema]
 });
 
 const User = mongoose.model('User', userSchema);

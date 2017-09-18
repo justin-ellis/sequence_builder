@@ -30,6 +30,9 @@ app.use('/session', sessionController);
 const seedController = require('./controllers/seedController.js');
 app.use('/seed', seedController);
 
+const sequenceController = require('./controllers/sequence.js');
+app.use('/sequence', sequence);
+
 const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/yoga';
 mongoose.connect(mongoUri);
 
