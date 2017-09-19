@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
+const Asana = require('./asana.js');
 
 const sequenceSchema = mongoose.Schema({
-	poses: Array, 
+	name: 'String',
 	difficulty: 'String',
-	author: 'String'
+	author: 'String',
+	poses: [Asana.schema], 
 });
 
 const Sequence = mongoose.model('Sequence', sequenceSchema);

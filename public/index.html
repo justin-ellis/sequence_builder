@@ -17,6 +17,17 @@
 <button ng-if="ctrl.loggedIn" ng-click="ctrl.logout()">Log out</button>
 </div>
 
+<div>
+	<h3>Create a sequence:</h3>
+<form ng-if="ctrl.loggedIn" ng-submit="ctrl.createSequence()">
+Name: <input type="text" ng-model="ctrl.name">
+Difficulty: <input type="text" ng-model="ctrl.difficulty">
+Author: <input type="text" ng-model="ctrl.author">
+<input type="submit" value="Create"/>
+</form>
+
+</div>
+
 <div ng-hide="ctrl.concealLogin">
 <form ng-submit="ctrl.login()" ng-if="ctrl.showLogin">
 	<h2>Log In</h2>
@@ -43,7 +54,7 @@
 </div>
 
 <div class="filterSelect">
-<h4> Filter Postures:</h4>
+<h4> Search Postures:</h4>
 <select class="selectpicker" ng-model="difficultyFilter"
 	data-ng-options="difficulty.difficulty as difficulty.name for difficulty in ctrl.asanaDifficulties">
 		<option value selected="selected">All Difficulties</option>
@@ -62,9 +73,9 @@
 		<li ng-show="ctrl.showName" class="list-group-item">{{pose.pose_name}} </li>
 		<li ng-show="ctrl.showSanskrit" class="list-group-item">
 
-			<button class="btn btn-secondary btn-sm" ng-show="!isHidden" ng-click="isHidden = true">{{pose.sanskrit_name}}</button>
-			<button  class="btn btn-default btn-sm" ng-show="isHidden" ng-click="isHidden = false">{{ctrl.hideTranslation}}</button> <br/>
-			<span ng-show="isHidden" ng-click="isHidden = false" ng-show="isHidden">{{pose.translation.join(", ")}}</span>
+			<p id="sanskrit-name" ng-show="!isHidden" ng-click="isHidden = true">{{pose.sanskrit_name}}</p>
+			
+			<span id="sanskrit-translation" ng-show="isHidden" ng-click="isHidden = false" ng-show="isHidden">{{pose.translation.join(", ")}}</span>
 		</li>
 		 <li ng-show="ctrl.showPicture" class="list-group-item"> <img class="posePicture" ng-src="{{pose.file_reference}}"/> </li>
 		 <li id="descScroll" ng-show="ctrl.showDescription" class="list-group-item" > {{pose.description.join(", ")}} </li>

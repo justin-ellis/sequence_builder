@@ -8,8 +8,8 @@ const session = require('express-session');
 const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true, limit: '50mb'}));
+app.use(bodyParser.json({limit: '50mb'}));
 
 app.use(session({
 	secret: "random secret string",

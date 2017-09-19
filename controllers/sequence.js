@@ -16,9 +16,11 @@ router.get('/', (req, res)=>{
 
 router.post('/', (req, res)=>{
 	Sequence.create(req.body, (err, createdSequence)=>{
-		User.findById(req.body.userId, (err, foundUser)=>{
+		User.findOne({username: req.session.username}, (err, foundUser)=>{
+			console.log(createdSequence);
 			foundUser.sequences.push(createdSequence);
 			foundUser.save((err, data)=>{
+				res.json(createdSequence);
 			});
 		});
 	});
@@ -26,7 +28,7 @@ router.post('/', (req, res)=>{
 
 router.get('/:id', (req, res)=>{
 	Sequence.findById(req.params.id, (err, foundSequence)=>{
-		User.findOne({'posts._id': req.params.id}, (err, foundUser)=>{
+		User.findOne({'user._id': req.params.id}, (err, foundUser)=>{
 		res.json(foundSequence);
 		});
 	});

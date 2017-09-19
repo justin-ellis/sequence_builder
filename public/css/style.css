@@ -2,11 +2,16 @@ body {
 	background-color: #FFECCD;
 }
 
+.selectpicker {
+	background-color: white;
+}
+
 #poseDiv {
 	display: inline-block;
 	padding: 0px 10px;
 	width: 33%;
 	text-align: center;
+	position: relative;
 	/*overflow: scroll;*/
 }
 
@@ -17,7 +22,7 @@ body {
 }
 
 #descScroll {
-	max-height: 5em;
+	max-height: 6.5em;
 	overflow: scroll;
 }
 
@@ -37,4 +42,27 @@ body {
     color: #fff;
     background-color: #8B8B8B;
     border-color: #1F1F1F; /*set the color you want here*/
+}
+
+.translation {
+	overflow: scroll;
+}
+
+#sanskrit-translation:hover {
+	border-radius: 4px;
+	padding: 6px 2px;
+	cursor: pointer;
+	font-style: italic;
+	margin: 5px;
+}
+
+#sanskrit-name {
+	background-color: lightgray;
+	border-radius: 4.5px;
+	margin-bottom: 0px;
+}
+
+#sanskrit-name:hover {
+	background-color: gray;
+	border-radius: 4.5px;
 }

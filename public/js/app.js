@@ -5,7 +5,8 @@ app.controller('mainController', ['$http', function($http){
 	const controller = this;
 	this.showTranslation = 'Translation';
 	this.hideTranslation = 'Hide';
-	this.poses = [];
+	this.postures = [];
+	this.sequences = [];
 	this.showToggle = "Hiding";
 	this.hideToggle = "Showing";
 	this.hideForm = true;
@@ -39,7 +40,7 @@ app.controller('mainController', ['$http', function($http){
 		this.showDifficulty = false;
 	
 	this.displayLogin = function(){
-		this.showLogin = true;
+		this.showLogin = !this.showLogin;
 	};
 
 	this.hideLogin = function(){
@@ -55,7 +56,7 @@ app.controller('mainController', ['$http', function($http){
    //  'Access-Control-Allow-Origin': 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500'}
 		}).then(
 		function(response){
-			controller.poses = response.data;
+			controller.postures = response.data;
 			console.log(response.data);
 		},
 		function(err){
@@ -168,6 +169,45 @@ app.controller('mainController', ['$http', function($http){
 			this.showBenefits = !this.showBenefits;
 			break;
 	}
+	};
+
+
+	this.getSequences = function(){
+			$http({
+
+				method: 'GET',
+				url: '/sequence',
+			}).then(
+			function(response){
+				controller.sequences = response.data;
+				console.log(response.data);
+			},
+			function(err){
+				console.log(err);
+			});
+		};
+
+	this.createSequence = function(){
+		$http({
+			method: 'POST',
+			url: '/sequence',
+			data: {
+				name: this.name,
+				difficulty: this.difficulty,
+				author: this.author,
+				poses: this.poses
+			}
+		}).then(
+		function(response){
+				// this.getSequences();
+				controller.name = '';
+				controller.difficulty = '';
+				controller.author = '';
+				controller.poses = [];
+		},
+		function(err){
+			console.log(err);
+		});
 	};
 
 	this.getYogaPoses();
