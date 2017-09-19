@@ -11,6 +11,8 @@ app.controller('mainController', ['$http', function($http){
 	this.hideToggle = "Showing";
 	this.hideForm = true;
 	this.showLogin = false;
+	let poseArray = [];
+	this.editSequenceIndex = 0;
 	this.URL = 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500';
 	this.asanaDifficulties = [
 	{name: 'Beginner', difficulty: 'Beginner'},
@@ -187,6 +189,21 @@ app.controller('mainController', ['$http', function($http){
 			});
 		};
 
+		this.deleteSequence = function(sequence){
+			$http({
+
+				method: 'DELETE',
+				url: '/sequence/' + sequence._id,
+			}).then(
+			function(response){
+				console.log(response.data);
+			},
+			function(err){
+				console.log(err);
+			});
+				this.getSequences();
+		};
+
 	this.createSequence = function(){
 		$http({
 			method: 'POST',
@@ -199,17 +216,43 @@ app.controller('mainController', ['$http', function($http){
 			}
 		}).then(
 		function(response){
-				// this.getSequences();
 				controller.name = '';
 				controller.difficulty = '';
 				controller.author = '';
 				controller.poses = [];
+				this.getSequences();
 		},
 		function(err){
 			console.log(err);
 		});
 	};
 
+	this.editSequence = function(sequence){
+		$http({
+			method: 'PUT',
+			url: '/sequence/' + sequence._id,
+			data: {
+				name: this.updatedName,
+				difficulty: this.updatedDifficulty,
+				author: this.updatedAuthor,
+				poses: this.updatedPoses
+			}
+		}).then(
+		function(response){
+			console.log(response);
+				// this.getSequences();
+				controller.name = '';
+				controller.difficulty = '';
+				controller.author = '';
+				controller.poses = [];
+				location.reload(true);
+				this.getSequences();
+		},
+		function(error){
+		});
+	};
+
+	this.getSequences();
 	this.getYogaPoses();
 
 }]);

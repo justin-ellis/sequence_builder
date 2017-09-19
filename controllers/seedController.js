@@ -82,7 +82,7 @@ var asanas = [ {
     pose_name: 'Box Pose',
     sanskrit_name: 'Cakravākāsana',
     translation: [ 'cakravāka = ruddy goose' ],
-    alt_name: 'Table Top',
+    alt_name: 'Table Top, tabletop, table-top',
     category: 'Arm+Leg Support / Neutral',
     difficulty: 'Beginner',
     description: [ 'From a kneeling position, the knees and arms form a box with the spine and neck in a neutral position.  The hips and shoulders are squared to the earth and the palms are rooted with the weight of the body equally distributed between the heel of the hands and the top of the knees.  The joints are stacked with the wrists, elbows and shoulders in a straight line.  The gaze is down.' ],

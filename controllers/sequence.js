@@ -26,12 +26,31 @@ router.post('/', (req, res)=>{
 	});
 });
 
-router.get('/:id', (req, res)=>{
-	Sequence.findById(req.params.id, (err, foundSequence)=>{
-		User.findOne({'user._id': req.params.id}, (err, foundUser)=>{
+
+router.put('/:id', (req, res)=>{
+	Sequence.findByIdAndUpdate(req.params.id, req.body, {new:true},(err, foundSequence)=>{
+		// User.findOne({'user._id': req.params.id}, (err, foundUser)=>{
 		res.json(foundSequence);
-		});
+		// });
 	});
 });
 
+router.delete('/:id', function(req, res){
+	// var sequencesUsersSequencesIds = users.sequences.map(function(sequences){
+	// 	console.log(sequences._id);
+	// 	return sequences._id;
+	// });
+	// 	console.log(sequencesUsersSequencesIds);
+  Sequence.findByIdAndRemove(req.params.id, function(err, deletedSequence){
+  	// User.findOne({'sequences._id': req.params.id}, (err, foundUser)=>{
+  // 		User.findOne({ _id : { $in: sequencesUsersSequencesIds}}, (err, foundUser)=>{
+  // 		console.log(foundUser);
+		// foundUser.sequences.id(req.params.id).remove();
+		// foundUser.save((err, savedUser)=>{
+		// res.json(foundUser);
+    res.json(deletedSequence);
+			// });
+		// });
+  });
+});
 module.exports = router;

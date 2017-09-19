@@ -23,7 +23,7 @@
 Name: <input type="text" ng-model="ctrl.name">
 Difficulty: <input type="text" ng-model="ctrl.difficulty">
 Author: <input type="text" ng-model="ctrl.author">
-<input type="submit" value="Create"/>
+<input type="submit" ng-click="ctrl.getSequences()" value="Create"/>
 </form>
 
 </div>
@@ -53,6 +53,30 @@ Author: <input type="text" ng-model="ctrl.author">
 	<button ng-class="{'showingDetails' : ctrl.showBenefits, 'hidingDetails' : !ctrl.showBenefits}" class="btn btn-primary" ng-click="ctrl.toggleDetails('benefits')"><span ng-if="ctrl.showBenefits">{{ctrl.hideToggle}} Benefits</span><span ng-if="!ctrl.showBenefits">{{ctrl.showToggle}} Benefits</span></button>
 </div>
 
+<div data-ng-repeat="sequence in ctrl.sequences track by $index">
+	<ul class="list-group">
+
+			<li class="list-group-item">{{sequence.name}}</li>
+			<li class="list-group-item">{{sequence.difficulty}}</li>
+			<li class="list-group-item">{{sequence.author}}</li>
+			<li class="list-group-item">{{sequence.poses.pose_name}} </li>
+			<button ng-if="ctrl.loggedIn" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
+	</ul>
+		<div ng-hide="ctrl.hideForm">
+			<form ng-if="$index === ctrl.editSequenceIndex" ng-submit="ctrl.editSequence(sequence);">
+       Name<input type="text"  ng-model="ctrl.updatedName" placeholder="name"/>
+       Author<input type="number"  ng-model="ctrl.updatedAuthor" placeholder=""/>
+       Difficulty<input type="text"  ng-model="ctrl.updatedDifficulty" placeholder=""/>
+       Poses<input type="text" ng-model="ctrl.updatedPoses" placeholder="">
+       <input type= "Submit"  value="update sequence">
+       </form>
+      <button ng-click="ctrl.deleteSequence(sequence)">Delete Sequence</button>
+
+		</div>
+</div>
+
+
+
 <div class="filterSelect">
 <h4> Search Postures:</h4>
 <select class="selectpicker" ng-model="difficultyFilter"
@@ -68,7 +92,7 @@ Author: <input type="text" ng-model="ctrl.author">
 <input type="text" placeholder="Downward Dog" ng-model="nameFilter">
 </div>
 
-<div id="poseDiv" data-ng-repeat="pose in ctrl.poses | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter} | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter">
+<div id="poseDiv" data-ng-repeat="pose in ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter} | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter">
 	<ul class="list-group">
 		<li ng-show="ctrl.showName" class="list-group-item">{{pose.pose_name}} </li>
 		<li ng-show="ctrl.showSanskrit" class="list-group-item">
@@ -82,6 +106,7 @@ Author: <input type="text" ng-model="ctrl.author">
 		<li ng-show="ctrl.showCategory" class="list-group-item" >Category: {{pose.category}} </li>
 		<li id="descScroll" ng-show="ctrl.showBenefits" class="list-group-item" >Benefits: {{pose.benefits}} </li>
 		<li ng-show="ctrl.showDifficulty" class="list-group-item">Difficulty: {{pose.difficulty}}</li>
+		<button ng-click="ctrl.addPose(sequence);">Add Pose</button>
 	</ul>
 </div>
 </body>
