@@ -38,11 +38,11 @@ router.post('/getOne', (req, res)=>{
 }
 });
 
-router.delete('/:id', (req, res)=>{
-	Asana.findByIdAndRemove(req.params.id, function(err, deletedAsana){
-		 res.json(deletedAsana);
-});
-});
+// router.delete('/:id', (req, res)=>{
+// 	Asana.findByIdAndRemove(req.params.id, function(err, deletedAsana){
+// 		 res.json(deletedAsana);
+// });
+// });
 
 // router.post('/', (req, res)=>{
 // 	Asana.create(req.body, (err, createdAsana)=>{

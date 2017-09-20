@@ -85,10 +85,15 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
 
 <div class="filterSelect">
 <h4> Search Postures:</h4>
+<!-- 	<form ng-submit="ctrl.submit()">
+		<input type="submit" value="submit">
+	</form> -->
 <select class="selectpicker" ng-model="difficultyFilter"
 	data-ng-options="difficulty.difficulty as difficulty.name for difficulty in ctrl.asanaDifficulties">
 		<option value selected="selected">All Difficulties</option>
 </select>
+
+<!-- <select class="selectpicker" ng-model="ctrl.postures" ng-options="c.category for c in ctrl.postures">All Categories</select> -->
 
 <select class="selectpicker" ng-model="categoryFilter"
 	data-ng-options="category.category as category.name for category in ctrl.asanaCategories">
@@ -98,8 +103,13 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
 <input type="text" placeholder="Downward Dog" ng-model="nameFilter">
 </div>
 
-<div id="poseDiv" data-ng-repeat="pose in ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter} | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter">
+<div id="poseDiv" ng-repeat="pose in ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter} | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter">
+
+<!-- <div id="poseDiv" data-ng-repeat="pose in ctrl.postures | filter: {difficulty: newDifficulty.difficulty} | filter: {category: newCategory.category} | filter: nameFilter"> -->
+
+
 		<button ng-click="ctrl.createAsana($index);">Add Pose</button>
+	
 	<ul class="list-group">
 		<li ng-show="ctrl.showName" class="list-group-item">{{pose.pose_name}} </li>
 		<li ng-show="ctrl.showSanskrit" class="list-group-item">
