@@ -65,6 +65,7 @@ app.controller('mainController', ['$http', function($http){
 			}
 			controller.postures = response.data;
 			console.log(poseArray);
+			console.log(poseArray[6]);
 			console.log(response.data);
 		},
 		function(err){
@@ -282,7 +283,7 @@ app.controller('mainController', ['$http', function($http){
 
 	this.createAsana = function(index){
 		$http({
-			method: 'GET',
+			method: 'POST',
 			url: '/asana/getOne',
 			data: {
 				poseData: poseArray[index],
@@ -297,7 +298,7 @@ app.controller('mainController', ['$http', function($http){
 			}
 		}).then(
 		function(response){
-
+			controller.poseData = {};
 			console.log(response);
 			// file_reference = this.file_reference; 
    //  pose_name = ''; 
