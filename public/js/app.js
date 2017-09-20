@@ -288,8 +288,8 @@ app.controller('mainController', ['$http', function($http){
 			method: 'POST',
 			url: '/asana/getOne',
 			data: {
-				// poseData: poseArray[index],
-				poseData: this.postures[index],
+				poseData: poseArray[index],
+				// poseData: this.postures[index],
 		// file_reference: this.file_reference,
   //   pose_name: this.pose_name,
   //   sanskrit_name: this.sanskrit_name,

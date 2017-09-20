@@ -103,7 +103,7 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
 <input type="text" placeholder="Downward Dog" ng-model="nameFilter">
 </div>
 
-<div id="poseDiv" ng-repeat="pose in ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter} | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter">
+<div id="poseDiv" data-ng-repeat="pose in ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter} | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter">
 
 <!-- <div id="poseDiv" data-ng-repeat="pose in ctrl.postures | filter: {difficulty: newDifficulty.difficulty} | filter: {category: newCategory.category} | filter: nameFilter"> -->
 
