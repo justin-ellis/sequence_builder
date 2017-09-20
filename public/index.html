@@ -92,6 +92,7 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
 
 <div id="poseDiv" data-ng-repeat="pose in ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter} | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter">
 	<ul class="list-group">
+		<button ng-click="ctrl.createAsana($index);">Add Pose</button>
 		<li ng-show="ctrl.showName" class="list-group-item">{{pose.pose_name}} </li>
 		<li ng-show="ctrl.showSanskrit" class="list-group-item">
 
@@ -104,7 +105,6 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
 		<li ng-show="ctrl.showCategory" class="list-group-item" >Category: {{pose.category}} </li>
 		<li id="descScroll" ng-show="ctrl.showBenefits" class="list-group-item" >Benefits: {{pose.benefits}} </li>
 		<li ng-show="ctrl.showDifficulty" class="list-group-item">Difficulty: {{pose.difficulty}}</li>
-		<button ng-click="ctrl.createAsana($index);">Add Pose</button>
 	</ul>
 </div>
 </body>

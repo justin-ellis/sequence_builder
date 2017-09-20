@@ -8,6 +8,7 @@ const asanaSchema = mongoose.Schema({
     category: String,
     difficulty: String,
     description: Array,
+    poseData: Object,
     benefits: String
   });
 

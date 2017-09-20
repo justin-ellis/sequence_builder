@@ -17,16 +17,29 @@ router.get('/count', (req, res)=>{
 	});
 });
 
-router.post('/', (req, res)=>{
-	Asana.create(req.body, (err, createdAsana)=>{
+router.get('/getOne', (req, res)=>{
+	Asana.create(req.body['poseData'], (err, foundAsana)=>{
+		console.log(foundAsana);
 		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
 			console.log(foundSequence);
-			foundSequence.poses.push(createdAsana);
+			foundSequence.poses.push(foundAsana);
 			foundSequence.save((err, data)=>{
-				res.json(createdAsana);
+				res.json(foundAsana);
 			});
 		});
 	});
 });
+
+// router.post('/', (req, res)=>{
+// 	Asana.create(req.body, (err, createdAsana)=>{
+// 		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
+// 			console.log(foundSequence);
+// 			foundSequence.poses.push(createdAsana);
+// 			foundSequence.save((err, data)=>{
+// 				res.json(createdAsana);
+// 			});
+// 		});
+// 	});
+// });
 
 module.exports = router;

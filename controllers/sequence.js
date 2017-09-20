@@ -2,6 +2,7 @@ const express = require('express');
 const Sequence = require('../models/sequence.js');
 const User = require('../models/user.js');
 const router = express.Router();
+const Asana = require('../models/asana.js');
 
 router.get('/', (req, res)=>{
 	Sequence.find({}, (err, foundSequences)=>{
@@ -31,9 +32,16 @@ router.post('/', (req, res)=>{
 	});
 });
 
-// router.post('/:id', (req, res)=>{
-	
-
+// router.get('/getOne', (req, res)=>{
+// 	Asana.findOne(req.body['poseData'], (err, createdAsana)=>{
+// 		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
+// 			console.log(foundSequence);
+// 			foundSequence.poses.push(createdAsana);
+// 			foundSequence.save((err, data)=>{
+// 				res.json(createdAsana);
+// 			});
+// 		});
+// 	});
 // });
 
 

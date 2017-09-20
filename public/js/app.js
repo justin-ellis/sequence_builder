@@ -13,6 +13,7 @@ app.controller('mainController', ['$http', function($http){
 	this.showLogin = false;
 	let poseArray = [];
 	this.editSequenceIndex = 0;
+	this.asanaIndex = 0;
 	this.activeUsername = '';
 	this.URL = 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500';
 	this.asanaDifficulties = [
@@ -59,7 +60,6 @@ app.controller('mainController', ['$http', function($http){
    //  'Access-Control-Allow-Origin': 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500'}
 		}).then(
 		function(response){
-			poseArray = [];
 			for (i = 0; i < 104; i++) {
 			poseArray.push(response.data[i]);
 			}
@@ -245,7 +245,7 @@ app.controller('mainController', ['$http', function($http){
 				name: this.updatedName,
 				difficulty: this.updatedDifficulty,
 				author: this.updatedAuthor,
-				poses: poseArray[index]
+				// poses: poseArray[index]
 			}
 		}).then(
 		function(response){
@@ -282,10 +282,10 @@ app.controller('mainController', ['$http', function($http){
 
 	this.createAsana = function(index){
 		$http({
-			method: 'POST',
-			url: '/asana',
+			method: 'GET',
+			url: '/asana/getOne',
 			data: {
-				poses: poseArray[index],
+				poseData: poseArray[index],
 		// file_reference: this.file_reference,
   //   pose_name: this.pose_name,
   //   sanskrit_name: this.sanskrit_name,
@@ -297,8 +297,9 @@ app.controller('mainController', ['$http', function($http){
 			}
 		}).then(
 		function(response){
+
 			console.log(response);
-			// file_reference = ''; 
+			// file_reference = this.file_reference; 
    //  pose_name = ''; 
    //  sanskrit_name = ''; 
    //  translation = [];
