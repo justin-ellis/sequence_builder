@@ -11,9 +11,10 @@ app.controller('mainController', ['$http', function($http){
 	this.hideToggle = "Showing";
 	this.hideForm = true;
 	this.showLogin = false;
-	let poseArray = [];
+	this.poseArray = [];
 	this.editSequenceIndex = 0;
 	this.asanaIndex = 0;
+	this.filteredPostures = [];
 	this.activeUsername = '';
 	this.URL = 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500';
 	this.asanaDifficulties = [
@@ -71,16 +72,14 @@ app.controller('mainController', ['$http', function($http){
 
 			method: 'GET',
 			url: '/asana',
-			// headers: {
-   //  'Access-Control-Allow-Origin': 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500'}
 		}).then(
 		function(response){
 			poseArray = [];
 			for (i = 0; i < 104; i++) {
-			poseArray.push(response.data[i]);
+			controller.poseArray.push(response.data[i]);
 			}
 			controller.postures = response.data;
-			console.log(poseArray);
+			console.log(controller.poseArray);
 			console.log(response.data);
 		},
 		function(err){
@@ -132,7 +131,6 @@ app.controller('mainController', ['$http', function($http){
 				controller.loggedIn = false;
 				controller.hideForm = true;
 				// this.showLogin = true;
-				// location.reload(true);
 				controller.concealLogin = false;
 				// this.displayLogin();
 			}
@@ -253,7 +251,6 @@ app.controller('mainController', ['$http', function($http){
 		}).then(
 		function(response){
 			console.log(response);
-				// this.getSequences();
 				controller.name = '';
 				controller.difficulty = '';
 				controller.author = '';
@@ -265,52 +262,19 @@ app.controller('mainController', ['$http', function($http){
 				this.getSequences();
 	};
 
-	// 	this.editSequencePoses = function(sequence, index){
-	// 	$http({
-	// 		method: 'PUT',
-	// 		url: '/sequence/' + sequence._id,
-	// 		data: {
-	// 			poses: poseArray[index]
-	// 			// poses: this.updatedPoses
-	// 		}
-	// 	}).then(
-	// 	function(response){
-	// 		console.log(response);
-	// 			location.reload(true);
-	// 	},
-	// 	function(error){
-	// 	});
-	// 			this.getSequences();
-	// };
-
 	this.createAsana = function(index){
 		$http({
 			method: 'POST',
 			url: '/asana/getOne',
 			data: {
-				poseData: poseArray[index],
-				// poseData: this.postures[index],
-		// file_reference: this.file_reference,
-  //   pose_name: this.pose_name,
-  //   sanskrit_name: this.sanskrit_name,
-  //   translation:this.translation,
-  //   category: this.category,
-  //   difficulty: this.difficulty,
-  //   description:this.description,
-  //   benefits: this.benefits
+				// poseData: controller.poseArray[index],
+				poseData: controller.filteredPostures[index],
 			}
 		}).then(
 		function(response){
+			console.log(controller.postures[index]);
 			// controller.poseData = {};
 			console.log(response);
-			// file_reference = this.file_reference; 
-   //  pose_name = ''; 
-   //  sanskrit_name = ''; 
-   //  translation = [];
-   //  category = ''; 
-   //  difficulty = ''; 
-   //  description = [];
-   //  benefits = ''; 
 		},
 		function(error){
 
@@ -334,9 +298,33 @@ app.controller('mainController', ['$http', function($http){
 	// this.getSequences();
 	// };
 
-	this.submit= function() {
-		this.newDifficulty = this.postures.difficulty;
-	};
+
+	// this.searchAsana = function(){
+	// 	$http({
+	// 		method: 'GET',
+	// 		url: '/asana/search',
+	// 		dataType: 'json',
+ //            data: {
+ //                category: this.category,
+	// 							difficulty: this.difficulty,
+	// 							pose_name: this.pose_name,
+	// 							sanskrit_name: this.sanskrit_name,
+	// 							description: this.description,
+	// 							benefits: this.benefits
+ //            }
+
+	// 	}).then(
+	// 	function(response){
+	// 		poseArray = [];
+	// 		for (i = 0; i < 104; i++) {
+	// 		poseArray.push(response.data[i]);
+
+	// 		}
+	// 		controller.postures = response.data;
+	// 	},
+	// 	function(error){
+	// 	});
+	// };
 
 	this.getSequences();
 	this.getYogaPoses();

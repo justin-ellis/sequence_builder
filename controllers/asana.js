@@ -17,6 +17,17 @@ router.get('/count', (req, res)=>{
 	});
 });
 
+router.get('/search', (req, res)=>{
+		Asana.find({'pose_name': res.pose_name}, function(err, data) {
+    if ( err ) { 
+    	console.log (err); 
+    }
+		res.send(data);
+	});
+});
+
+
+
 router.post('/getOne', (req, res)=>{
 
 // } else {
@@ -37,6 +48,7 @@ router.post('/getOne', (req, res)=>{
 	res.redirect('/');
 }
 });
+
 
 // router.delete('/:id', (req, res)=>{
 // 	Asana.findByIdAndRemove(req.params.id, function(err, deletedAsana){
