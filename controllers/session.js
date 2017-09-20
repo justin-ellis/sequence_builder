@@ -40,9 +40,10 @@ router.post('/register', (req, res, next)=>{
     userDbEntry.username = req.body.username;
     userDbEntry.password = passwordHash;
 
+
     User.create(userDbEntry, (err, user) => {
       console.log(user);
-
+     
       req.session.username = user.username;
       req.session.logged   = true;
       res.json(req.session.logged);

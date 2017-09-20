@@ -22,7 +22,6 @@
 <form ng-if="ctrl.loggedIn" ng-submit="ctrl.createSequence()">
 Name: <input type="text" ng-model="ctrl.name">
 Difficulty: <input type="text" ng-model="ctrl.difficulty">
-Author: <input type="text" ng-model="ctrl.author">
 <input type="submit" ng-click="ctrl.getSequences()" value="Create"/>
 </form>
 
@@ -106,7 +105,7 @@ Author: <input type="text" ng-model="ctrl.author">
 		<li ng-show="ctrl.showCategory" class="list-group-item" >Category: {{pose.category}} </li>
 		<li id="descScroll" ng-show="ctrl.showBenefits" class="list-group-item" >Benefits: {{pose.benefits}} </li>
 		<li ng-show="ctrl.showDifficulty" class="list-group-item">Difficulty: {{pose.difficulty}}</li>
-		<button ng-click="ctrl.addPose(sequence);">Add Pose</button>
+		<!-- <button ng-click="ctrl.savePose(index);">Add Pose</button> -->
 	</ul>
 </div>
 </body>

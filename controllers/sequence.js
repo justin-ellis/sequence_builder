@@ -18,8 +18,13 @@ router.post('/', (req, res)=>{
 	Sequence.create(req.body, (err, createdSequence)=>{
 		User.findOne({username: req.session.username}, (err, foundUser)=>{
 			console.log(createdSequence);
+			createdSequence.author = req.session.username;
+			createdSequence.save((err, data)=>{
+
+			});
 			foundUser.sequences.push(createdSequence);
 			foundUser.save((err, data)=>{
+			// res.json(createdSequence);
 				res.json(createdSequence);
 			});
 		});

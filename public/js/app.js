@@ -13,6 +13,7 @@ app.controller('mainController', ['$http', function($http){
 	this.showLogin = false;
 	let poseArray = [];
 	this.editSequenceIndex = 0;
+	this.activeUsername = '';
 	this.URL = 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500';
 	this.asanaDifficulties = [
 	{name: 'Beginner', difficulty: 'Beginner'},
@@ -58,7 +59,12 @@ app.controller('mainController', ['$http', function($http){
    //  'Access-Control-Allow-Origin': 'https://yoga.com/api/content/feed/?format=json&type=pose&offset=0&limit=500'}
 		}).then(
 		function(response){
+			poseArray = [];
+			for (i = 0; i < 104; i++) {
+			poseArray.push(response.data[i]);
+			}
 			controller.postures = response.data;
+			console.log(poseArray);
 			console.log(response.data);
 		},
 		function(err){
@@ -97,14 +103,13 @@ app.controller('mainController', ['$http', function($http){
 			url: '/session/login',
 			data: {
 				username: this.username,
-				password: this.password
+				password: this.password,
 			}
 		}).then(
 		function(response){
-			controller.username = '';
-			controller.password = '';
+			controller.username = "";
+			controller.password = "";
 			controller.foundUser = response.data;
-			console.log(response.data);
 
 			if(response.data != true){
 				console.log('wrong username or password');
@@ -116,6 +121,10 @@ app.controller('mainController', ['$http', function($http){
 				// this.displayLogin();
 			}
 			else if(response.data){
+			console.log(controller.foundUser);
+				controller.activeUsername = controller.username;
+				console.log(this.username);
+				console.log(this.activeUsername);
 				controller.loggedIn = true;
 				controller.hideForm = false;
 				controller.hideLogin();
@@ -182,7 +191,7 @@ app.controller('mainController', ['$http', function($http){
 			}).then(
 			function(response){
 				controller.sequences = response.data;
-				console.log(response.data);
+				// console.log(response.data);
 			},
 			function(err){
 				console.log(err);
@@ -220,11 +229,12 @@ app.controller('mainController', ['$http', function($http){
 				controller.difficulty = '';
 				controller.author = '';
 				controller.poses = [];
-				this.getSequences();
+				// location.reload(true);
 		},
 		function(err){
 			console.log(err);
 		});
+				this.getSequences();
 	};
 
 	this.editSequence = function(sequence){
@@ -246,11 +256,27 @@ app.controller('mainController', ['$http', function($http){
 				controller.author = '';
 				controller.poses = [];
 				location.reload(true);
-				this.getSequences();
 		},
 		function(error){
 		});
+				this.getSequences();
 	};
+
+	// this.savePose = function(index){
+	// 	$http({
+	// 		method: 'POST',
+	// 		url: '/sequence',
+	// 		data: {
+	// 			pose: poseArray[index]
+	// 		}
+	// 	}).then(
+	// 	function(response){
+	// 		console.log(response);
+	// 	},
+	// 	function(error){
+
+	// 	});
+	// };
 
 	this.getSequences();
 	this.getYogaPoses();

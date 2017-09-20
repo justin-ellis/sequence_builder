@@ -16,4 +16,16 @@ router.get('/count', (req, res)=>{
 	});
 });
 
+router.post('/', (req, res)=>{
+	Asana.create(req.body, (err, createdAsana)=>{
+		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
+			console.log(createdSequence);
+			foundSequence.poses.push(createdAsana);
+			foundSequence.save((err, data)=>{
+				res.json(createdAsana);
+			});
+		});
+	});
+});
+
 module.exports = router;
