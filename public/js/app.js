@@ -32,8 +32,8 @@ app.controller('mainController', ['$http', function($http){
 	{name: 'Supine', category: 'Supine'},
 	{name: 'Lateral Bend', category: 'Lateral Bend'},
 	{name: 'Forward Bend', category: 'Forward Bend'},
-	{name: 'Arm and Leg Support', category: 'Arm and Leg Support'},
-	{name: 'Arm Balance and Inversion', category: 'Arm Balance and Inversion'},
+	{name: 'Arm and Leg Support', category: 'Arm+Leg Support'},
+	{name: 'Arm Balance and Inversion', category: 'Arm Balance+Inversion'},
 	];
 		this.showName = true;
 		this.showSanskrit = true;
@@ -65,7 +65,6 @@ app.controller('mainController', ['$http', function($http){
 			}
 			controller.postures = response.data;
 			console.log(poseArray);
-			console.log(poseArray[6]);
 			console.log(response.data);
 		},
 		function(err){
@@ -287,6 +286,7 @@ app.controller('mainController', ['$http', function($http){
 			url: '/asana/getOne',
 			data: {
 				poseData: poseArray[index],
+				// poseData: this.postures[index],
 		// file_reference: this.file_reference,
   //   pose_name: this.pose_name,
   //   sanskrit_name: this.sanskrit_name,

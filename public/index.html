@@ -59,12 +59,13 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
 			Name: <li class="list-group-item">{{sequence.name}}</li>
 			Difficulty: <li class="list-group-item">{{sequence.difficulty}}</li>
 			Creator: <li class="list-group-item">{{sequence.author}}</li>
+			<li class="list-group-item sequenceLi">
 	<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses">
-		<ul>
+		
 			 {{key.pose_name}}<br/>
 			 <img id="sequencePicture" ng-src="{{key.file_reference}}"> </img>
 		</div>
-	</ul>
+	</li>
 			<button ng-if="ctrl.loggedIn" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
 	</ul>
 		<div ng-hide="ctrl.hideForm">
@@ -96,8 +97,8 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
 </div>
 
 <div id="poseDiv" data-ng-repeat="pose in ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter} | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter">
-	<ul class="list-group">
 		<button ng-click="ctrl.createAsana($index);">Add Pose</button>
+	<ul class="list-group">
 		<li ng-show="ctrl.showName" class="list-group-item">{{pose.pose_name}} </li>
 		<li ng-show="ctrl.showSanskrit" class="list-group-item">
 

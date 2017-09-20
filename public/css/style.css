@@ -77,4 +77,10 @@ body {
 #sequencePoses {
 	display: inline-block;
 	text-align: center;
+	max-width: 12em;
+	height: auto;
+}
+
+.sequenceLi {
+	text-align: center;
 }

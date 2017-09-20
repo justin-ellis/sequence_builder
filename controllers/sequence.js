@@ -10,12 +10,10 @@ router.get('/', (req, res)=>{
 	});
 });
 
-// if (req.session.logged){
-// } else {
-// 	res.redirect somewhere
-// }
+
 
 router.post('/', (req, res)=>{
+	if (req.session.logged){
 	Sequence.create(req.body, (err, createdSequence)=>{
 		User.findOne({username: req.session.username}, (err, foundUser)=>{
 			console.log(createdSequence);
@@ -30,6 +28,9 @@ router.post('/', (req, res)=>{
 			});
 		});
 	});
+} else {
+	res.redirect('/');
+}
 });
 
 // router.get('/getOne', (req, res)=>{

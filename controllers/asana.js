@@ -18,6 +18,11 @@ router.get('/count', (req, res)=>{
 });
 
 router.post('/getOne', (req, res)=>{
+
+// } else {
+// 	res.redirect somewhere
+// }
+			if (req.session.logged){
 	Asana.create(req.body['poseData'], ()=>{
 		console.log(req.body['poseData']);
 		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
@@ -28,6 +33,9 @@ router.post('/getOne', (req, res)=>{
 			});
 		});
 	});
+} else {
+	res.redirect('/');
+}
 });
 
 // router.post('/', (req, res)=>{
