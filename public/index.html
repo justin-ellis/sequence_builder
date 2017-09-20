@@ -103,17 +103,17 @@
 	<!-- 	<form ng-submit="ctrl.submit()">
 			<input type="submit" value="submit">
 		</form> -->
-<!-- 	<select class="selectpicker" ng-model="difficultyFilter"
+	<select class="selectpicker" ng-model="difficultyFilter"
 		data-ng-options="difficulty.difficulty as difficulty.name for difficulty in ctrl.asanaDifficulties">
 			<option value selected="selected">All Difficulties</option>
-	</select> -->
+	</select>
 
 	<!-- <select class="selectpicker" ng-model="ctrl.postures" ng-options="c.category for c in ctrl.postures">All Categories</select> -->
 
-	<!-- <select class="selectpicker" ng-model="categoryFilter"
+	<select class="selectpicker" ng-model="categoryFilter"
 		data-ng-options="category.category as category.name for category in ctrl.asanaCategories">
 			<option value selected="selected">All Categories</option>
-	</select> -->
+	</select>
 
 	<input type="text" placeholder="Downward Dog" ng-model="nameFilter">
 	</div>
@@ -138,10 +138,10 @@
 
 
 
-	<!-- <div id="poseDiv" data-ng-repeat="pose in ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter}  | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter"> -->
+	<div id="poseDiv" data-ng-repeat="pose in (ctrl.filteredPostures = (ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter}  | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter))">
 
-		<div id="poseDiv" data-ng-repeat="pose in (ctrl.filteredPostures = (ctrl.postures | filter: nameFilter))">
-
+<!-- 		<div id="poseDiv" data-ng-repeat="pose in (ctrl.filteredPostures = (ctrl.postures | filter: nameFilter))">
+ -->
 	<!-- <div id="poseDiv" data-ng-repeat="pose in ctrl.postures | filter: {difficulty: newDifficulty.difficulty} | filter: {category: newCategory.category} | filter: nameFilter"> -->
 
 
