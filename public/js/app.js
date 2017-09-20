@@ -42,6 +42,21 @@ app.controller('mainController', ['$http', function($http){
 		this.showDescription = false;
 		this.showBenefits = false;
 		this.showDifficulty = false;
+
+		this.getSequences = function(){
+			$http({
+
+				method: 'GET',
+				url: '/sequence',
+			}).then(
+			function(response){
+				controller.sequences = response.data;
+				// console.log(response.data);
+			},
+			function(err){
+				console.log(err);
+			});
+		};
 	
 	this.displayLogin = function(){
 		this.showLogin = !this.showLogin;
@@ -123,8 +138,8 @@ app.controller('mainController', ['$http', function($http){
 			else if(response.data){
 			console.log(controller.foundUser);
 				controller.activeUsername = controller.username;
-				console.log(this.username);
-				console.log(this.activeUsername);
+				// console.log(this.username);
+				// console.log(this.activeUsername);
 				controller.loggedIn = true;
 				controller.hideForm = false;
 				controller.hideLogin();
@@ -183,20 +198,7 @@ app.controller('mainController', ['$http', function($http){
 	};
 
 
-	this.getSequences = function(){
-			$http({
 
-				method: 'GET',
-				url: '/sequence',
-			}).then(
-			function(response){
-				controller.sequences = response.data;
-				// console.log(response.data);
-			},
-			function(err){
-				console.log(err);
-			});
-		};
 
 		this.deleteSequence = function(sequence){
 			$http({
@@ -230,11 +232,11 @@ app.controller('mainController', ['$http', function($http){
 				controller.author = '';
 				controller.poses = [];
 				// location.reload(true);
-				// this.getSequences();
 		},
 		function(err){
 			console.log(err);
 		});
+				this.getSequences();
 	};
 
 	this.editSequence = function(sequence, index){
@@ -313,6 +315,22 @@ app.controller('mainController', ['$http', function($http){
 
 		});
 	};
+
+	// this.deleteAsana = function(asana){
+	// 	$http({
+	// 		method: 'DELETE',
+	// 		url: '/asana/' + asana._id,
+	// 		data: {
+	// 		}
+	// 	}).then(
+	// 	function(response){
+	// 		console.log(response);
+	// 	},
+	// 	function(error){
+	// 		console.log(error);
+	// 	});
+	// this.getSequences();
+	// };
 
 	this.getSequences();
 	this.getYogaPoses();

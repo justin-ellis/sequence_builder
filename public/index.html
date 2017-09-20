@@ -59,11 +59,13 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
 			Name: <li class="list-group-item">{{sequence.name}}</li>
 			Difficulty: <li class="list-group-item">{{sequence.difficulty}}</li>
 			Creator: <li class="list-group-item">{{sequence.author}}</li>
+			
 			<li class="list-group-item sequenceLi">
 	<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses">
 		
 			 {{key.pose_name}}<br/>
 			 <img id="sequencePicture" ng-src="{{key.file_reference}}"> </img>
+			 <button ng-click="ctrl.deleteAsana(asana);">Delete</button>
 		</div>
 	</li>
 			<button ng-if="ctrl.loggedIn" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
