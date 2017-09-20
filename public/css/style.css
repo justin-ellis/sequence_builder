@@ -57,6 +57,7 @@ body {
 }
 
 #sanskrit-name {
+	overflow: hidden;
 	background-color: lightgray;
 	border-radius: 4.5px;
 	margin-bottom: 0px;
@@ -65,4 +66,15 @@ body {
 #sanskrit-name:hover {
 	background-color: gray;
 	border-radius: 4.5px;
+}
+
+#sequencePicture {
+	display: inline;
+	height: 10em;
+	width: auto;
+}
+
+#sequencePoses {
+	display: inline-block;
+	text-align: center;
 }

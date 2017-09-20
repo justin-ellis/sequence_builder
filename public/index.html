@@ -53,12 +53,18 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
 </div>
 
 <div data-ng-repeat="sequence in ctrl.sequences track by $index">
+		
 	<ul class="list-group">
 
 			Name: <li class="list-group-item">{{sequence.name}}</li>
 			Difficulty: <li class="list-group-item">{{sequence.difficulty}}</li>
 			Creator: <li class="list-group-item">{{sequence.author}}</li>
-			Poses: <li class="list-group-item">{{sequence.poses}} </li>
+	<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses">
+		<ul>
+			 {{key.pose_name}}<br/>
+			 <img id="sequencePicture" ng-src="{{key.file_reference}}"> </img>
+		</div>
+	</ul>
 			<button ng-if="ctrl.loggedIn" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
 	</ul>
 		<div ng-hide="ctrl.hideForm">
@@ -69,8 +75,7 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
        <input type= "Submit"  value="update sequence">
        </form>
       <button ng-click="ctrl.deleteSequence(sequence)">Delete Sequence</button>
-
-		</div>
+			</div>
 </div>
 
 
