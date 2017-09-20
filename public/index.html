@@ -55,16 +55,15 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
 <div data-ng-repeat="sequence in ctrl.sequences track by $index">
 	<ul class="list-group">
 
-			<li class="list-group-item">{{sequence.name}}</li>
-			<li class="list-group-item">{{sequence.difficulty}}</li>
-			<li class="list-group-item">{{sequence.author}}</li>
-			<li class="list-group-item">{{sequence.poses.pose_name}} </li>
+			Name: <li class="list-group-item">{{sequence.name}}</li>
+			Difficulty: <li class="list-group-item">{{sequence.difficulty}}</li>
+			Creator: <li class="list-group-item">{{sequence.author}}</li>
+			Poses: <li class="list-group-item">{{sequence.poses}} </li>
 			<button ng-if="ctrl.loggedIn" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
 	</ul>
 		<div ng-hide="ctrl.hideForm">
 			<form ng-if="$index === ctrl.editSequenceIndex" ng-submit="ctrl.editSequence(sequence);">
        Name<input type="text"  ng-model="ctrl.updatedName" placeholder="name"/>
-       Author<input type="number"  ng-model="ctrl.updatedAuthor" placeholder=""/>
        Difficulty<input type="text"  ng-model="ctrl.updatedDifficulty" placeholder=""/>
        Poses<input type="text" ng-model="ctrl.updatedPoses" placeholder="">
        <input type= "Submit"  value="update sequence">
@@ -105,7 +104,7 @@ Difficulty: <input type="text" ng-model="ctrl.difficulty">
 		<li ng-show="ctrl.showCategory" class="list-group-item" >Category: {{pose.category}} </li>
 		<li id="descScroll" ng-show="ctrl.showBenefits" class="list-group-item" >Benefits: {{pose.benefits}} </li>
 		<li ng-show="ctrl.showDifficulty" class="list-group-item">Difficulty: {{pose.difficulty}}</li>
-		<!-- <button ng-click="ctrl.savePose(index);">Add Pose</button> -->
+		<button ng-click="ctrl.createAsana($index);">Add Pose</button>
 	</ul>
 </div>
 </body>

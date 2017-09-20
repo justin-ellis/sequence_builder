@@ -31,6 +31,11 @@ router.post('/', (req, res)=>{
 	});
 });
 
+// router.post('/:id', (req, res)=>{
+	
+
+// });
+
 
 router.put('/:id', (req, res)=>{
 	Sequence.findByIdAndUpdate(req.params.id, req.body, {new:true},(err, foundSequence)=>{
@@ -41,11 +46,13 @@ router.put('/:id', (req, res)=>{
 });
 
 router.delete('/:id', function(req, res){
-	// var sequencesUsersSequencesIds = users.sequences.map(function(sequences){
-	// 	console.log(sequences._id);
-	// 	return sequences._id;
-	// });
+	// var sequencesUsersSequencesIds = User.keys(myObject.map(function(key, index){
+	// 	// console.log(sequences.author);
+	// 	myObject[key] *= 2;
 	// 	console.log(sequencesUsersSequencesIds);
+	// }));
+
+		// console.log(sequencesUsersSequencesIds);
   Sequence.findByIdAndRemove(req.params.id, function(err, deletedSequence){
   	// User.findOne({'sequences._id': req.params.id}, (err, foundUser)=>{
   // 		User.findOne({ _id : { $in: sequencesUsersSequencesIds}}, (err, foundUser)=>{

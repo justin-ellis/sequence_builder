@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Asana = require('../models/asana.js');
+const Sequence = require('../models/sequence.js');
 
 router.get('/', (req, res) => {
 	Asana.find(function(err, data) {
@@ -19,7 +20,7 @@ router.get('/count', (req, res)=>{
 router.post('/', (req, res)=>{
 	Asana.create(req.body, (err, createdAsana)=>{
 		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
-			console.log(createdSequence);
+			console.log(foundSequence);
 			foundSequence.poses.push(createdAsana);
 			foundSequence.save((err, data)=>{
 				res.json(createdAsana);

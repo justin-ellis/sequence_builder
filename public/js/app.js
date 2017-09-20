@@ -230,14 +230,14 @@ app.controller('mainController', ['$http', function($http){
 				controller.author = '';
 				controller.poses = [];
 				// location.reload(true);
+				// this.getSequences();
 		},
 		function(err){
 			console.log(err);
 		});
-				this.getSequences();
 	};
 
-	this.editSequence = function(sequence){
+	this.editSequence = function(sequence, index){
 		$http({
 			method: 'PUT',
 			url: '/sequence/' + sequence._id,
@@ -245,7 +245,7 @@ app.controller('mainController', ['$http', function($http){
 				name: this.updatedName,
 				difficulty: this.updatedDifficulty,
 				author: this.updatedAuthor,
-				poses: this.updatedPoses
+				poses: poseArray[index]
 			}
 		}).then(
 		function(response){
@@ -255,28 +255,62 @@ app.controller('mainController', ['$http', function($http){
 				controller.difficulty = '';
 				controller.author = '';
 				controller.poses = [];
-				location.reload(true);
+				// location.reload(true);
 		},
 		function(error){
 		});
 				this.getSequences();
 	};
 
-	// this.savePose = function(index){
+	// 	this.editSequencePoses = function(sequence, index){
 	// 	$http({
-	// 		method: 'POST',
-	// 		url: '/sequence',
+	// 		method: 'PUT',
+	// 		url: '/sequence/' + sequence._id,
 	// 		data: {
-	// 			pose: poseArray[index]
+	// 			poses: poseArray[index]
+	// 			// poses: this.updatedPoses
 	// 		}
 	// 	}).then(
 	// 	function(response){
 	// 		console.log(response);
+	// 			location.reload(true);
 	// 	},
 	// 	function(error){
-
 	// 	});
+	// 			this.getSequences();
 	// };
+
+	this.createAsana = function(index){
+		$http({
+			method: 'POST',
+			url: '/asana',
+			data: {
+				poses: poseArray[index],
+		// file_reference: this.file_reference,
+  //   pose_name: this.pose_name,
+  //   sanskrit_name: this.sanskrit_name,
+  //   translation:this.translation,
+  //   category: this.category,
+  //   difficulty: this.difficulty,
+  //   description:this.description,
+  //   benefits: this.benefits
+			}
+		}).then(
+		function(response){
+			console.log(response);
+			// file_reference = ''; 
+   //  pose_name = ''; 
+   //  sanskrit_name = ''; 
+   //  translation = [];
+   //  category = ''; 
+   //  difficulty = ''; 
+   //  description = [];
+   //  benefits = ''; 
+		},
+		function(error){
+
+		});
+	};
 
 	this.getSequences();
 	this.getYogaPoses();
