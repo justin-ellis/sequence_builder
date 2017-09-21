@@ -82,8 +82,8 @@
 					<li>{{pose.name}}</li>
 					</div> -->
 		<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses track by $index">
-				 {{key.pose_name}}<br/>
 				 <button ng-click="ctrl.deleteAsana($index);">Delete</button>
+				 {{key.pose_name}}<br/>
 				 <img id="sequencePicture" ng-src="{{key.file_reference}}"> </img>
 			</div>
 		</li>

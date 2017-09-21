@@ -48,7 +48,14 @@ router.post('/getOne', (req, res)=>{
 
 router.delete('/getOne/:id', (req, res)=>{
 	Asana.findByIdAndRemove(req.params.id, function(err, deletedAsana){
+	Sequence.findOne({'poses._id': req.params.id}, (err, foundSequence)=>{
+		foundSequence.posts.id(req.params.id).remove();
+		foundSequence.save((err, savedSequence)=>{
 		 res.json(deletedAsana);
+			
+		});
+			console.log(foundSequence);
+		});
 });
 });
 

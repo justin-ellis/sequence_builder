@@ -288,6 +288,7 @@ app.controller('mainController', ['$http', function($http){
 		}).then(
 		function(response){
 			console.log(response);
+			console.log(response.data);
 		},
 		function(error){
 			console.log('clicked');
