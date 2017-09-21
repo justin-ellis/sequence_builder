@@ -31,7 +31,7 @@ router.get('/search', (req, res)=>{
 router.post('/', (req, res)=>{
 
 			if (req.session.logged){
-	Asana.create(req.body['poseData'],{new:true}, ()=>{
+	Asana.create(req.body['poseData'], ()=>{
 		console.log(req.body['poseData']);
 		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
 			console.log(foundSequence);
@@ -48,7 +48,7 @@ router.post('/', (req, res)=>{
 
 router.delete('/:id', (req, res)=>{
 	if (req.session.logged){
-	Asana.findByIdAndRemove(req.params.id, function(err, deletedAsana){
+	Asana.findById(req.params.id, function(err, deletedAsana){
 	Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
 		foundSequence.poses.id(req.params.id).remove();
 		foundSequence.save((err, savedSequence)=>{

@@ -248,6 +248,8 @@ app.controller('mainController', ['$http', function($http){
 			console.log(err);
 		});
 				this.getSequences();
+				this.getSequences();
+
 	};
 
 	this.editSequence = function(sequence, index){
@@ -279,12 +281,14 @@ app.controller('mainController', ['$http', function($http){
 			method: 'POST',
 			url: '/asana',
 			data: {
-				// poseData: controller.poseArray[index],
+				poseData2: controller.filteredPostures[index],
 				poseData: controller.filteredPostures[index],
 			}
 		}).then(
 		function(response){
 			console.log(controller.postures[index]);
+			console.log(controller.poseArray[index]);
+
 			// controller.poseData = {};
 			console.log(response);
 		},
@@ -292,6 +296,8 @@ app.controller('mainController', ['$http', function($http){
 
 		});
 		this.getSequences();
+		this.getSequences();
+
 	};
 
 	this.deleteAsana = function(asana){
@@ -308,6 +314,7 @@ app.controller('mainController', ['$http', function($http){
 			console.log('clicked error');
 			console.log(error);
 		});
+	this.getSequences();
 	this.getSequences();
 	};
 
