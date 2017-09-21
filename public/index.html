@@ -77,10 +77,14 @@
 				Difficulty: <li class="list-group-item">{{sequence.difficulty}}</li>
 				Creator: <li class="list-group-item">{{sequence.author}}</li>
 				<li class="list-group-item sequenceLi">
-		<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses">
+
+				<!-- <div ng-repeat="pose in ctrl.sequences track by $index">
+					<li>{{pose.name}}</li>
+					</div> -->
+		<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses track by $index">
 				 {{key.pose_name}}<br/>
+				 <button ng-click="ctrl.deleteAsana($index);">Delete</button>
 				 <img id="sequencePicture" ng-src="{{key.file_reference}}"> </img>
-				 <button ng-click="ctrl.deleteAsana(asana);">Delete</button>
 			</div>
 		</li>
 				<button ng-if="ctrl.loggedIn" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>

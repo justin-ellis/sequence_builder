@@ -54,6 +54,12 @@ router.put('/:id', (req, res)=>{
 	});
 });
 
+// router.delete('/:id', (req, res)=>{
+// 	Asana.findByIdAndRemove(req.params.id, function(err, deletedAsana){
+// 		 res.json(deletedAsana);
+// });
+// });
+
 router.delete('/:id', function(req, res){
 	// var sequencesUsersSequencesIds = User.keys(myObject.map(function(key, index){
 	// 	// console.log(sequences.author);
@@ -74,4 +80,7 @@ router.delete('/:id', function(req, res){
 		// });
   });
 });
+
+
+
 module.exports = router;

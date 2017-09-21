@@ -201,7 +201,6 @@ app.controller('mainController', ['$http', function($http){
 
 		this.deleteSequence = function(sequence){
 			$http({
-
 				method: 'DELETE',
 				url: '/sequence/' + sequence._id,
 			}).then(
@@ -282,12 +281,25 @@ app.controller('mainController', ['$http', function($http){
 		this.getSequences();
 	};
 
-	// this.deleteAsana = function(asana){
+	this.deleteAsana = function(asana){
+		$http({
+			method: 'DELETE',
+			url: '/asana/getOne/' + asana._id
+		}).then(
+		function(response){
+			console.log(response);
+		},
+		function(error){
+			console.log('clicked');
+			console.log(error);
+		});
+	this.getSequences();
+	};
+
+	// 	this.deleteAsana = function(asana){
 	// 	$http({
 	// 		method: 'DELETE',
-	// 		url: '/asana/' + asana._id,
-	// 		data: {
-	// 		}
+	// 		url: '/sequence/' + asana._id
 	// 	}).then(
 	// 	function(response){
 	// 		console.log(response);
@@ -298,33 +310,9 @@ app.controller('mainController', ['$http', function($http){
 	// this.getSequences();
 	// };
 
+// might need to go through sequence controller/route to delete postures from
+// a specific sequence
 
-	// this.searchAsana = function(){
-	// 	$http({
-	// 		method: 'GET',
-	// 		url: '/asana/search',
-	// 		dataType: 'json',
- //            data: {
- //                category: this.category,
-	// 							difficulty: this.difficulty,
-	// 							pose_name: this.pose_name,
-	// 							sanskrit_name: this.sanskrit_name,
-	// 							description: this.description,
-	// 							benefits: this.benefits
- //            }
-
-	// 	}).then(
-	// 	function(response){
-	// 		poseArray = [];
-	// 		for (i = 0; i < 104; i++) {
-	// 		poseArray.push(response.data[i]);
-
-	// 		}
-	// 		controller.postures = response.data;
-	// 	},
-	// 	function(error){
-	// 	});
-	// };
 
 	this.getSequences();
 	this.getYogaPoses();

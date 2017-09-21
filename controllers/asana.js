@@ -30,9 +30,6 @@ router.get('/search', (req, res)=>{
 
 router.post('/getOne', (req, res)=>{
 
-// } else {
-// 	res.redirect somewhere
-// }
 			if (req.session.logged){
 	Asana.create(req.body['poseData'], ()=>{
 		console.log(req.body['poseData']);
@@ -49,12 +46,12 @@ router.post('/getOne', (req, res)=>{
 }
 });
 
+router.delete('/getOne/:id', (req, res)=>{
+	Asana.findByIdAndRemove(req.params.id, function(err, deletedAsana){
+		 res.json(deletedAsana);
+});
+});
 
-// router.delete('/:id', (req, res)=>{
-// 	Asana.findByIdAndRemove(req.params.id, function(err, deletedAsana){
-// 		 res.json(deletedAsana);
-// });
-// });
 
 // router.post('/', (req, res)=>{
 // 	Asana.create(req.body, (err, createdAsana)=>{
