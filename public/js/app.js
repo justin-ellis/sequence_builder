@@ -45,6 +45,19 @@ app.controller('mainController', ['$http', function($http){
 		this.showBenefits = false;
 		this.showDifficulty = false;
 
+		this.seedDb = function(){
+			$http({
+				method: 'GET',
+				url: '/seed',
+			}).then(
+			function(response){
+				// console.log(response.data);
+			},
+			function(err){
+				console.log(err);
+			});
+		};
+
 		this.getSequences = function(){
 			$http({
 				method: 'GET',
@@ -314,7 +327,7 @@ app.controller('mainController', ['$http', function($http){
 // might need to go through sequence controller/route to delete postures from
 // a specific sequence
 
-
+	this.seedDb();
 	this.getSequences();
 	this.getYogaPoses();
 

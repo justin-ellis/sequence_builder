@@ -1590,7 +1590,7 @@ router.get('/', (req, res) => {
 			res.send('Error seeding database');
 		} else {
 			console.log('SEED EXECUTED');
-			res.redirect('/asana');
+			res.redirect('/');
 		}
 	});
 
