@@ -28,10 +28,10 @@ router.get('/search', (req, res)=>{
 
 
 
-router.post('/getOne', (req, res)=>{
+router.post('/', (req, res)=>{
 
 			if (req.session.logged){
-	Asana.create(req.body['poseData'], ()=>{
+	Asana.create(req.body['poseData'],{new:true}, ()=>{
 		console.log(req.body['poseData']);
 		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
 			console.log(foundSequence);
@@ -46,30 +46,23 @@ router.post('/getOne', (req, res)=>{
 }
 });
 
-router.delete('/getOne/:id', (req, res)=>{
+router.delete('/:id', (req, res)=>{
+	if (req.session.logged){
 	Asana.findByIdAndRemove(req.params.id, function(err, deletedAsana){
-	Sequence.findOne({'poses._id': req.params.id}, (err, foundSequence)=>{
-		foundSequence.posts.id(req.params.id).remove();
+	Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
+		foundSequence.poses.id(req.params.id).remove();
 		foundSequence.save((err, savedSequence)=>{
+		});
 		 res.json(deletedAsana);
-			
-		});
-			console.log(foundSequence);
+		 // res.json(foundSequence);
+			// console.log(foundSequence);
 		});
 });
+} else {
+	res.redirect('/');
+}
 });
 
-
-// router.post('/', (req, res)=>{
-// 	Asana.create(req.body, (err, createdAsana)=>{
-// 		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
-// 			console.log(foundSequence);
-// 			foundSequence.poses.push(createdAsana);
-// 			foundSequence.save((err, data)=>{
-// 				res.json(createdAsana);
-// 			});
-// 		});
-// 	});
-// });
+// 'poses._id': req.params.id
 
 module.exports = router;

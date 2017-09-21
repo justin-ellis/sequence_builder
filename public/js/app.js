@@ -277,7 +277,7 @@ app.controller('mainController', ['$http', function($http){
 	this.createAsana = function(index){
 		$http({
 			method: 'POST',
-			url: '/asana/getOne',
+			url: '/asana',
 			data: {
 				// poseData: controller.poseArray[index],
 				poseData: controller.filteredPostures[index],
@@ -297,14 +297,15 @@ app.controller('mainController', ['$http', function($http){
 	this.deleteAsana = function(asana){
 		$http({
 			method: 'DELETE',
-			url: '/asana/getOne/' + asana._id
+			url: '/asana/' + asana._id
 		}).then(
 		function(response){
-			console.log(response);
+			console.log('clicked success');
 			console.log(response.data);
+			console.log(response);
 		},
 		function(error){
-			console.log('clicked');
+			console.log('clicked error');
 			console.log(error);
 		});
 	this.getSequences();
@@ -327,7 +328,6 @@ app.controller('mainController', ['$http', function($http){
 // might need to go through sequence controller/route to delete postures from
 // a specific sequence
 
-	this.seedDb();
 	this.getSequences();
 	this.getYogaPoses();
 
