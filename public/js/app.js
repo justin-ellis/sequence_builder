@@ -285,6 +285,8 @@ app.controller('mainController', ['$http', function($http){
 		}).then(
 		function(response){
 			console.log(controller.postures[index]);
+			console.log(controller.poseArray[index]);
+
 			// controller.poseData = {};
 			console.log(response);
 		},
@@ -292,6 +294,8 @@ app.controller('mainController', ['$http', function($http){
 
 		});
 		this.getSequences();
+		this.getSequences();
+		
 	};
 
 	this.deleteAsana = function(asana){
@@ -308,6 +312,7 @@ app.controller('mainController', ['$http', function($http){
 			console.log('clicked error');
 			console.log(error);
 		});
+	this.getSequences();
 	this.getSequences();
 	};
 
