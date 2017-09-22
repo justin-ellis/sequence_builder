@@ -189,7 +189,7 @@
 		<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses track by $index">
 				 <!-- <button class = "btn btn-sm btn-danger" ng-click="ctrl.deleteAsana(key);">Delete</button> -->
 				 {{key.pose_name}}<br/><div class= view hm-zoom">
-				 <img class="img-fluid" alt="" id ="sequencePicture" ng-src="{{key.file_reference}}">  <div id="absolute"><button class = "btn btn-sm btn-danger" id="experiment" ng-click="ctrl.deleteAsana(key);">Delete</button></div></img> <div class="mask flex-center"><p class="red-text"></p></div> </div>
+				 <img class="img-fluid" alt="" id ="sequencePicture" ng-src="{{key.file_reference}}">  <div id="absolute"><button ng-if="!ctrl.checkDeleteButton() && sequence.author === ctrl.activeUsername;" class = "btn btn-sm btn-danger" id="experiment" ng-click="ctrl.deleteAsana(key);">Delete</button></div></img> <div class="mask flex-center"><p class="red-text"></p></div> </div>
 			</div>
 		</li>
 				<button ng-if="ctrl.loggedIn" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
@@ -213,8 +213,8 @@
 <!-- Repeating created sequences end -->
 
 <!-- retrieving req.session.username from server begin -->
-	<button ng-click="ctrl.getUsers();">Get Username</button>
-	{{ctrl.activeUsername}}
+<!-- 	<button ng-click="ctrl.getUsers();">Get Username</button>
+	{{ctrl.activeUsername}} -->
 <!-- retrieving req.session.username from server end -->
 
 	<button ng-click="ctrl.checkSequenceAuthors();">get authors for sequences</button>

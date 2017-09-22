@@ -404,11 +404,11 @@ app.controller('mainController', ['$http', '$q', function($http, $q){
 	this.checkDeleteButton = function(){
 		for (let i = 0; i <= controller.sequences.length-1; i++) {
 			if (controller.sequences[i].author != controller.activeUsername){
-				console.log('check sequences for matching username returning false');
+				console.log('check delete button for matching username returning false');
 				return false;
 			} 
 		}
-				console.log('check sequences for matching username returning true');
+				console.log('check delete button for matching username returning true');
 		return true;
 	};
 	// 	this.deleteAsana = function(asana){
