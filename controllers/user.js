@@ -3,9 +3,15 @@ const router = express.Router();
 const User = require('../models/user.js');
 
 router.get('/', function(req, res){
-	User.find({}, function(err, Users){
+		if (req.session.logged) {
+	User.findOne({'username': req.session.username}, function(err, Users){
+		username = req.session.username;
+		console.log(username);
 		res.json(Users);
 	});
+	} else {
+	res.redirect('/');
+}
 });
 
 router.post('/', function(req, res){

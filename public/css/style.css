@@ -111,7 +111,7 @@ body {
 	margin-top: 2%;
 }
 
-@media (max-width: 415px) { #poseDiv {
+@media (max-width: 600px) { #poseDiv {
 	display: inline-block;
 	padding: 0px 10px;
 	width: 48%;
@@ -120,12 +120,13 @@ body {
 	/*overflow: scroll;*/
 } }
 
-@media (max-width: 415px) { .posePicture {
+@media (max-width: 600px) { .posePicture {
 
 height: 88%;
 width: 88%;
 display: inline-block;
 } }
+
 .center {
 	text-align: center;
 }

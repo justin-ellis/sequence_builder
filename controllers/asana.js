@@ -4,6 +4,7 @@ const Asana = require('../models/asana.js');
 const Sequence = require('../models/sequence.js');
 
 router.get('/', (req, res) => {
+
 	Asana.find(function(err, data) {
     if ( err ) { console.log (err); }
 		res.send(data);
