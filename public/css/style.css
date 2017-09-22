@@ -93,7 +93,7 @@ body {
 #experiment {
 	position: relative;
 	margin-bottom: 20%;
-	bottom: 0;*
+	bottom: 0;
 		
 	/*left: 50%;
 	/*top*/
@@ -108,7 +108,7 @@ body {
 }
 
 #loginDiv {
-	margin-top: 7%;
+	margin-top: 4%;
 }
 
 @media (max-width: 600px) { #poseDiv {
