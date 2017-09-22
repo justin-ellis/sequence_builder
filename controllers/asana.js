@@ -29,7 +29,7 @@ router.get('/search', (req, res)=>{
 
 
 router.post('/', (req, res)=>{
-
+// if foundSequence doesn't have author of req.lession
 			if (req.session.logged){
 	Asana.create(req.body['poseData'], ()=>{
 		console.log(req.body['poseData']);
@@ -48,9 +48,25 @@ router.post('/', (req, res)=>{
 
 router.delete('/:id', (req, res)=>{
 	if (req.session.logged){
-	Asana.findById(req.params.id, function(err, deletedAsana){
 	Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
-		foundSequence.poses.id(req.params.id).remove();
+	Asana.findOne({'_id': req.params.id}, function(err, deletedAsana){
+		console.log(foundSequence.deletedAsana);
+		// console.log(foundSequence.deletedAsana[0]);
+
+		console.log(deletedAsana);
+		// const sexyVariable = foundSequence.poses;
+		// const sexierVariable = sexyVariable[0];
+		// console.log(sexyVariable[0]);
+		// console.log(typeof sexyVariable);
+		// console.log(sexyVariable);
+		// console.log(foundSequence.poses);
+		// console.log(foundSequence.poses[0]);
+
+		//the next two delete both poses
+		foundSequence.poses[0].remove()
+		// foundSequence.poses.id(req.params.id).remove();
+
+		const index = foundSequence.poses;
 		foundSequence.save((err, savedSequence)=>{
 		});
 		 res.json(deletedAsana);

@@ -7,10 +7,13 @@ app.controller('mainController', ['$http', function($http){
 	this.hideTranslation = 'Hide';
 	this.postures = [];
 	this.sequences = [];
+	this.loggedOutButton = "Login";
+	this.loggedInButton = "Log out";
 	this.showToggle = "Hiding";
 	this.hideToggle = "Showing";
 	this.hideForm = true;
 	this.showLogin = false;
+	this.showRegistration = false;
 	this.poseArray = [];
 	this.editSequenceIndex = 0;
 	this.asanaIndex = 0;
@@ -40,8 +43,8 @@ app.controller('mainController', ['$http', function($http){
 		this.showName = true;
 		this.showSanskrit = true;
 		this.showPicture = true;
-		this.showCategory = true;
-		this.showDescription = false;
+		this.showCategory = false;
+		this.showDescription = true;
 		this.showBenefits = false;
 		this.showDifficulty = false;
 
@@ -281,11 +284,14 @@ app.controller('mainController', ['$http', function($http){
 			method: 'POST',
 			url: '/asana',
 			data: {
-				poseData2: controller.filteredPostures[index],
+				objectId: this.objectId,
 				poseData: controller.filteredPostures[index],
 			}
 		}).then(
 		function(response){
+			// maybe make a function that generates a unique id. call it here
+			// and set the objectId equal to that.
+			controller.objectId = "";
 			console.log(controller.postures[index]);
 			console.log(controller.poseArray[index]);
 

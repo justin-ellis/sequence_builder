@@ -74,6 +74,10 @@ body {
 	width: auto;
 }
 
+/*#sequencePicture:hover {
+	border: 1px solid red;
+}*/
+
 #sequencePoses {
 	display: inline-block;
 	text-align: center;
@@ -83,4 +87,25 @@ body {
 
 .sequenceLi {
 	text-align: center;
+}
+
+#experiment {
+	position: relative;
+	margin-bottom: 20%;
+	bottom: 0;*
+		
+	/*left: 50%;
+	/*top*/
+	/*border: 2px solid gold;*/
+	/*right: .8em;*/
+}
+
+
+.dropdown-menu {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#loginDiv {
+	margin-top: 2%;
 }

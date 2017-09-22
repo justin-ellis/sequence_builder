@@ -14,12 +14,93 @@
 </head>
 	<body ng-controller="mainController as ctrl">
 
+<!-- Navbar begins  -->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Yoga Bloom</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown"><a ng-if="!ctrl.loggedIn" href="#" ng-click="ctrl.displayLogin()">{{ctrl.loggedOutButton}}<span class="sr-only">(current)</span></a></li>
+        <li ng-click="ctrl.logout()"><a ng-click="ctrl.displayLogin()" ng-if="ctrl.loggedIn" href="#">{{ctrl.loggedInButton}}</a> </li>
+        <li><a ng-click="ctrl.displayLogin()" href="#">Register</a></li>
+        <li class="dropdown">
+          <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Display Options <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+                       <button ng-class="{'showingDetails' : ctrl.showName, 'hidingDetails' : !ctrl.showName}" class="list-group-item list-group-item" ng-cbuttonck="ctrl.toggleDetails('name')">
+			<span ng-if="ctrl.showName">{{ctrl.hideToggle}} Name</span>
+			<span ng-if="!ctrl.showName">{{ctrl.showToggle}} Name</span>
+		</button>
+		<button ng-class="{'showingDetails' : ctrl.showSanskrit, 'hidingDetails' : !ctrl.showSanskrit}" class="buttonst-group-item list-group-item" ng-click="ctrl.toggleDetails('sanskrit')">
+			<span ng-if="ctrl.showSanskrit">{{ctrl.hideToggle}} Sanskrit</span>
+			<span ng-if="!ctrl.showSanskrit">{{ctrl.showToggle}} Sanskrit</span>
+		</button>
+		<button ng-class="{'showingDetails' : ctrl.showPicture, 'hidingDetails' : !ctrl.showPicture}" class="buttonst-group-item list-group-item" ng-click="ctrl.toggleDetails('picture')">
+			<span ng-if="ctrl.showPicture">{{ctrl.hideToggle}} Picture</span>
+			<span ng-if="!ctrl.showPicture">{{ctrl.showToggle}} Picture</span>
+		</button>
+		<button ng-class="{'showingDetails' : ctrl.showCategory, 'hidingDetails' : !ctrl.showCategory}" class="buttonst-group-item list-group-item" ng-click="ctrl.toggleDetails('category')">
+			<span ng-if="ctrl.showCategory">{{ctrl.hideToggle}} Category</span><span ng-if="!ctrl.showCategory">{{ctrl.showToggle}} Category</span>
+		</button>
+		<button ng-class="{'showingDetails' : ctrl.showDescription, 'hidingDetails' : !ctrl.showDescription}" class="list-group-item buttonst-group-item" ng-click="ctrl.toggleDetails('description')"><span ng-if="ctrl.showDescription">{{ctrl.hideToggle}} Description</span>
+			<span ng-if="!ctrl.showDescription">{{ctrl.showToggle}} Description</span>
+		</button>
+		<button ng-class="{'showingDetails' : ctrl.showBenefits, 'hidingDetails' : !ctrl.showBenefits}" class="buttonst-group-item list-group-item" ng-click="ctrl.toggleDetails('benefits')">
+			<span ng-if="ctrl.showBenefits">{{ctrl.hideToggle}} Benefits</span>
+			<span ng-if="!ctrl.showBenefits">{{ctrl.showToggle}} Benefits</span>
+		</button>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" ng-model="nameFilter" placeholder="Search Yoga Bloom">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- Nav bar ends -->
+
+
 <!-- Register/login button begin -->
-		<div> 
+<!-- 		<div id="loginDiv"> 
 			<button class="btn btn-default" ng-click="ctrl.displayLogin()">Register or Log In</button>
 			<button ng-if="ctrl.loggedIn" ng-click="ctrl.logout()">Log out</button>
-		</div>
+		</div> -->
 <!-- Register/login button end -->
+
+
+
+
+
+
 
 
 <!-- Create a sequence form begin -->
@@ -57,7 +138,7 @@
 
 
 <!-- Filtered Poses toggle buttons begin -->
-	<div>
+	<!-- <div>
 		<button ng-class="{'showingDetails' : ctrl.showName, 'hidingDetails' : !ctrl.showName}" class="btn btn-primary" ng-click="ctrl.toggleDetails('name')">
 			<span ng-if="ctrl.showName">{{ctrl.hideToggle}} Name</span>
 			<span ng-if="!ctrl.showName">{{ctrl.showToggle}} Name</span>
@@ -80,7 +161,7 @@
 			<span ng-if="ctrl.showBenefits">{{ctrl.hideToggle}} Benefits</span>
 			<span ng-if="!ctrl.showBenefits">{{ctrl.showToggle}} Benefits</span>
 		</button>
-	</div>
+	</div> -->
 	<!-- Filtered poses toggle buttons end  -->
 
 
@@ -102,9 +183,9 @@
 
 				<li class="list-group-item sequenceLi">
 		<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses track by $index">
-				 <button ng-click="ctrl.deleteAsana(key);">Delete</button>
-				 {{key.pose_name}}<br/>
-				 <img id="sequencePicture" ng-src="{{key.file_reference}}"> </img>
+				 <!-- <button class = "btn btn-sm btn-danger" ng-click="ctrl.deleteAsana(key);">Delete</button> -->
+				 {{key.pose_name}}<br/><div class= view hm-zoom">
+				 <img class="img-fluid" alt="" ng-click="ctrl.deleteAsana(key);" id ="sequencePicture" ng-src="{{key.file_reference}}">  <div id="absolute"><button class = "btn btn-sm btn-danger" id="experiment" ng-click="ctrl.deleteAsana(key);">Delete</button></div></img> <div class="mask flex-center"><p class="red-text"></p></div> </div>
 			</div>
 		</li>
 				<button ng-if="ctrl.loggedIn" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
@@ -150,10 +231,10 @@
 	<div id="poseDiv" data-ng-repeat="pose in (ctrl.filteredPostures = (ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter}  | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter))">
 
 
-			<button ng-click="ctrl.createAsana($index);">Add Pose</button>
 		
 		<ul class="list-group">
 			<li ng-show="ctrl.showName" class="list-group-item">{{pose.pose_name}} </li>
+			<li class="list-group-item"> <button class="btn btn-warning" ng-click="ctrl.createAsana($index);">Add Pose</button> </li>
 			<li ng-show="ctrl.showSanskrit" class="list-group-item">
 
 				<p id="sanskrit-name" ng-show="!isHidden" ng-click="isHidden = true">{{pose.sanskrit_name}}</p>
