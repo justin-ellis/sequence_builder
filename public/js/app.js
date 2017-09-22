@@ -3,12 +3,13 @@ const app = angular.module('sequence-builder', []);
 app.controller('mainController', ['$http', function($http){
 	console.log('angular is here');
 	const controller = this;
-	this.showTranslation = 'Translation';
-	this.hideTranslation = 'Hide';
+	this.show = 'Show';
+	this.hide = 'Hide';
 	this.postures = [];
 	this.sequences = [];
 	this.loggedOutButton = "Login";
 	this.loggedInButton = "Log out";
+	this.sequencesToggle = "Show"
 	this.showToggle = "Hiding";
 	this.hideToggle = "Showing";
 	this.hideForm = true;
