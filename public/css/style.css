@@ -108,7 +108,7 @@ body {
 }
 
 #loginDiv {
-	margin-top: 2%;
+	margin-top: 7%;
 }
 
 @media (max-width: 600px) { #poseDiv {
@@ -129,4 +129,8 @@ display: inline-block;
 
 .center {
 	text-align: center;
+}
+
+.form-control {
+	margin-bottom: 1%;
 }

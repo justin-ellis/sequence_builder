@@ -53,8 +53,8 @@
 		<button ng-class="{'showingDetails' : ctrl.showCategory, 'hidingDetails' : !ctrl.showCategory}" class="buttonst-group-item list-group-item" ng-click="ctrl.toggleDetails('category')">
 			<span ng-if="ctrl.showCategory">{{ctrl.hideToggle}} Category</span><span ng-if="!ctrl.showCategory">{{ctrl.showToggle}} Category</span>
 		</button>
-		<button ng-class="{'showingDetails' : ctrl.showDescription, 'hidingDetails' : !ctrl.showDescription}" class="list-group-item buttonst-group-item" ng-click="ctrl.toggleDetails('description')"><span ng-if="ctrl.showDescription">{{ctrl.hideToggle}} Description</span>
-			<span ng-if="!ctrl.showDescription">{{ctrl.showToggle}} Description</span>
+		<button ng-class="{'showingDetails' : ctrl.showDescription, 'hidingDetails' : !ctrl.showDescription}" class="list-group-item buttonst-group-item" ng-click="ctrl.toggleDetails('description')"><span id="descShow" ng-if="ctrl.showDescription">{{ctrl.hideToggle}} Cues</span>
+			<span ng-if="!ctrl.showDescription">{{ctrl.showToggle}} Cues</span>
 		</button>
 		<button ng-class="{'showingDetails' : ctrl.showBenefits, 'hidingDetails' : !ctrl.showBenefits}" class="buttonst-group-item list-group-item" ng-click="ctrl.toggleDetails('benefits')">
 			<span ng-if="ctrl.showBenefits">{{ctrl.hideToggle}} Benefits</span>
@@ -69,9 +69,12 @@
         </div>
         <!-- <button type="submit" class="btn btn-default">Submit</button> -->
       </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li ><a ng-if="ctrl.showSequence" ng-click="ctrl.toggleSequences();" href="#">{{ctrl.hide}} Sequences</a></li>
+      <ul class ="nav navbar-nav">
+      	<li ><a ng-if="ctrl.showSequence" ng-click="ctrl.toggleSequences();" href="#">{{ctrl.hide}} Sequences</a></li>
          <li ><a ng-if="!ctrl.showSequence" ng-click="ctrl.toggleSequences();" href="#">{{ctrl.show}} Sequences</a></li>
+      </ul>
+      <!-- <ul class="nav navbar-nav navbar-right"> -->
+        
         <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -82,7 +85,7 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li> -->
-      </ul>
+      <!-- </ul> -->
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -105,9 +108,9 @@
 
 
 <!-- Create a sequence form begin -->
-	<div>
+	<div id="loginDiv" ng-if="ctrl.loggedIn">
 		<h3>Create a sequence:</h3>
-		<form ng-if="ctrl.loggedIn" ng-submit="ctrl.createSequence()">
+		<form ng-submit="ctrl.createSequence()">
 				Name: <input type="text" ng-model="ctrl.name"/>
 	Difficulty: <input type="text" ng-model="ctrl.difficulty"/>
 							<input type="submit" ng-click="ctrl.getSequences()" value="Create"/>
@@ -118,19 +121,19 @@
 
 
 <!-- Register/login form begin -->
-	<div ng-hide="ctrl.concealLogin">
+	<div class="form-group" id="loginDiv" ng-hide="ctrl.concealLogin">
 		<form ng-submit="ctrl.login()" ng-if="ctrl.showLogin">
 			<h2>Log In</h2>
-				Username: <input type="text" ng-model="ctrl.username"/>
-				Password: <input type="text" ng-model="ctrl.password"/>
-			<input type="submit" ng-click="ctrl.hideLogin()" value="Log in"/>
+				Username: <input class="form-control" type="text" ng-model="ctrl.username"/>
+				Password: <input class="form-control" type="text" ng-model="ctrl.password"/>
+			<input class="btn btn-default" type="submit" ng-click="ctrl.hideLogin()" value="Log in"/>
 		</form>
 
 		<form ng-if="ctrl.showLogin" ng-submit="ctrl.registerUser()">
 			<h2>Register</h2>
-			Username: <input type="text" ng-model="ctrl.registeredUsername"/>
-			Password: <input type="text" ng-model="ctrl.registeredPassword"/>
-			<input type="submit" ng-click="ctrl.hideLogin()" value="Register"/>
+			Username: <input class="form-control" type="text" ng-model="ctrl.registeredUsername"/>
+			Password: <input class="form-control" type="text" ng-model="ctrl.registeredPassword"/>
+			<input class="btn btn-default" type="submit" ng-click="ctrl.hideLogin()" value="Register"/>
 		</form>
 	</div>
 <!-- Register/login form end -->
@@ -176,7 +179,7 @@
 			
 		<ul class="list-group">
 
-				Name: <li class="list-group-item">{{sequence.name}}</li>
+				Sequence Name: <li class="list-group-item">{{sequence.name}}</li>
 				Difficulty: <li class="list-group-item">{{sequence.difficulty}}</li>
 				Creator: <li class="list-group-item">{{sequence.author}}</li>
 
@@ -186,7 +189,7 @@
 		<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses track by $index">
 				 <!-- <button class = "btn btn-sm btn-danger" ng-click="ctrl.deleteAsana(key);">Delete</button> -->
 				 {{key.pose_name}}<br/><div class= view hm-zoom">
-				 <img class="img-fluid" alt="" ng-click="ctrl.deleteAsana(key);" id ="sequencePicture" ng-src="{{key.file_reference}}">  <div id="absolute"><button class = "btn btn-sm btn-danger" id="experiment" ng-click="ctrl.deleteAsana(key);">Delete</button></div></img> <div class="mask flex-center"><p class="red-text"></p></div> </div>
+				 <img class="img-fluid" alt="" id ="sequencePicture" ng-src="{{key.file_reference}}">  <div id="absolute"><button class = "btn btn-sm btn-danger" id="experiment" ng-click="ctrl.deleteAsana(key);">Delete</button></div></img> <div class="mask flex-center"><p class="red-text"></p></div> </div>
 			</div>
 		</li>
 				<button ng-if="ctrl.loggedIn" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
@@ -202,22 +205,22 @@
 	       Difficulty<input type="text"  ng-model="ctrl.updatedDifficulty" placeholder=""/>
 	       <input type="submit" value="edit sequence">
 	       </form>
-
-	      <button ng-click="ctrl.deleteSequence(sequence)">Delete Sequence</button>
+<!-- ng-if="ctrl.checkSequenceAuthors();" -->
+	      <button  ng-click="ctrl.deleteSequence(sequence)">Delete Sequence</button>
 				</div>
 		<!-- Edit sequence name and difficulty form end -->
 	</div>
 <!-- Repeating created sequences end -->
 
 <!-- retrieving req.session.username from server begin -->
-	<button ng-click="ctrl.getUsers();">Get Username</button>
-	{{ctrl.activeUsername}}
+<!-- 	<button ng-click="ctrl.getUsers();">Get Username</button>
+	{{ctrl.activeUsername}} -->
 <!-- retrieving req.session.username from server end -->
 
-	<button ng-click="ctrl.checkSequenceAuthors();">get authors for sequences</button>
+<!-- 	<button ng-click="ctrl.checkSequenceAuthors();">get authors for sequences</button> -->
 
 
-	<div class="filterSelect">
+	<div id="loginDiv" class="filterSelect">
 	<h4> Search Postures:</h4>
 
 	<select class="selectpicker" ng-model="difficultyFilter"
@@ -242,6 +245,7 @@
 		<ul class="list-group">
 			<li ng-show="ctrl.showName" class="list-group-item">{{pose.pose_name}} </li>
 <!-- ng-if="ctrl.checkSequenceAuthors();" -->
+
 			<li  class="list-group-item"> <button class="btn btn-warning" ng-click="ctrl.createAsana($index);">Add Pose</button> </li>
 			<li ng-show="ctrl.showSanskrit" class="list-group-item">
 

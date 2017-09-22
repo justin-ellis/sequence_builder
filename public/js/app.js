@@ -188,8 +188,9 @@ app.controller('mainController', ['$http', function($http){
 		});
 		
 				// this.getUsers();
-		this.getUsers();
 		this.getSequences();
+		this.getUsers();
+		this.getUsers();
 	};
 
 
@@ -283,6 +284,7 @@ app.controller('mainController', ['$http', function($http){
 		});
 				this.getSequences();
 				this.getSequences();
+				this.showSequence = true;
 
 	};
 
@@ -357,15 +359,15 @@ app.controller('mainController', ['$http', function($http){
 
 	this.checkSequenceAuthors = function(){
 		for (let i = 0; i <= controller.sequences.length-1; i++) {
-			console.log(i + ' iteration number');
+			// console.log(i + ' iteration number');
 			// console.log(controller.sequences + ' is controller.sequences');
 			// console.log(controller.sequences.length + ' is controller.sequences.length');
 			// console.log(controller.sequences[i]);
 			// console.log(JSON.stringify(controller.sequences[i]));
 			// console.log(JSON.stringify(controller.sequences[i]));
 			// console.log(JSON.stringify(controller.sequences[i]));
-			console.log(controller.sequences[i].author);
-			console.log(controller.sequences[i]);
+			// console.log(controller.sequences[i].author);
+			// console.log(controller.sequences[i]);
 
 			// console.log(controller.sequences);
 			// console.log(controller.sequences[0].author);
@@ -373,7 +375,7 @@ app.controller('mainController', ['$http', function($http){
 			// console.log(controller.sequences[2]);
 			// console.log(typeof controller.sequences);
 			if (controller.sequences[i].author === controller.activeUsername){
-				console.log('checksequence returning true');
+				console.log('check sequences for matching username returning true');
 				return true;
 		
 			} 
@@ -381,8 +383,19 @@ app.controller('mainController', ['$http', function($http){
 			// 	return false;
 			// }
 		}
-				console.log('checksequence returning false');
+				console.log('check sequences for matching username returning false');
 		return false;
+	};
+
+	this.checkDeleteButton = function(){
+		for (let i = 0; i <= controller.sequences.length-1; i++) {
+			if (controller.sequences[i].author != controller.activeUsername){
+				console.log('check sequences for matching username returning false');
+				return false;
+			} 
+		}
+				console.log('check sequences for matching username returning true');
+		return true;
 	};
 	// 	this.deleteAsana = function(asana){
 	// 	$http({

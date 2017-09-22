@@ -35,14 +35,17 @@ router.post('/', (req, res)=>{
 	Asana.create(req.body['poseData'], ()=>{
 		console.log(req.body['poseData']);
 		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
+			if (foundSequence != null){
 			console.log(foundSequence);
 			foundSequence.poses.push(req.body['poseData']);
 			foundSequence.save((err, data)=>{
 				res.json(req.body['poseData']);
 			});
+			}
 		});
 	});
 } else {
+	console.log('no sequences for this user');
 	res.redirect('/');
 }
 });
@@ -50,6 +53,7 @@ router.post('/', (req, res)=>{
 router.delete('/:id', (req, res)=>{
 	if (req.session.logged){
 	Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
+		// if (foundSequence != null) {
 	Asana.findOne({'_id': req.params.id}, function(err, deletedAsana){
 		console.log(foundSequence.deletedAsana);
 		// console.log(foundSequence.deletedAsana[0]);
@@ -64,8 +68,8 @@ router.delete('/:id', (req, res)=>{
 		// console.log(foundSequence.poses[0]);
 
 		//the next two delete both poses
-		foundSequence.poses[0].remove()
-		// foundSequence.poses.id(req.params.id).remove();
+		// foundSequence.poses[0].remove()
+		foundSequence.poses.id(req.params.id).remove();
 
 		const index = foundSequence.poses;
 		foundSequence.save((err, savedSequence)=>{
