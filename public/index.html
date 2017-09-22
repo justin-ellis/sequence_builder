@@ -213,11 +213,11 @@
 <!-- Repeating created sequences end -->
 
 <!-- retrieving req.session.username from server begin -->
-<!-- 	<button ng-click="ctrl.getUsers();">Get Username</button>
-	{{ctrl.activeUsername}} -->
+	<button ng-click="ctrl.getUsers();">Get Username</button>
+	{{ctrl.activeUsername}}
 <!-- retrieving req.session.username from server end -->
 
-<!-- 	<button ng-click="ctrl.checkSequenceAuthors();">get authors for sequences</button> -->
+	<button ng-click="ctrl.checkSequenceAuthors();">get authors for sequences</button>
 
 
 	<div id="loginDiv" class="filterSelect">
@@ -246,7 +246,8 @@
 			<li ng-show="ctrl.showName" class="list-group-item">{{pose.pose_name}} </li>
 <!-- ng-if="ctrl.checkSequenceAuthors();" -->
 
-			<li  class="list-group-item"> <button class="btn btn-warning" ng-click="ctrl.createAsana($index);">Add Pose</button> </li>
+
+			<li ng-if="ctrl.checkSequenceAuthors();" class="list-group-item"> <button class="btn btn-warning" ng-click="ctrl.createAsana($index);">Add Pose</button> </li>
 			<li ng-show="ctrl.showSanskrit" class="list-group-item">
 
 				<p id="sanskrit-name" ng-show="!isHidden" ng-click="isHidden = true">{{pose.sanskrit_name}}</p>

@@ -23,7 +23,7 @@ body {
 }
 
 #descScroll {
-	max-height: 6.5em;
+	max-height: 20em;
 	overflow: scroll;
 }
 
@@ -133,4 +133,8 @@ display: inline-block;
 
 .form-control {
 	margin-bottom: 1%;
+}
+
+.navbar-brand {
+	font-weight: bold;
 }
