@@ -3,14 +3,19 @@ const app = angular.module('sequence-builder', []);
 app.controller('mainController', ['$http', function($http){
 	console.log('angular is here');
 	const controller = this;
-	this.showTranslation = 'Translation';
-	this.hideTranslation = 'Hide';
+	this.show = 'Show';
+	this.hide = 'Hide';
 	this.postures = [];
 	this.sequences = [];
+	this.loggedOutButton = "Login";
+	this.loggedInButton = "Log out";
+	this.sequencesToggle = "Show"
 	this.showToggle = "Hiding";
 	this.hideToggle = "Showing";
 	this.hideForm = true;
 	this.showLogin = false;
+	this.showRegistration = false;
+	this.showSequence = false;
 	this.poseArray = [];
 	this.editSequenceIndex = 0;
 	this.asanaIndex = 0;
@@ -37,13 +42,31 @@ app.controller('mainController', ['$http', function($http){
 	{name: 'Arm Balance and Inversion', category: 'Arm Balance+Inversion'},
 	];
 
+
 		this.showName = true;
 		this.showSanskrit = true;
 		this.showPicture = true;
-		this.showCategory = true;
-		this.showDescription = false;
+		this.showCategory = false;
+		this.showDescription = true;
 		this.showBenefits = false;
 		this.showDifficulty = false;
+
+		this.getUsers = function(){
+			$http({
+				method: 'GET',
+				url: '/users',
+				data: {
+					username: this.username
+				}
+			}).then(
+			function(response){
+				console.log(response.data.username);
+				controller.activeUsername = response.data.username;
+			},
+			function(err){
+				console.log(err);
+			});
+		};
 
 		this.seedDb = function(){
 			$http({
@@ -115,6 +138,8 @@ app.controller('mainController', ['$http', function($http){
 			controller.newUser = response.data;
 			console.log(response.data);
 			if(response.data){
+				// check to see if this works for registered users
+				controller.activeUsername = controller.username;
 				controller.loggedIn = true;
 				controller.hideForm = false;
 			}
@@ -123,6 +148,7 @@ app.controller('mainController', ['$http', function($http){
 		function(err){
 			console.log(err);
 		});
+				this.getUsers();
 	};
 
 	this.login = function(username, password){
@@ -160,6 +186,11 @@ app.controller('mainController', ['$http', function($http){
 		function(err){
 			console.log(err);
 		});
+		
+				// this.getUsers();
+		this.getSequences();
+		this.getUsers();
+		this.getUsers();
 	};
 
 
@@ -184,6 +215,10 @@ app.controller('mainController', ['$http', function($http){
 
 	this.showForm = function(){
 		this.hideForm = false;
+	};
+
+	this.toggleSequences = function(){
+		this.showSequence = !this.showSequence;
 	};
 	
 	this.toggleDetails = function(detail){
@@ -248,6 +283,9 @@ app.controller('mainController', ['$http', function($http){
 			console.log(err);
 		});
 				this.getSequences();
+				this.getSequences();
+				this.showSequence = true;
+
 	};
 
 	this.editSequence = function(sequence, index){
@@ -277,14 +315,19 @@ app.controller('mainController', ['$http', function($http){
 	this.createAsana = function(index){
 		$http({
 			method: 'POST',
-			url: '/asana/getOne',
+			url: '/asana',
 			data: {
-				// poseData: controller.poseArray[index],
+				objectId: this.objectId,
 				poseData: controller.filteredPostures[index],
 			}
 		}).then(
 		function(response){
+			// maybe make a function that generates a unique id. call it here
+			// and set the objectId equal to that.
+			controller.objectId = "";
 			console.log(controller.postures[index]);
+			console.log(controller.poseArray[index]);
+
 			// controller.poseData = {};
 			console.log(response);
 		},
@@ -292,23 +335,68 @@ app.controller('mainController', ['$http', function($http){
 
 		});
 		this.getSequences();
+		this.getSequences();
+
 	};
 
 	this.deleteAsana = function(asana){
 		$http({
 			method: 'DELETE',
-			url: '/asana/getOne/' + asana._id
+			url: '/asana/' + asana._id
 		}).then(
 		function(response){
+			console.log('clicked success');
+			console.log(response.data);
 			console.log(response);
 		},
 		function(error){
-			console.log('clicked');
+			console.log('clicked error');
 			console.log(error);
 		});
 	this.getSequences();
+	this.getSequences();
 	};
 
+	this.checkSequenceAuthors = function(){
+		for (let i = 0; i <= controller.sequences.length-1; i++) {
+			// console.log(i + ' iteration number');
+			// console.log(controller.sequences + ' is controller.sequences');
+			// console.log(controller.sequences.length + ' is controller.sequences.length');
+			// console.log(controller.sequences[i]);
+			// console.log(JSON.stringify(controller.sequences[i]));
+			// console.log(JSON.stringify(controller.sequences[i]));
+			// console.log(JSON.stringify(controller.sequences[i]));
+			// console.log(controller.sequences[i].author);
+			// console.log(controller.sequences[i]);
+
+			// console.log(controller.sequences);
+			// console.log(controller.sequences[0].author);
+			// console.log(controller.sequences[1]);
+			// console.log(controller.sequences[2]);
+			// console.log(typeof controller.sequences);
+			if (controller.sequences[i].author === controller.activeUsername){
+				console.log('check sequences for matching username returning true');
+				return true;
+		
+			} 
+			// else {
+			// 	return false;
+			// }
+		}
+				console.log('check sequences for matching username returning false');
+		return false;
+	};
+
+	this.checkDeleteButton = function(){
+		for (let i = 0; i <= controller.sequences.length-1; i++) {
+			if (controller.sequences[i].author != controller.activeUsername){
+				console.log('check sequences for matching username returning false');
+				return false;
+			} 
+		}
+				console.log('check sequences for matching username returning true');
+		return true;
+	};
 	// 	this.deleteAsana = function(asana){
 	// 	$http({
 	// 		method: 'DELETE',
@@ -326,7 +414,6 @@ app.controller('mainController', ['$http', function($http){
 // might need to go through sequence controller/route to delete postures from
 // a specific sequence
 
-	this.seedDb();
 	this.getSequences();
 	this.getYogaPoses();
 

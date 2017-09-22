@@ -12,6 +12,7 @@ body {
 	width: 33%;
 	text-align: center;
 	position: relative;
+	margin-top: 2%;
 	/*overflow: scroll;*/
 }
 
@@ -74,6 +75,10 @@ body {
 	width: auto;
 }
 
+/*#sequencePicture:hover {
+	border: 1px solid red;
+}*/
+
 #sequencePoses {
 	display: inline-block;
 	text-align: center;
@@ -83,4 +88,49 @@ body {
 
 .sequenceLi {
 	text-align: center;
+}
+
+#experiment {
+	position: relative;
+	margin-bottom: 20%;
+	bottom: 0;*
+		
+	/*left: 50%;
+	/*top*/
+	/*border: 2px solid gold;*/
+	/*right: .8em;*/
+}
+
+
+.dropdown-menu {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#loginDiv {
+	margin-top: 7%;
+}
+
+@media (max-width: 600px) { #poseDiv {
+	display: inline-block;
+	padding: 0px 10px;
+	width: 48%;
+	text-align: center;
+	position: relative;
+	/*overflow: scroll;*/
+} }
+
+@media (max-width: 600px) { .posePicture {
+
+height: 88%;
+width: 88%;
+display: inline-block;
+} }
+
+.center {
+	text-align: center;
+}
+
+.form-control {
+	margin-bottom: 1%;
 }

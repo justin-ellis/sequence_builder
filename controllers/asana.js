@@ -4,6 +4,7 @@ const Asana = require('../models/asana.js');
 const Sequence = require('../models/sequence.js');
 
 router.get('/', (req, res) => {
+
 	Asana.find(function(err, data) {
     if ( err ) { console.log (err); }
 		res.send(data);
@@ -28,41 +29,61 @@ router.get('/search', (req, res)=>{
 
 
 
-router.post('/getOne', (req, res)=>{
-
+router.post('/', (req, res)=>{
+// if foundSequence doesn't have author of req.lession
 			if (req.session.logged){
 	Asana.create(req.body['poseData'], ()=>{
 		console.log(req.body['poseData']);
 		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
+			if (foundSequence != null){
 			console.log(foundSequence);
 			foundSequence.poses.push(req.body['poseData']);
 			foundSequence.save((err, data)=>{
 				res.json(req.body['poseData']);
 			});
+			}
 		});
 	});
+} else {
+	console.log('no sequences for this user');
+	res.redirect('/');
+}
+});
+
+router.delete('/:id', (req, res)=>{
+	if (req.session.logged){
+	Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
+		// if (foundSequence != null) {
+	Asana.findOne({'_id': req.params.id}, function(err, deletedAsana){
+		console.log(foundSequence.deletedAsana);
+		// console.log(foundSequence.deletedAsana[0]);
+
+		console.log(deletedAsana);
+		// const sexyVariable = foundSequence.poses;
+		// const sexierVariable = sexyVariable[0];
+		// console.log(sexyVariable[0]);
+		// console.log(typeof sexyVariable);
+		// console.log(sexyVariable);
+		// console.log(foundSequence.poses);
+		// console.log(foundSequence.poses[0]);
+
+		//the next two delete both poses
+		// foundSequence.poses[0].remove()
+		foundSequence.poses.id(req.params.id).remove();
+
+		const index = foundSequence.poses;
+		foundSequence.save((err, savedSequence)=>{
+		});
+		 res.json(deletedAsana);
+		 // res.json(foundSequence);
+			// console.log(foundSequence);
+		});
+});
 } else {
 	res.redirect('/');
 }
 });
 
-router.delete('/getOne/:id', (req, res)=>{
-	Asana.findByIdAndRemove(req.params.id, function(err, deletedAsana){
-		 res.json(deletedAsana);
-});
-});
-
-
-// router.post('/', (req, res)=>{
-// 	Asana.create(req.body, (err, createdAsana)=>{
-// 		Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
-// 			console.log(foundSequence);
-// 			foundSequence.poses.push(createdAsana);
-// 			foundSequence.save((err, data)=>{
-// 				res.json(createdAsana);
-// 			});
-// 		});
-// 	});
-// });
+// 'poses._id': req.params.id
 
 module.exports = router;
