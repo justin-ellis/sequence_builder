@@ -12,6 +12,7 @@ body {
 	width: 33%;
 	text-align: center;
 	position: relative;
+	margin-top: 2%;
 	/*overflow: scroll;*/
 }
 
@@ -108,4 +109,23 @@ body {
 
 #loginDiv {
 	margin-top: 2%;
+}
+
+@media (max-width: 415px) { #poseDiv {
+	display: inline-block;
+	padding: 0px 10px;
+	width: 48%;
+	text-align: center;
+	position: relative;
+	/*overflow: scroll;*/
+} }
+
+@media (max-width: 415px) { .posePicture {
+
+height: 88%;
+width: 88%;
+display: inline-block;
+} }
+.center {
+	text-align: center;
 }

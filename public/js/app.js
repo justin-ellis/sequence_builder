@@ -14,6 +14,7 @@ app.controller('mainController', ['$http', function($http){
 	this.hideForm = true;
 	this.showLogin = false;
 	this.showRegistration = false;
+	this.showSequence = false;
 	this.poseArray = [];
 	this.editSequenceIndex = 0;
 	this.asanaIndex = 0;
@@ -39,6 +40,7 @@ app.controller('mainController', ['$http', function($http){
 	{name: 'Arm and Leg Support', category: 'Arm+Leg Support'},
 	{name: 'Arm Balance and Inversion', category: 'Arm Balance+Inversion'},
 	];
+
 
 		this.showName = true;
 		this.showSanskrit = true;
@@ -187,6 +189,10 @@ app.controller('mainController', ['$http', function($http){
 
 	this.showForm = function(){
 		this.hideForm = false;
+	};
+
+	this.toggleSequences = function(){
+		this.showSequence = !this.showSequence;
 	};
 	
 	this.toggleDetails = function(detail){
