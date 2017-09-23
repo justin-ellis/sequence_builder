@@ -189,7 +189,8 @@
 		<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses track by $index">
 				 <!-- <button class = "btn btn-sm btn-danger" ng-click="ctrl.deleteAsana(key);">Delete</button> -->
 				 {{key.pose_name}}<br/><div class= view hm-zoom">
-				 <img class="img-fluid" alt="" id ="sequencePicture" ng-src="{{key.file_reference}}">  <div id="absolute"><button ng-if="!ctrl.checkDeleteButton() && sequence.author === ctrl.activeUsername;" class = "btn btn-sm btn-danger" id="experiment" ng-click="ctrl.deleteAsana(key);">Delete</button></div></img> <div class="mask flex-center"><p class="red-text"></p></div> </div>
+				 <img class="img-fluid" alt="" id ="sequencePicture" ng-src="{{key.file_reference}}">  <div id="absolute"><button ng-if="sequence.author === ctrl.activeUsername;" class = "btn btn-sm btn-danger" id="experiment" ng-click="ctrl.deleteAsana(key);">Delete</button></div></img> <div class="mask flex-center"><p class="red-text"></p></div> </div>
+				 <!-- was previously using !ctrl.checkDeleteButton() && in delete ng-if -->
 			</div>
 		</li>
 				<button ng-if="!ctrl.checkDeleteButton() && sequence.author === ctrl.activeUsername" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
@@ -206,7 +207,7 @@
 	       <input type="submit" value="edit sequence">
 	       </form>
 <!-- ng-if="ctrl.checkSequenceAuthors();" -->
-	      <button  ng-if="!ctrl.checkDeleteButton() && sequence.author === ctrl.activeUsername" ng-click="ctrl.deleteSequence(sequence)">Delete Sequence</button>
+	      <button  ng-if="sequence.author === ctrl.activeUsername" ng-click="ctrl.deleteSequence(sequence)">Delete Sequence</button>
 				</div>
 		<!-- Edit sequence name and difficulty form end -->
 	</div>
