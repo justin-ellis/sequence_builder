@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="sequence-builder">
 <head>
+	<meta name="viewport" content="width=device-width">
 	<title>Sequence Builder</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -35,28 +36,28 @@
         <li class="dropdown"><a ng-if="!ctrl.loggedIn" href="#" ng-click="ctrl.displayLogin()">{{ctrl.loggedOutButton}}<span class="sr-only">(current)</span></a></li>
         <li ng-click="ctrl.logout()"><a ng-click="ctrl.displayLogin()" ng-if="ctrl.loggedIn" href="#">{{ctrl.loggedInButton}}</a> </li>
         <li><a ng-click="ctrl.displayLogin()" href="#">Register</a></li>
-        <li class="dropdown">
+        <li class="dropdown dropdownList">
           <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Display Options <span class="caret"></span></a>
           <ul class="dropdown-menu">
-                       <button ng-class="{'showingDetails' : ctrl.showName, 'hidingDetails' : !ctrl.showName}" class="list-group-item list-group-item" ng-click="ctrl.toggleDetails('name')">
+                       <button ng-class="{'showingDetails' : ctrl.showName, 'hidingDetails' : !ctrl.showName}" class="list-group-item" ng-click="ctrl.toggleDetails('name')">
 			<span ng-if="ctrl.showName">{{ctrl.hideToggle}} Name</span>
 			<span ng-if="!ctrl.showName">{{ctrl.showToggle}} Name</span>
 		</button>
-		<button ng-class="{'showingDetails' : ctrl.showSanskrit, 'hidingDetails' : !ctrl.showSanskrit}" class="buttonst-group-item list-group-item" ng-click="ctrl.toggleDetails('sanskrit')">
+		<button ng-class="{'showingDetails' : ctrl.showSanskrit, 'hidingDetails' : !ctrl.showSanskrit}" class="list-group-item" ng-click="ctrl.toggleDetails('sanskrit')">
 			<span ng-if="ctrl.showSanskrit">{{ctrl.hideToggle}} Sanskrit</span>
 			<span ng-if="!ctrl.showSanskrit">{{ctrl.showToggle}} Sanskrit</span>
 		</button>
-		<button ng-class="{'showingDetails' : ctrl.showPicture, 'hidingDetails' : !ctrl.showPicture}" class="buttonst-group-item list-group-item" ng-click="ctrl.toggleDetails('picture')">
+		<button ng-class="{'showingDetails' : ctrl.showPicture, 'hidingDetails' : !ctrl.showPicture}" class="list-group-item" ng-click="ctrl.toggleDetails('picture')">
 			<span ng-if="ctrl.showPicture">{{ctrl.hideToggle}} Picture</span>
 			<span ng-if="!ctrl.showPicture">{{ctrl.showToggle}} Picture</span>
 		</button>
-		<button ng-class="{'showingDetails' : ctrl.showCategory, 'hidingDetails' : !ctrl.showCategory}" class="buttonst-group-item list-group-item" ng-click="ctrl.toggleDetails('category')">
+		<button ng-class="{'showingDetails' : ctrl.showCategory, 'hidingDetails' : !ctrl.showCategory}" class="list-group-item" ng-click="ctrl.toggleDetails('category')">
 			<span ng-if="ctrl.showCategory">{{ctrl.hideToggle}} Category</span><span ng-if="!ctrl.showCategory">{{ctrl.showToggle}} Category</span>
 		</button>
-		<button ng-class="{'showingDetails' : ctrl.showDescription, 'hidingDetails' : !ctrl.showDescription}" class="list-group-item buttonst-group-item" ng-click="ctrl.toggleDetails('description')"><span id="descShow" ng-if="ctrl.showDescription">{{ctrl.hideToggle}} Cues</span>
+		<button ng-class="{'showingDetails' : ctrl.showDescription, 'hidingDetails' : !ctrl.showDescription}" class="list-group-item" ng-click="ctrl.toggleDetails('description')"><span id="descShow" ng-if="ctrl.showDescription">{{ctrl.hideToggle}} Cues</span>
 			<span ng-if="!ctrl.showDescription">{{ctrl.showToggle}} Cues</span>
 		</button>
-		<button ng-class="{'showingDetails' : ctrl.showBenefits, 'hidingDetails' : !ctrl.showBenefits}" class="buttonst-group-item list-group-item" ng-click="ctrl.toggleDetails('benefits')">
+		<button ng-class="{'showingDetails' : ctrl.showBenefits, 'hidingDetails' : !ctrl.showBenefits}" class="list-group-item" ng-click="ctrl.toggleDetails('benefits')">
 			<span ng-if="ctrl.showBenefits">{{ctrl.hideToggle}} Benefits</span>
 			<span ng-if="!ctrl.showBenefits">{{ctrl.showToggle}} Benefits</span>
 		</button>
@@ -207,7 +208,7 @@
 	       <input type="submit" value="edit sequence">
 	       </form>
 <!-- ng-if="ctrl.checkSequenceAuthors();" -->
-	      <button  ng-if="sequence.author === ctrl.activeUsername" ng-click="ctrl.deleteSequence(sequence)">Delete Sequence</button>
+	      <button class = "btn btn-sm btn-danger" ng-if="sequence.author === ctrl.activeUsername" ng-click="ctrl.deleteSequence(sequence)">Delete Sequence</button>
 				</div>
 		<!-- Edit sequence name and difficulty form end -->
 	</div>
@@ -239,27 +240,27 @@
 	</div>
 
 <div class="container-fluid center">
-	<div id="poseDiv" class="rounded-circle"data-ng-repeat="pose in (ctrl.filteredPostures = (ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter}  | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter))">
+	<div id="poseDiv" data-ng-repeat="pose in (ctrl.filteredPostures = (ctrl.postures | filter:(!!difficultyFilter || undefined) && {difficulty: difficultyFilter}  | filter: (!!categoryFilter || undefined) && {category: categoryFilter} | filter: nameFilter))">
 
 
 		
 		<ul class="list-group">
-			<li ng-show="ctrl.showName" class="list-group-item">{{pose.pose_name}} </li>
+			<li ng-show="ctrl.showName" class="list-group-item poseDivLi">{{pose.pose_name}} </li>
 <!-- ng-if="ctrl.checkSequenceAuthors();" -->
 
 
-			<li ng-if="ctrl.checkSequenceAuthors();" class="list-group-item"> <button class="btn btn-warning" ng-click="ctrl.createAsana($index);">Add Pose</button> </li>
-			<li ng-show="ctrl.showSanskrit" class="list-group-item">
+			<li ng-if="ctrl.checkSequenceAuthors();" class="list-group-item poseDivLi"> <button class="btn btn-warning" ng-click="ctrl.createAsana($index);">Add Pose</button> </li>
+			<li ng-show="ctrl.showSanskrit" class="list-group-item poseDivLi">
 
 				<p id="sanskrit-name" ng-show="!isHidden" ng-click="isHidden = true">{{pose.sanskrit_name}}</p>
 				
 				<span id="sanskrit-translation" ng-show="isHidden" ng-click="isHidden = false" ng-show="isHidden">{{pose.translation.join(", ")}}</span>
 			</li>
-			 <li ng-show="ctrl.showPicture" class="list-group-item"> <img class="posePicture" ng-src="{{pose.file_reference}}"/> </li>
-			 <li id="descScroll" ng-show="ctrl.showDescription" class="list-group-item" > {{pose.description.join(", ")}} </li>
-			<li ng-show="ctrl.showCategory" class="list-group-item" >Category: {{pose.category}} </li>
-			<li id="descScroll" ng-show="ctrl.showBenefits" class="list-group-item" >Benefits: {{pose.benefits}} </li>
-			<li ng-show="ctrl.showDifficulty" class="list-group-item">Difficulty: {{pose.difficulty}}</li>
+			 <li ng-show="ctrl.showPicture" class="list-group-item poseDivLi"> <img class="posePicture" ng-src="{{pose.file_reference}}"/> </li>
+			 <li id="descScroll" ng-show="ctrl.showDescription" class="list-group-item poseDivLi" > {{pose.description.join(", ")}} </li>
+			<li ng-show="ctrl.showCategory" class="list-group-item poseDivLi" >Category: {{pose.category}} </li>
+			<li id="descScroll" ng-show="ctrl.showBenefits" class="list-group-item poseDivLi" >Benefits: {{pose.benefits}} </li>
+			<li ng-show="ctrl.showDifficulty" class="list-group-item poseDivLi">Difficulty: {{pose.difficulty}}</li>
 		</ul>
 	</div>
 </div>
