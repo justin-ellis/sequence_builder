@@ -9,7 +9,7 @@ app.controller('mainController', ['$http', '$q', function($http, $q){
 	this.sequences = [];
 	this.loggedOutButton = "Login";
 	this.loggedInButton = "Log out";
-	this.sequencesToggle = "Show"
+	this.sequencesToggle = "Show";
 	this.showToggle = "Hiding";
 	this.hideToggle = "Showing";
 	this.hideForm = true;

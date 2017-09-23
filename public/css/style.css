@@ -1,5 +1,5 @@
 body {
-	background-color: #FFECCD;
+	background-color: #4B6E8F;
 }
 
 .selectpicker {
@@ -7,12 +7,15 @@ body {
 }
 
 #poseDiv {
+	background-color: #4B6E8F;
 	display: inline-block;
 	padding: 0px 10px;
 	width: 33%;
 	text-align: center;
 	position: relative;
 	margin-top: 2%;
+	border-radius: 9px;
+
 	/*overflow: scroll;*/
 }
 
@@ -111,6 +114,10 @@ body {
 	margin-top: 4%;
 }
 
+#makeASequence {
+	margin-top: 10%;
+}
+
 @media (max-width: 600px) { #poseDiv {
 	display: inline-block;
 	padding: 0px 10px;
@@ -137,4 +144,15 @@ display: inline-block;
 
 .navbar-brand {
 	font-weight: bold;
+}
+
+.list-group-item {
+	/*margin-top: 2%;*/
+	background-color:  #EDF5D7;
+	/*border-radius: 12px;*/
+	border: 2px 
+}
+
+.form-control {
+	width: 10em;
 }

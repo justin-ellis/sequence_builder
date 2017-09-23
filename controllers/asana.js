@@ -71,17 +71,25 @@ router.delete('/:id', (req, res)=>{
 			const requisite = req.params.id;
 			const newReq = '"'+requisite+'"';
 			console.log(newReq);
-		for (var i = foundSequence.poses.length - 1; i >= 0; i--) {
+		for (var i = 0;  i <= foundSequence.poses.length-1; i++) {
 			// console.log(foundSequence.poses[i]);
 				stringifiedIds.push(JSON.stringify(foundSequence.poses[i]._id));
 	// console.log(id + ' is id');
 			console.log(typeof req.params.id + ' is req.params.id');
 			// console.log(typeof foundSequence.poses[i]._id + ' is id of index' + i);
-			for (var j = stringifiedIds.length - 1; j >= 0; j--) {
+			for (var j = 0;  j <= stringifiedIds.length-1; j++) {
 			if (newReq === stringifiedIds[j]){
 				console.log('true');
+				console.log(j + " is the index number of the pose sequence poes index");
 				let matchingPoses = [];
 				matchingPoses.push(foundSequence.poses[i]);
+				if (matchingPoses.length > 1) {
+
+					// figure out which index array the matching poses
+					// are at in the origin found.sequence.poses[i]
+
+					//delete the correct data (only one pose)
+				}
 				console.log(matchingPoses + "are matching poses");
 			} else {
 				console.log('false');
