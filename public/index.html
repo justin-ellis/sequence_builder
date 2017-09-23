@@ -2,7 +2,7 @@
 <html ng-app="sequence-builder">
 <head>
 	<meta name="viewport" content="width=device-width">
-	<title>Sequence Builder</title>
+	<title>Yoga Bloom</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
@@ -21,21 +21,27 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
+      <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> -->
+   <!--      <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
+      </button> -->
       <a class="navbar-brand" href="#">Yoga Bloom</a>
+         <!-- <form class="navbar-form navbar-left"> -->
+        
+          <input id="topFilterInput" type="text" ng-model="nameFilter" placeholder="Search Yoga Bloom">
+        
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      <!-- </form> -->
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
       <ul class="nav navbar-nav">
-        <li class="dropdown"><a ng-if="!ctrl.loggedIn" href="#" ng-click="ctrl.displayLogin()">{{ctrl.loggedOutButton}}<span class="sr-only">(current)</span></a></li>
+        <li><a ng-if="!ctrl.loggedIn" href="#" ng-click="ctrl.displayLogin()">{{ctrl.loggedOutButton}}<span class="sr-only">(current)</span></a></li>
         <li ng-click="ctrl.logout()"><a ng-click="ctrl.displayLogin()" ng-if="ctrl.loggedIn" href="#">{{ctrl.loggedInButton}}</a> </li>
-        <li><a ng-click="ctrl.displayLogin()" href="#">Register</a></li>
+        <li ng-if="!ctrl.loggedIn"><a ng-click="ctrl.displayLogin()" href="#">Register</a></li>
         <li class="dropdown dropdownList">
           <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Display Options <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -63,17 +69,12 @@
 		</button>
           </ul>
         </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" ng-model="nameFilter" placeholder="Search Yoga Bloom">
-        </div>
-        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
-      </form>
-      <ul class ="nav navbar-nav">
       	<li ><a ng-if="ctrl.showSequence" ng-click="ctrl.toggleSequences();" href="#">{{ctrl.hide}} Sequences</a></li>
          <li ><a ng-if="!ctrl.showSequence" ng-click="ctrl.toggleSequences();" href="#">{{ctrl.show}} Sequences</a></li>
       </ul>
+   
+    
+    
       <!-- <ul class="nav navbar-nav navbar-right"> -->
         
         <!-- <li class="dropdown">
@@ -87,25 +88,13 @@
           </ul>
         </li> -->
       <!-- </ul> -->
-    </div><!-- /.navbar-collapse -->
+    <!-- </div>/.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
 <!-- Nav bar ends -->
 
-
-<!-- Register/login button begin -->
-<!-- 		<div id="loginDiv"> 
-			<button class="btn btn-default" ng-click="ctrl.displayLogin()">Register or Log In</button>
-			<button ng-if="ctrl.loggedIn" ng-click="ctrl.logout()">Log out</button>
-		</div> -->
-<!-- Register/login button end -->
-
-
-
-
-
-
+<div id="wrapper">
 
 
 <!-- Create a sequence form begin -->
@@ -236,7 +225,7 @@
 			<option value selected="selected">All Categories</option>
 	</select>
 
-	<input type="text" placeholder="Downward Dog" ng-model="nameFilter">
+	<input type="text" class="form-control filterBottom" placeholder="Downward Dog" ng-model="nameFilter">
 	</div>
 
 <div class="container-fluid center">
@@ -245,7 +234,7 @@
 
 		
 		<ul class="list-group">
-			<li ng-show="ctrl.showName" class="list-group-item poseDivLi">{{pose.pose_name}} </li>
+			<li ng-show="ctrl.showName" class="list-group-item poseDivLi poseName">{{pose.pose_name}} </li>
 <!-- ng-if="ctrl.checkSequenceAuthors();" -->
 
 
@@ -263,6 +252,7 @@
 			<li ng-show="ctrl.showDifficulty" class="list-group-item poseDivLi">Difficulty: {{pose.difficulty}}</li>
 		</ul>
 	</div>
+</div>
 </div>
 	</body>
 </html>
