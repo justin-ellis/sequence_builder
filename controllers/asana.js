@@ -51,27 +51,51 @@ router.post('/', (req, res)=>{
 });
 
 router.delete('/:id', (req, res)=>{
+	
 	if (req.session.logged){
 	Sequence.findOne({author: req.session.username}, (err, foundSequence)=>{
 		// if (foundSequence != null) {
 	Asana.findOne({'_id': req.params.id}, function(err, deletedAsana){
-		console.log(foundSequence.deletedAsana);
+		// console.log(foundSequence.deletedAsana);
 		// console.log(foundSequence.deletedAsana[0]);
 
-		console.log(deletedAsana);
-		// const sexyVariable = foundSequence.poses;
-		// const sexierVariable = sexyVariable[0];
-		// console.log(sexyVariable[0]);
-		// console.log(typeof sexyVariable);
-		// console.log(sexyVariable);
-		// console.log(foundSequence.poses);
+		// console.log(deletedAsana);
+		// console.log(typeof foundSequence.poses);
+		// console.log(typeof foundSequence.poses[0]);
 		// console.log(foundSequence.poses[0]);
 
 		//the next two delete both poses
 		// foundSequence.poses[0].remove()
+		// console.log(foundSequence.poses.id(req.params.id) + "is thing with id");
+			let stringifiedIds = [];
+			const requisite = req.params.id;
+			const newReq = '"'+requisite+'"';
+			console.log(newReq);
+		for (var i = foundSequence.poses.length - 1; i >= 0; i--) {
+			// console.log(foundSequence.poses[i]);
+				stringifiedIds.push(JSON.stringify(foundSequence.poses[i]._id));
+	// console.log(id + ' is id');
+			console.log(typeof req.params.id + ' is req.params.id');
+			// console.log(typeof foundSequence.poses[i]._id + ' is id of index' + i);
+			for (var j = stringifiedIds.length - 1; j >= 0; j--) {
+			if (newReq === stringifiedIds[j]){
+				console.log('true');
+				let matchingPoses = [];
+				matchingPoses.push(foundSequence.poses[i]);
+				console.log(matchingPoses + "are matching poses");
+			} else {
+				console.log('false');
+				console.log(req.params.id + ' is req.params.id');
+				console.log(stringifiedIds[0] + ' is stringifiedIds[0]');
+				console.log(stringifiedIds[1] + ' is stringifiedIds[1]');
+			}
+			}
+				console.log(stringifiedIds + ' are stringifiedIds');
+		}
+		// console.log(typeof foundSequence.poses.id(req.params.id) + "is thing with id");
+		// const butt = foundSequence.poses.id(req.params.id);
+		// console.log(butt);
 		foundSequence.poses.id(req.params.id).remove();
-
-		const index = foundSequence.poses;
 		foundSequence.save((err, savedSequence)=>{
 		});
 		 res.json(deletedAsana);
