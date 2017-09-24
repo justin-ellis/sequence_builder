@@ -114,6 +114,12 @@ body {
 
 #loginDiv {
 	margin-top: 4%;
+	text-align: center;
+}
+
+#loginDiv input{
+	text-align: center;
+	display: inline-block;
 }
 
 #makeASequence {
@@ -239,6 +245,7 @@ display: inline-block;
 	margin-top: 13.5px;
 }
 
+
 #wrapper {
 	margin-top: 88px;
 }
@@ -273,4 +280,30 @@ display: inline-block;
 .navbar-nav .open .dropdown-menu {
 	position:absolute;
 	}
+}
+
+#welcomeMessage {
+	padding-right: 5px;
+}
+
+[ng:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+display: none !important;
+}
+
+.sequenceUl {
+	text-align: center;
+}
+
+.signIn {
+	padding-top: 2.5px;
+	padding-bottom: 15px;
+	background-color: white;
+	width: 50%;
+	margin: 0 auto;
+	border-radius: 10px;
+	border: 1px solid blanchedalmond;
+}
+.signInHeader{
+	margin: 5px 0 15px 0;
+	background-color: skyblue;
 }

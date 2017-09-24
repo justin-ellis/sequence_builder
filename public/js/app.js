@@ -99,6 +99,10 @@ app.controller('mainController', ['$http', '$q', function($http, $q){
 		this.showLogin = !this.showLogin;
 	};
 
+	this.displayRegistration = function(){
+		this.showRegistration = !this.showRegistration;
+	};
+
 	this.hideLogin = function(){
 		this.concealLogin = true;
 	};
@@ -168,6 +172,7 @@ app.controller('mainController', ['$http', '$q', function($http, $q){
 			controller.password = "";
 			// controller.foundUser = response.data;
 		controller.getUsers();
+		controller.checkSequenceAuthors();
 		// controller.getUsers();
 
 			if(response.data != true){
@@ -401,15 +406,16 @@ app.controller('mainController', ['$http', '$q', function($http, $q){
 		return false;
 	};
 
-	this.checkDeleteButton = function(){
+	this.displayNewSequence = function(){
 		for (let i = 0; i <= controller.sequences.length-1; i++) {
-			if (controller.sequences[i].author != controller.activeUsername){
-				console.log('check delete button for matching username returning false');
+			if (controller.sequences[i].author === controller.activeUsername){
+				console.log('check if user can make new sequence returning false');
 				return false;
-			} 
+			} else {
+				return true;
+			}
 		}
-				console.log('check delete button for matching username returning true');
-		return true;
+				console.log('check if user can make new sequence returning true');
 	};
 	// 	this.deleteAsana = function(asana){
 	// 	$http({

@@ -12,6 +12,11 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+[ng:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+display: none !important;
+}
+</style>
 </head>
 	<body ng-controller="mainController as ctrl">
 
@@ -41,7 +46,8 @@
       <ul class="nav navbar-nav">
         <li><a ng-if="!ctrl.loggedIn" href="#" ng-click="ctrl.displayLogin()">{{ctrl.loggedOutButton}}<span class="sr-only">(current)</span></a></li>
         <li ng-click="ctrl.logout()"><a ng-click="ctrl.displayLogin()" ng-if="ctrl.loggedIn" href="#">{{ctrl.loggedInButton}}</a> </li>
-        <li ng-if="!ctrl.loggedIn"><a ng-click="ctrl.displayLogin()" href="#">Register</a></li>
+        <li ng-if="!ctrl.loggedIn"><a ng-click="ctrl.displayRegistration()" href="#">Register</a></li>
+      <!--   <li id="welcomeMessage" ng-if="ctrl.loggedIn">Welcome {{ctrl.activeUsername}}!</li> -->
         <li class="dropdown dropdownList">
           <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Display Options <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -98,8 +104,8 @@
 
 
 <!-- Create a sequence form begin -->
-	<div id="makeASequence" ng-if="ctrl.loggedIn">
-		<h3>Create a sequence:</h3>
+	<div id="makeASequence" ng-show="!ctrl.checkSequenceAuthors() && ctrl.loggedIn" ng-cloak>
+		<h3 ng-cloak>Create a sequence:</h3>
 		<form ng-submit="ctrl.createSequence()">
 				Name: <input type="text" ng-model="ctrl.name"/>
 	Difficulty: <input type="text" ng-model="ctrl.difficulty"/>
@@ -111,20 +117,30 @@
 
 
 <!-- Register/login form begin -->
-	<div class="form-group" id="loginDiv" ng-hide="ctrl.concealLogin">
-		<form ng-submit="ctrl.login()" ng-if="ctrl.showLogin">
-			<h2>Log In</h2>
-				Username: <input class="form-control" type="text" ng-model="ctrl.username"/>
-				Password: <input class="form-control" type="text" ng-model="ctrl.password"/>
-			<input class="btn btn-default" type="submit" ng-click="ctrl.hideLogin()" value="Log in"/>
+
+
+	<div class="form-group container" id="loginDiv" ng-hide="ctrl.concealLogin">
+				
+		<form class="signIn" ng-submit="ctrl.login()" ng-if="ctrl.showLogin">
+			<h3 class="signInHeader">Hello there!</h3>
+				 <input class="form-control" type="text" placeholder="Username" ng-model="ctrl.username"/> <br>
+				<input class="form-control" type="password" placeholder="Password" ng-model="ctrl.password"/> <br>
+				<hr>
+			<input class="btn btn-info" type="submit" ng-click="ctrl.hideLogin()" value="Log in"/>
+		</form>
+			
+	
+		<br/>
+	
+		<form class="signIn" ng-if="ctrl.showRegistration" ng-submit="ctrl.registerUser()">
+			<h3 class="signInHeader">Registration</h3>
+			<input class="form-control" type="text" placeholder="Username" ng-model="ctrl.registeredUsername"/> <br>
+			<input class="form-control" type="password" placeholder="Password" ng-model="ctrl.registeredPassword"/> <br>
+			<hr>
+			<input class="btn btn-success" type="submit" ng-click="ctrl.hideLogin()" value="Register"/>
 		</form>
 
-		<form ng-if="ctrl.showLogin" ng-submit="ctrl.registerUser()">
-			<h2>Register</h2>
-			Username: <input class="form-control" type="text" ng-model="ctrl.registeredUsername"/>
-			Password: <input class="form-control" type="text" ng-model="ctrl.registeredPassword"/>
-			<input class="btn btn-default" type="submit" ng-click="ctrl.hideLogin()" value="Register"/>
-		</form>
+			
 	</div>
 <!-- Register/login form end -->
 
@@ -164,15 +180,20 @@
 
 
 
+
 <!-- Repeating created sequences begin -->
 	<div ng-if="ctrl.showSequence" ng-if="ctrl.loggedIn" data-ng-repeat="sequence in ctrl.sequences track by $index">
 			
-		<ul class="list-group">
-
-				Sequence Name: <li class="list-group-item">{{sequence.name}}</li>
-				Difficulty: <li class="list-group-item">{{sequence.difficulty}}</li>
-				Creator: <li class="list-group-item">{{sequence.author}}</li>
-
+		<ul class="list-group sequenceUl">
+			<div class="container-fluid">
+				<div class="row">
+					<div ng-if="sequence.difficulty" class="col-xs-4"><span> Sequence Name: {{sequence.name}}</span></div>
+					<div ng-if="!sequence.difficulty" class="col-xs-6"><span> Sequence Name: {{sequence.name}}</span></div>
+					<div ng-if="sequence.difficulty" class="col-xs-4"><span> Difficulty: {{sequence.difficulty}}</span></div>
+					<div ng-if="!sequence.difficulty" class="col-xs-6"><span> Made by: {{sequence.author}}</span></div>
+					<div ng-if="sequence.difficulty" class="col-xs-4"><span> Made by: {{sequence.author}}</span></div>
+				</div>
+			</div>
 		<!-- Repeating poses that have been added to sequence begin -->
 
 				<li class="list-group-item sequenceLi">
