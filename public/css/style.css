@@ -113,6 +113,7 @@ body {
 }
 
 #loginDiv {
+	/*background-color: white;*/
 	margin-top: 4%;
 	text-align: center;
 }
@@ -190,7 +191,7 @@ display: inline-block;
 	display: block;
 }
 
-/*@media (max-width: 300px) {
+@media (max-width: 300px) {
     .navbar-header {
         float: none;
     }
@@ -225,7 +226,7 @@ display: inline-block;
     .collapse.in{
         display:block !important;
     }
-}*/
+}
 
 
    .navbar-nav>li {
@@ -248,6 +249,7 @@ display: inline-block;
 
 #wrapper {
 	margin-top: 88px;
+	text-align: center;
 }
 
 @media (max-width: 880px) {
@@ -260,6 +262,36 @@ display: inline-block;
 
 }
 
+@media (max-width: 560px){
+#wrapper {
+	margin-top: 150px;
+}
+}
+
+@media (max-width: 415px){
+#sequencePicture {
+	height: 5em;
+}
+}
+
+@media (max-width: 508px){
+#wrapper {
+	margin-top: 170px;
+}
+
+@media (max-width: 340px){
+#wrapper {
+	margin-top: 240px;
+}
+
+@media (max-width: 370px){
+#wrapper {
+	margin-top: 210px;
+}
+.form-control{
+	overflow:hidden;	
+}
+}
 .poseName {
 	background-color: #FEA032;
 	padding: 4px;
@@ -277,13 +309,21 @@ display: inline-block;
 }
 
 @media (max-width: 767px){
-.navbar-nav .open .dropdown-menu {
+.navbar-nav .open .dropdown-menu .navbar-toggleable-xl{
 	position:absolute;
 	}
 }
 
-#welcomeMessage {
-	padding-right: 5px;
+@media (max-width: 420px){
+.navbar-nav .open .dropdown-menu .navbar-toggleable-xl{
+	position:absolute;
+	}
+}
+
+@media (max-width: 360px){
+.navbar-nav .open .dropdown-menu .navbar-toggleable-xl{
+	position:absolute;
+	}
 }
 
 [ng:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -302,8 +342,23 @@ display: none !important;
 	margin: 0 auto;
 	border-radius: 10px;
 	border: 1px solid blanchedalmond;
+
 }
 .signInHeader{
 	margin: 5px 0 15px 0;
 	background-color: skyblue;
 }
+
+.selectpicker {
+	margin-bottom: 5px;
+}
+
+h2{
+     word-wrap: break-word;
+     -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+     -ms-hyphens: auto;
+     -o-hyphens: auto;
+     hyphens: auto;
+}
+

@@ -116,10 +116,7 @@ router.delete('/:id', (req, res)=>{
 		});
 					} else {
 
-		// console.log(butts + ' is the butt');
-		// console.log(typeof foundSequence.poses.id(req.params.id) + "is thing with id");
-		// const butt = foundSequence.poses.id(req.params.id);
-		// console.log(butt);
+		// console.log(typeof foundSequence.poses.id(req.params.id) + " is thing with id");
 		foundSequence.poses.id(req.params.id).remove();
 		foundSequence.save((err, savedSequence)=>{
 		});
