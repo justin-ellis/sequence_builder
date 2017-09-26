@@ -1,6 +1,6 @@
 const app = angular.module('sequence-builder', []);
 
-app.controller('mainController', ['$http', function($http){
+app.controller('mainController', ['$http', '$q', function($http, $q){
 	console.log('angular is here');
 	const controller = this;
 	this.show = 'Show';
@@ -9,7 +9,7 @@ app.controller('mainController', ['$http', function($http){
 	this.sequences = [];
 	this.loggedOutButton = "Login";
 	this.loggedInButton = "Log out";
-	this.sequencesToggle = "Show"
+	this.sequencesToggle = "Show";
 	this.showToggle = "Hiding";
 	this.hideToggle = "Showing";
 	this.hideForm = true;
@@ -47,7 +47,7 @@ app.controller('mainController', ['$http', function($http){
 		this.showSanskrit = true;
 		this.showPicture = true;
 		this.showCategory = false;
-		this.showDescription = true;
+		this.showDescription = false;
 		this.showBenefits = false;
 		this.showDifficulty = false;
 
@@ -99,6 +99,10 @@ app.controller('mainController', ['$http', function($http){
 		this.showLogin = !this.showLogin;
 	};
 
+	this.displayRegistration = function(){
+		this.showRegistration = !this.showRegistration;
+	};
+
 	this.hideLogin = function(){
 		this.concealLogin = true;
 	};
@@ -137,11 +141,13 @@ app.controller('mainController', ['$http', function($http){
 			controller.registeredPassword = '';
 			controller.newUser = response.data;
 			console.log(response.data);
+			controller.getUsers();
+
 			if(response.data){
 				// check to see if this works for registered users
 				controller.activeUsername = controller.username;
 				controller.loggedIn = true;
-				controller.hideForm = false;
+				controller.hideForm = true;
 			}
 			controller.hideLogin();
 		},
@@ -152,6 +158,7 @@ app.controller('mainController', ['$http', function($http){
 	};
 
 	this.login = function(username, password){
+		var deferred = $q.defer();
 		$http({
 			method: 'POST',
 			url: '/session/login',
@@ -163,7 +170,10 @@ app.controller('mainController', ['$http', function($http){
 		function(response){
 			controller.username = "";
 			controller.password = "";
-			controller.foundUser = response.data;
+			// controller.foundUser = response.data;
+		controller.getUsers();
+		controller.checkSequenceAuthors();
+		// controller.getUsers();
 
 			if(response.data != true){
 				console.log('wrong username or password');
@@ -171,26 +181,33 @@ app.controller('mainController', ['$http', function($http){
 				controller.hideForm = true;
 				// this.showLogin = true;
 				controller.concealLogin = false;
+		// controller.getUsers();
 				// this.displayLogin();
 			}
 			else if(response.data){
-			console.log(controller.foundUser);
+			// console.log(controller.foundUser);
 				controller.activeUsername = controller.username;
 				// console.log(this.username);
 				// console.log(this.activeUsername);
 				controller.loggedIn = true;
-				controller.hideForm = false;
+				controller.hideForm = true;
 				controller.hideLogin();
+				// controller.getUsers();
 			}
+		// controller.getUsers();
+
 		},
 		function(err){
 			console.log(err);
 		});
+		// controller.getUsers();
 		
+				// this.checkSequenceAuthors();
+				// this.checkSequenceAuthors();
 				// this.getUsers();
 		this.getSequences();
-		this.getUsers();
-		this.getUsers();
+		// this.getUsers();
+		// this.getUsers();
 	};
 
 
@@ -214,7 +231,7 @@ app.controller('mainController', ['$http', function($http){
 	};
 
 	this.showForm = function(){
-		this.hideForm = false;
+		this.hideForm = !this.hideForm;
 	};
 
 	this.toggleSequences = function(){
@@ -277,6 +294,8 @@ app.controller('mainController', ['$http', function($http){
 				controller.difficulty = '';
 				controller.author = '';
 				controller.poses = [];
+				controller.getUsers();
+
 				// location.reload(true);
 		},
 		function(err){
@@ -383,20 +402,23 @@ app.controller('mainController', ['$http', function($http){
 			// 	return false;
 			// }
 		}
-				console.log('check sequences for matching username returning false');
+				// console.log('check sequences for matching username returning false');
 		return false;
 	};
 
-	this.checkDeleteButton = function(){
+	this.displayNewSequence = function(){
 		for (let i = 0; i <= controller.sequences.length-1; i++) {
-			if (controller.sequences[i].author != controller.activeUsername){
-				console.log('check sequences for matching username returning false');
+			if (controller.sequences[i].author === controller.activeUsername){
+				console.log('check if user can make new sequence returning false');
 				return false;
-			} 
+			} else {
+				return true;
+			}
 		}
-				console.log('check sequences for matching username returning true');
-		return true;
+				console.log('check if user can make new sequence returning true');
 	};
+
+
 	// 	this.deleteAsana = function(asana){
 	// 	$http({
 	// 		method: 'DELETE',

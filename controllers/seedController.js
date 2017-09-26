@@ -37,15 +37,15 @@ var asanas = [ {
     difficulty: 'Intermediate',
     description: [ 'From a seated position the feet are lifted up so that the thighs are angled about 45-50 degrees relative to the earth.  The tailbone is lengthened into the earth and the pubis pulls toward the navel.  The shoulder blades are spread across the back and the hands reach around the back of the calves, with legs pulled towards the body.  The chin is tipped slightly toward the sternum so that the base of the skull lifts lightly away from the back of the neck.  Gaze is forward.' ],
     benefits: 'Strengthens the abdomen, hip flexors, and spine.  Stimulates the kidneys, thyroid and prostate glands, and intestines.  Helps relieve stress.  Improves digestion.' },
-  { 
-    file_reference: 'https://dl.dropboxusercontent.com/s/wqivpc3zbti9ib3/navasana.png?dl=0',
-    pose_name: 'Half Boat Pose',
-    sanskrit_name: 'Ardha Nāvāsana',
-    translation: [ 'ardha = half', 'nāva = boat' ],
-    category: 'Seated / Balancing',
-    difficulty: 'Beginner',
-    description: [ 'From a seated position the hands are gripped around the back of the legs and the knees are bent in a 90 degree angle.  Both legs are pulled in towards the abdomen.  The core is engaged to maintain balance on the sits bones (be sure that the back does not round).  The front of the torso lengthens between the pubis and top of the sternum as the spine extends in both directions reaching up to the sky and rooting down to the earth.  The gaze is forward and Bandhas are engaged.' ],
-    benefits: 'Strengthens the abdomen, hip flexors and spine.  Stimulates the kidneys, thyroid, prostate glands and intestines.  Helps relieve stress.  Improves digestion.' },
+  // { 
+  //   file_reference: 'https://dl.dropboxusercontent.com/s/wqivpc3zbti9ib3/navasana.png?dl=0',
+  //   pose_name: 'Half Boat Pose',
+  //   sanskrit_name: 'Ardha Nāvāsana',
+  //   translation: [ 'ardha = half', 'nāva = boat' ],
+  //   category: 'Seated / Balancing',
+  //   difficulty: 'Beginner',
+  //   description: [ 'From a seated position the hands are gripped around the back of the legs and the knees are bent in a 90 degree angle.  Both legs are pulled in towards the abdomen.  The core is engaged to maintain balance on the sits bones (be sure that the back does not round).  The front of the torso lengthens between the pubis and top of the sternum as the spine extends in both directions reaching up to the sky and rooting down to the earth.  The gaze is forward and Bandhas are engaged.' ],
+  //   benefits: 'Strengthens the abdomen, hip flexors and spine.  Stimulates the kidneys, thyroid, prostate glands and intestines.  Helps relieve stress.  Improves digestion.' },
   { 
     // file_reference: 'bound_angle.html',
     // pose_name: 'Bound Angle Pose',
@@ -73,8 +73,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Backbend',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'a prone position with the abdomen on the earth',
+     [ 'From a prone position with the abdomen on the earth',
        ', extend one arm forward and the opposite leg towards the back, keep the neck in line with the spine.  Bend the top knee and bring the extended hand backwards to catch the foot or toes.  Start to lift the knee and chest higher to create an arch like a bow.' ],
     benefits: 'Stretches the back muscles and the front body.  Stimulates the abdominal organs and lungs.  Improves balance.' },
   { 
@@ -116,9 +115,7 @@ var asanas = [ {
     category: 'Supine / Backbend',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'bridge',
-       ' pose, begin to extend one leg out in front, without dropping the hips.  If possible, bring the extended leg higher, toes pointing towards the sky.' ],
+     [ 'From bridge pose, begin to extend one leg out in front, without dropping the hips.  If possible, bring the extended leg higher, toes pointing towards the sky.' ],
     benefits: 'Stretches the rib cage, chest, neck and back muscles.  Tightens the gluts.  Strengthens the legs, knees and thighs.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/7ivetmlr3npctmz/ustrasana.png?dl=0',
@@ -137,9 +134,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Forward Bend',
     difficulty: 'Beginner',
     description:
-     [ 'From ',
-       'tabletop',
-       ', shift some weight to the palms.  The wrists, elbows and shoulders are in one line.  The abdomen is pulled in and up with the spine arched in a strong Cobra spine.  The crown of the head is towards the earth and the neck is relaxed.  The gaze is between the arms towards the belly.' ],
+     [ 'From tabletop shift some weight to the palms.  The wrists, elbows and shoulders are in one line.  The abdomen is pulled in and up with the spine arched in a strong Cobra spine.  The crown of the head is towards the earth and the neck is relaxed.  The gaze is between the arms towards the belly.' ],
     benefits: 'Relieves the spine and neck.  Energizes the body.' },
   { 
     // file_reference: 'cat_balance.html',
@@ -189,9 +184,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'chair pose',
-       ', the lower arm weaves in between the legs as the upper arm wraps around the back and the fingers interlace.  The ribcage is lifted.  The gaze toward the sky, unless it hurts your neck, then the gaze towards the earth.' ],
+     [ 'From chair pose, the lower arm weaves in between the legs as the upper arm wraps around the back and the fingers interlace.  The ribcage is lifted.  The gaze toward the sky, unless it hurts your neck, then the gaze towards the earth.' ],
     benefits: 'Increases the flexibility of the spine and back and stretches the shoulders.  Stretches the lower back.  Challenges the balance.  Powerful detoxification of toxic food, drink, and thoughts.' },
   { 
     // file_reference: 'chair_twist_bind_up.html',

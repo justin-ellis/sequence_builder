@@ -1,5 +1,5 @@
 body {
-	background-color: #FFECCD;
+	background-color: #4B6E8F;
 }
 
 .selectpicker {
@@ -7,12 +7,16 @@ body {
 }
 
 #poseDiv {
+	background-color: #4B6E8F;
 	display: inline-block;
 	padding: 0px 10px;
 	width: 33%;
 	text-align: center;
 	position: relative;
 	margin-top: 2%;
+	border-radius: 9px;
+
+
 	/*overflow: scroll;*/
 }
 
@@ -23,7 +27,7 @@ body {
 }
 
 #descScroll {
-	max-height: 6.5em;
+	max-height: 26em;
 	overflow: scroll;
 }
 
@@ -88,12 +92,13 @@ body {
 
 .sequenceLi {
 	text-align: center;
+	background-color: rgba(69, 80, 87, .7);
 }
 
 #experiment {
 	position: relative;
-	margin-bottom: 20%;
-	bottom: 0;*
+	margin-bottom: 10%;
+	bottom: 0;
 		
 	/*left: 50%;
 	/*top*/
@@ -105,10 +110,27 @@ body {
 .dropdown-menu {
 	padding-top: 0px;
 	padding-bottom: 0px;
+	padding-right: 1px;
+}
+
+#originalLoginDiv{
+	margin-top: 2%;
+	text-align: center;
 }
 
 #loginDiv {
-	margin-top: 7%;
+	/*background-color: white;*/
+	margin: 0 auto;
+	text-align: center;
+}
+
+#loginDiv input{
+	text-align: center;
+	display: inline-block;
+}
+
+#makeASequence {
+	margin-top: 10%;
 }
 
 @media (max-width: 600px) { #poseDiv {
@@ -133,4 +155,284 @@ display: inline-block;
 
 .form-control {
 	margin-bottom: 1%;
+}
+
+.navbar-default .navbar-brand {
+	color: orange;
+	font-weight: bold;
+}
+
+.list-group-item {
+	/*margin-top: 2%;*/
+	
+	/*border-radius: 12px;*/
+	border: 1px double white;
+	border-radius: 3px;
+	margin: 1px;
+	overflow: hidden;
+}
+
+.form-control {
+	width: 10em;
+}
+
+.poseDivLi {
+	background-color:  #EDF5D7;
+}
+
+.dropdown:hover {
+	background-color: lemonchiffon;
+}
+
+.dropdownList {
+	border-radius: 50px;
+	background-color: #FFECCD;
+	margin: 3px 0px;
+}
+
+./*nav {
+	display: inline-block;
+}*/
+
+.navbar-header {
+	display: block;
+}
+
+@media (max-width: 300px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}
+
+
+   .navbar-nav>li {
+    float: none;
+    text-align: center;
+    display: inline-block;
+}
+
+   .navbar-nav>input {
+    float: none;
+    text-align: center;
+    display: inline-block;
+}
+
+#topFilterInput {
+	border-radius: 10px;
+	margin-top: 13.5px;
+}
+
+
+#wrapper {
+	margin-top: 88px;
+
+}
+
+@media (max-width: 880px) {
+#wrapper {
+	margin-top: 80px;
+}
+#topFilterInput{
+
+}
+
+}
+
+@media (max-width: 560px){
+#wrapper {
+	margin-top: 150px;
+}
+}
+
+@media (max-width: 415px){
+#sequencePicture {
+	height: 3em;
+}
+}
+
+@media (max-width: 508px){
+#wrapper {
+	margin-top: 170px;
+}
+
+}
+@media (max-width: 340px){
+#wrapper {
+	margin-top: 240px;
+}
+}
+
+@media (max-width: 370px){
+#wrapper {
+	margin-top: 170px;
+}
+.form-control{
+	overflow:hidden;	
+}
+}
+
+
+.poseName {
+	background-color: #FEA032;
+	padding: 4px;
+}
+
+.filterBottom {
+	border-radius: 10px;
+	display: inline;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #555;
+    background-color: lemonchiffon;
+    border-radius: 50px;
+}
+
+@media (max-width: 767px){
+.navbar-nav .open .dropdown-menu .navbar-toggleable-xl{
+	position:absolute;
+	}
+}
+
+@media (max-width: 420px){
+.navbar-nav .open .dropdown-menu .navbar-toggleable-xl{
+	position:absolute;
+	}
+}
+
+@media (max-width: 360px){
+.navbar-nav .open .dropdown-menu .navbar-toggleable-xl{
+	position:absolute;
+	}
+}
+
+[ng:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+display: none !important;
+}
+
+.sequenceUl {
+	text-align: center;
+}
+
+.signIn {
+	padding-top: 2.5px;
+	padding-bottom: 15px;
+	background-color: white;
+	width: 50%;
+	margin: 5% auto;
+	border-radius: 10px;
+	border: 1px solid blanchedalmond;
+
+}
+.signInHeader{
+	margin: 5px 0 15px 0;
+	background-color: skyblue;
+}
+
+.selectpicker {
+	margin-bottom: 5px;
+}
+
+h4{
+     word-wrap: break-word;
+     -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+     -ms-hyphens: auto;
+     -o-hyphens: auto;
+     hyphens: auto;
+}
+
+.col-xs-4 {
+	/*border: 2px solid white;*/
+}
+
+.sequenceInfo {
+	background-color: azure;
+}
+
+.col-xs-6 {
+	/*border: 2px solid white;*/
+}
+
+.sequencePoseNames {
+	color: white;
+	display: inline;
+	font-weight: bold;
+	font-size: .8em;
+}
+
+.search {
+	color: white;
+	margin-top: 0;
+}
+
+
+#welcomeText {
+color: darkgrey;
+width: 85%;
+margin: 0 auto;
+background-color: white;
+border-radius: 10px;
+padding: 10px;
+}
+.sequenceForm {
+	margin: 0 auto;
+	width: 70%;
+}
+
+.createMargin {
+	margin: 20px 0px 10px 0px;
+}
+
+.editForm {
+	background-color: azure;
+	width: 75%;
+	margin: 0 auto;
+	border-radius: 10px;
+	padding: 20px 0px;
+	border: 2px solid orange;
+}
+
+#sequenceMarginTop {
+	margin-top: 5%;
+}
+
+.sequenceInfoAlt {
+	background-color: orange;
+}
+
+#orange {
+	color: orange;
+	font-weight: bold;
 }
