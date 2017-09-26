@@ -27,7 +27,7 @@ body {
 }
 
 #descScroll {
-	max-height: 24em;
+	max-height: 26em;
 	overflow: scroll;
 }
 
@@ -92,11 +92,12 @@ body {
 
 .sequenceLi {
 	text-align: center;
+	background-color: rgba(69, 80, 87, .7);
 }
 
 #experiment {
 	position: relative;
-	margin-bottom: 20%;
+	margin-bottom: 10%;
 	bottom: 0;
 		
 	/*left: 50%;
@@ -151,7 +152,8 @@ display: inline-block;
 	margin-bottom: 1%;
 }
 
-.navbar-brand {
+.navbar-default .navbar-brand {
+	color: orange;
 	font-weight: bold;
 }
 
@@ -249,7 +251,7 @@ display: inline-block;
 
 #wrapper {
 	margin-top: 88px;
-	text-align: center;
+
 }
 
 @media (max-width: 880px) {
@@ -270,7 +272,7 @@ display: inline-block;
 
 @media (max-width: 415px){
 #sequencePicture {
-	height: 5em;
+	height: 3em;
 }
 }
 
@@ -279,9 +281,11 @@ display: inline-block;
 	margin-top: 170px;
 }
 
+}
 @media (max-width: 340px){
 #wrapper {
 	margin-top: 240px;
+}
 }
 
 @media (max-width: 370px){
@@ -292,6 +296,8 @@ display: inline-block;
 	overflow:hidden;	
 }
 }
+
+
 .poseName {
 	background-color: #FEA032;
 	padding: 4px;
@@ -353,7 +359,7 @@ display: none !important;
 	margin-bottom: 5px;
 }
 
-h2{
+h4{
      word-wrap: break-word;
      -webkit-hyphens: auto;
      -moz-hyphens: auto;
@@ -362,3 +368,51 @@ h2{
      hyphens: auto;
 }
 
+.col-xs-4 {
+	/*border: 2px solid white;*/
+}
+
+.sequenceInfo {
+	background-color: azure;
+}
+
+.col-xs-6 {
+	/*border: 2px solid white;*/
+}
+
+.sequencePoseNames {
+	color: white;
+	display: inline;
+	font-weight: bold;
+	font-size: .8em;
+}
+
+.search {
+	color: white;
+}
+
+.sequenceForm {
+	margin: 0 auto;
+	width: 60%;
+}
+
+.createMargin {
+	margin: 20px 0px 10px 0px;
+}
+
+.editForm {
+	background-color: azure;
+	width: 75%;
+	margin: 0 auto;
+	border-radius: 10px;
+	padding: 20px 0px;
+	border: 2px solid orange;
+}
+
+#sequenceMarginTop {
+	margin-top: 5%;
+}
+
+.sequenceInfoAlt {
+	background-color: orange;
+}

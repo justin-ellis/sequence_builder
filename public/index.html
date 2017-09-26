@@ -52,11 +52,40 @@ display: none !important;
         
       	<li ><a ng-if="ctrl.showSequence" ng-click="ctrl.toggleSequences();" href="#">{{ctrl.hide}} Sequences</a></li>
          <li ><a ng-if="!ctrl.showSequence" ng-click="ctrl.toggleSequences();" href="#">{{ctrl.show}} Sequences</a></li>
+
+				 <li class="dropdown dropdownList">
+          <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Display Options <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+                       <button ng-class="{'showingDetails' : ctrl.showName, 'hidingDetails' : !ctrl.showName}" class="list-group-item" ng-click="ctrl.toggleDetails('name')">
+			<span ng-if="ctrl.showName">{{ctrl.hideToggle}} Name</span>
+			<span ng-if="!ctrl.showName">{{ctrl.showToggle}} Name</span>
+		</button>
+		<button ng-class="{'showingDetails' : ctrl.showSanskrit, 'hidingDetails' : !ctrl.showSanskrit}" class="list-group-item" ng-click="ctrl.toggleDetails('sanskrit')">
+			<span ng-if="ctrl.showSanskrit">{{ctrl.hideToggle}} Sanskrit</span>
+			<span ng-if="!ctrl.showSanskrit">{{ctrl.showToggle}} Sanskrit</span>
+		</button>
+		<button ng-class="{'showingDetails' : ctrl.showPicture, 'hidingDetails' : !ctrl.showPicture}" class="list-group-item" ng-click="ctrl.toggleDetails('picture')">
+			<span ng-if="ctrl.showPicture">{{ctrl.hideToggle}} Picture</span>
+			<span ng-if="!ctrl.showPicture">{{ctrl.showToggle}} Picture</span>
+		</button>
+		<button ng-class="{'showingDetails' : ctrl.showCategory, 'hidingDetails' : !ctrl.showCategory}" class="list-group-item" ng-click="ctrl.toggleDetails('category')">
+			<span ng-if="ctrl.showCategory">{{ctrl.hideToggle}} Category</span><span ng-if="!ctrl.showCategory">{{ctrl.showToggle}} Category</span>
+		</button>
+		<button ng-class="{'showingDetails' : ctrl.showDescription, 'hidingDetails' : !ctrl.showDescription}" class="list-group-item" ng-click="ctrl.toggleDetails('description')"><span id="descShow" ng-if="ctrl.showDescription">{{ctrl.hideToggle}} Cues</span>
+			<span ng-if="!ctrl.showDescription">{{ctrl.showToggle}} Cues</span>
+		</button>
+		<button ng-class="{'showingDetails' : ctrl.showBenefits, 'hidingDetails' : !ctrl.showBenefits}" class="list-group-item" ng-click="ctrl.toggleDetails('benefits')">
+			<span ng-if="ctrl.showBenefits">{{ctrl.hideToggle}} Benefits</span>
+			<span ng-if="!ctrl.showBenefits">{{ctrl.showToggle}} Benefits</span>
+		</button>
+          </ul>
+        </li>
+
       </ul>
    
     
     
-      <ul class="nav navbar-nav navbar-right">
+      <!-- <ul class="nav navbar-nav navbar-right">
         
         <li class="dropdown dropdownList">
           <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Display Options <span class="caret"></span></a>
@@ -85,7 +114,7 @@ display: none !important;
 		</button>
           </ul>
         </li>
-      </ul>
+      </ul> -->
     <!-- </div>/.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -96,16 +125,20 @@ display: none !important;
 
 
 <!-- Create a sequence form begin -->
-	<div id="makeASequence" ng-show="!ctrl.checkSequenceAuthors() && ctrl.loggedIn" ng-cloak>
-		<h2 ng-cloak>Create a sequence:</h2>
-		<form ng-submit="ctrl.createSequence()">
-				Name: <input class="form-control" type="text" ng-model="ctrl.name"/>
-	Difficulty: <input class="form-control" type="text" placeholder="Beginner, Lvl II, etc." ng-model="ctrl.difficulty"/>
-							<input type="submit" ng-click="ctrl.getSequences()" value="Create"/>
+	<div id="makeASequence loginDiv" class="center signIn" ng-show="!ctrl.checkSequenceAuthors() && ctrl.loggedIn" ng-cloak>
+		<h4 ng-cloak class="signInHeader">Create a sequence</h4>
+		<form class=".center" ng-submit="ctrl.createSequence()">
+
+
+				<div class="form-group row"><label class="col-2 col-form-label">Name</label> <input class="form-control sequenceForm" type="text" ng-model="ctrl.name" placeholder="ex. Morning Flow" /> </div>
+	<div> <label class="col-2 col-form-label">Difficulty</label><input class="form-control sequenceForm" type="text" placeholder="Beginner, Lvl II, etc." ng-model="ctrl.difficulty"/></div>
+							<input class="btn btn-success createMargin" type="submit" ng-click="ctrl.getSequences()" value="Create"/>
 		</form>
 
 	</div>
 <!-- Create a sequence form end -->
+
+
 
 
 <!-- Register/login form begin -->
@@ -114,7 +147,7 @@ display: none !important;
 	<div class="form-group container" id="loginDiv" ng-hide="ctrl.concealLogin">
 				
 		<form class="signIn" ng-submit="ctrl.login()" ng-if="ctrl.showLogin">
-			<h2 class="signInHeader">Hello there!</h2>
+			<h4 class="signInHeader">Hello there!</h4>
 				 <input class="form-control" type="text" placeholder="Username" ng-model="ctrl.username"/> <br>
 				<input class="form-control" type="password" placeholder="Password" ng-model="ctrl.password"/> <br>
 				<hr>
@@ -125,7 +158,7 @@ display: none !important;
 		<br/>
 	
 		<form class="signIn" ng-if="ctrl.showRegistration" ng-submit="ctrl.registerUser()">
-			<h2 class="signInHeader">Registration</h2>
+			<h4 class="signInHeader">Registration</h4>
 			<input class="form-control" type="text" placeholder="Username" ng-model="ctrl.registeredUsername"/> <br>
 			<input class="form-control" type="password" placeholder="Password" ng-model="ctrl.registeredPassword"/> <br>
 			<hr>
@@ -174,17 +207,23 @@ display: none !important;
 
 
 <!-- Repeating created sequences begin -->
-	<div ng-if="ctrl.showSequence" ng-if="ctrl.loggedIn" data-ng-repeat="sequence in ctrl.sequences track by $index">
+	<div ng-if="ctrl.showSequence" ng-if="ctrl.loggedIn" data-ng-repeat="sequence in ctrl.sequences track by $index" id="sequenceMarginTop">
 			
 		<ul class="list-group sequenceUl">
 			<div class="container-fluid">
-				<div class="row">
-					
-					<div ng-if="sequence.difficulty" class="col-xs-4"><span> Sequence Name: {{sequence.name}}</span></div>
-					<div ng-if="!sequence.difficulty" class="col-xs-6"><span> Sequence Name: {{sequence.name}}</span></div>
-					<div ng-if="sequence.difficulty" class="col-xs-4"><span> Difficulty: {{sequence.difficulty}}</span></div>
-					<div ng-if="!sequence.difficulty" class="col-xs-6"><span> Made by: {{sequence.author}}</span></div>
-					<div ng-if="sequence.difficulty" class="col-xs-4"><span> Made by: {{sequence.author}}</span></div>
+				<div class="row sequenceInfo sequenceInfoAlt">
+					<div ng-if="sequence.difficulty" class="col-xs-4"><span>Title:</span></div>
+					<div ng-if="!sequence.difficulty" class="col-xs-6"><span>Title:</span></div>
+					<div ng-if="sequence.difficulty" class="col-xs-4"><span>Difficulty:</span></div>
+					<div ng-if="!sequence.difficulty" class="col-xs-6"><span> Made by: </span></div>
+					<div ng-if="sequence.difficulty" class="col-xs-4"><span> Made by: </span></div>
+				</div>
+				<div class="row sequenceInfo">
+					<div ng-if="sequence.difficulty" class="col-xs-4"><span> {{sequence.name}}</span></div>
+					<div ng-if="!sequence.difficulty" class="col-xs-6"><span> {{sequence.name}}</span></div>
+					<div ng-if="sequence.difficulty" class="col-xs-4"><span>{{sequence.difficulty}}</span></div>
+					<div ng-if="!sequence.difficulty" class="col-xs-6"><span>{{sequence.author}}</span></div>
+					<div ng-if="sequence.difficulty" class="col-xs-4"><span>{{sequence.author}}</span></div>
 				</div>
 			</div>
 		<!-- Repeating poses that have been added to sequence begin -->
@@ -192,26 +231,29 @@ display: none !important;
 				<li class="list-group-item sequenceLi">
 		<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses track by $index">
 				 <!-- <button class = "btn btn-sm btn-danger" ng-click="ctrl.deleteAsana(key);">Delete</button> -->
-				 {{key.pose_name}}<br/><div class= view hm-zoom">
+				 <p class="sequencePoseNames">{{key.pose_name}}</p><br/><div class= view hm-zoom">
 				 <img class="img-fluid" alt="" id ="sequencePicture" ng-src="{{key.file_reference}}">  <div id="absolute"><button ng-if="sequence.author === ctrl.activeUsername;" class = "btn btn-sm btn-danger" id="experiment" ng-click="ctrl.deleteAsana(key);">Delete</button></div></img> <div class="mask flex-center"><p class="red-text"></p></div> </div>
 				 <!-- was previously using !ctrl.checkDeleteButton() && in delete ng-if -->
 			</div>
 		</li>
-				<button ng-if="!ctrl.checkDeleteButton() && sequence.author === ctrl.activeUsername" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
+				<button class="btn btn-primary" ng-if="!ctrl.checkDeleteButton() && sequence.author === ctrl.activeUsername" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
+				<button class = "btn btn-sm btn-danger" ng-if="sequence.author === ctrl.activeUsername" ng-click="ctrl.deleteSequence(sequence)">Delete Sequence</button>
 		</ul>
 
 		<!-- Repeating poses that have been added to sequence begin -->
 
 		<!-- Edit sequence name and difficulty form begin -->
-			<div ng-hide="ctrl.hideForm">
+			<div id="makeASequence loginDiv" class="center" ng-hide="ctrl.hideForm">
 
-				<form ng-if="$index === ctrl.editSequenceIndex" ng-submit="ctrl.editSequence(sequence);">
-	       Name<input type="text"  ng-model="ctrl.updatedName" placeholder="name"/>
-	       Difficulty<input type="text"  ng-model="ctrl.updatedDifficulty" placeholder=""/>
-	       <input type="submit" value="edit sequence">
+				<form ng-if="$index === ctrl.editSequenceIndex && sequence.author === ctrl.activeUsername" class="center editForm" ng-submit="ctrl.editSequence(sequence);">
+
+					<div class="form-group row"> <label class="col-2 col-form-label">Name</label>
+	       <input class="form-control sequenceForm" type="text" ng-model="ctrl.updatedName" placeholder="Updated name"/> </div>
+	       <div class="form-group row"> <label class="col-2 col-form-label">Difficulty</label><input class="form-control sequenceForm" type="text"  ng-model="ctrl.updatedDifficulty" placeholder="Updated difficulty"/> </div>
+	       <input class="btn btn-warning" type="submit" value="Edit">
 	       </form>
 <!-- ng-if="ctrl.checkSequenceAuthors();" -->
-	      <button class = "btn btn-sm btn-danger" ng-if="sequence.author === ctrl.activeUsername" ng-click="ctrl.deleteSequence(sequence)">Delete Sequence</button>
+	      
 				</div>
 		<!-- Edit sequence name and difficulty form end -->
 	</div>
@@ -226,7 +268,7 @@ display: none !important;
 
 
 	<div id="loginDiv" class="filterSelect">
-	<h2> Search Poses:</h2>
+	<h4 class='search'> Search Poses:</h4>
 
 	<select class="selectpicker" ng-model="difficultyFilter"
 		data-ng-options="difficulty.difficulty as difficulty.name for difficulty in ctrl.asanaDifficulties">
@@ -266,6 +308,56 @@ display: none !important;
 			<li ng-show="ctrl.showDifficulty" class="list-group-item poseDivLi">Difficulty: {{pose.difficulty}}</li>
 		</ul>
 	</div>
+</div>
+
+
+<!-- <div class="navbar-fixed-bottom row-fluid">
+  <div class="navbar-inner">
+    <div class="container">
+      <div ng-if="ctrl.showSequence" ng-if="ctrl.loggedIn" data-ng-repeat="sequence in ctrl.sequences track by $index">
+			
+		<ul class="list-group sequenceUl">
+
+		<!-- Repeating poses that have been added to sequence begin -->
+
+				<!-- <li class="list-group-item sequenceLi">
+		<div id="sequencePoses" class="container-fluid" data-ng-repeat="key in sequence.poses track by $index"> -->
+				 <!-- <button class = "btn btn-sm btn-danger" ng-click="ctrl.deleteAsana(key);">Delete</button> -->
+			<!-- 	 <p class="sequencePoseNames">{{key.pose_name}}</p><br/><div class="view hm-zoom">
+				 <img class="img-fluid" alt="" id ="sequencePicture" ng-src="{{key.file_reference}}">  <div id="absolute"><button ng-if="sequence.author === ctrl.activeUsername;" class = "btn btn-sm btn-danger" id="experiment" ng-click="ctrl.deleteAsana(key);">Delete</button></div></img> <div class="mask flex-center"><p class="red-text"></p></div> </div> -->
+				 <!-- was previously using !ctrl.checkDeleteButton() && in delete ng-if -->
+			<!-- </div>
+		</li>
+				<button ng-if="!ctrl.checkDeleteButton() && sequence.author === ctrl.activeUsername" ng-click="ctrl.editSequenceIndex = $index; ctrl.showForm();">Edit Sequence</button>
+		</ul>
+
+		Repeating poses that have been added to sequence begin -->
+
+		<!-- Edit sequence name and difficulty form begin -->
+			<!-- <div ng-hide="ctrl.hideForm">
+
+				<form ng-if="$index === ctrl.editSequenceIndex" ng-submit="ctrl.editSequence(sequence);">
+	       Name<input type="text"  ng-model="ctrl.updatedName" placeholder="name"/>
+	       Difficulty<input type="text"  ng-model="ctrl.updatedDifficulty" placeholder=""/>
+	       <input type="submit" value="edit sequence">
+	       </form> -->
+<!-- ng-if="ctrl.checkSequenceAuthors();" -->
+	     <!--  <button class = "btn btn-sm btn-danger" ng-if="sequence.author === ctrl.activeUsername" ng-click="ctrl.deleteSequence(sequence)">Delete Sequence</button>
+				</div>
+ -->		<!-- Edit sequence name and difficulty form end -->
+					<!-- <div class="container-fluid">
+				<div class="row">
+					
+					<div ng-if="sequence.difficulty" class="col-xs-4"><p> Name: {{sequence.name}}</p></div>
+					<div ng-if="!sequence.difficulty" class="col-xs-6"><p> Sequence Name: {{sequence.name}}</p></div>
+					<div ng-if="sequence.difficulty" class="col-xs-4"><p> Difficulty: {{sequence.difficulty}}</p></div>
+					<div ng-if="!sequence.difficulty" class="col-xs-6"><p> Made by: {{sequence.author}}</p></div>
+					<div ng-if="sequence.difficulty" class="col-xs-4"><p> Made by: {{sequence.author}}</span></div>
+				</div>
+			</div> -->
+	</div>
+    </div>
+  </div> -->
 </div>
 </div>
 	</body>

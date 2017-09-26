@@ -147,7 +147,7 @@ app.controller('mainController', ['$http', '$q', function($http, $q){
 				// check to see if this works for registered users
 				controller.activeUsername = controller.username;
 				controller.loggedIn = true;
-				controller.hideForm = false;
+				controller.hideForm = true;
 			}
 			controller.hideLogin();
 		},
@@ -190,7 +190,7 @@ app.controller('mainController', ['$http', '$q', function($http, $q){
 				// console.log(this.username);
 				// console.log(this.activeUsername);
 				controller.loggedIn = true;
-				controller.hideForm = false;
+				controller.hideForm = true;
 				controller.hideLogin();
 				// controller.getUsers();
 			}
@@ -231,7 +231,7 @@ app.controller('mainController', ['$http', '$q', function($http, $q){
 	};
 
 	this.showForm = function(){
-		this.hideForm = false;
+		this.hideForm = !this.hideForm;
 	};
 
 	this.toggleSequences = function(){
@@ -417,6 +417,8 @@ app.controller('mainController', ['$http', '$q', function($http, $q){
 		}
 				console.log('check if user can make new sequence returning true');
 	};
+
+
 	// 	this.deleteAsana = function(asana){
 	// 	$http({
 	// 		method: 'DELETE',
