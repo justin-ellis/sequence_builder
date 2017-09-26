@@ -113,9 +113,14 @@ body {
 	padding-right: 1px;
 }
 
+#originalLoginDiv{
+	margin-top: 2%;
+	text-align: center;
+}
+
 #loginDiv {
 	/*background-color: white;*/
-	margin-top: 4%;
+	margin: 0 auto;
 	text-align: center;
 }
 
@@ -256,7 +261,7 @@ display: inline-block;
 
 @media (max-width: 880px) {
 #wrapper {
-	margin-top: 110px;
+	margin-top: 80px;
 }
 #topFilterInput{
 
@@ -290,7 +295,7 @@ display: inline-block;
 
 @media (max-width: 370px){
 #wrapper {
-	margin-top: 210px;
+	margin-top: 170px;
 }
 .form-control{
 	overflow:hidden;	
@@ -345,7 +350,7 @@ display: none !important;
 	padding-bottom: 15px;
 	background-color: white;
 	width: 50%;
-	margin: 0 auto;
+	margin: 5% auto;
 	border-radius: 10px;
 	border: 1px solid blanchedalmond;
 
@@ -389,11 +394,21 @@ h4{
 
 .search {
 	color: white;
+	margin-top: 0;
 }
 
+
+#welcomeText {
+color: darkgrey;
+width: 85%;
+margin: 0 auto;
+background-color: white;
+border-radius: 10px;
+padding: 10px;
+}
 .sequenceForm {
 	margin: 0 auto;
-	width: 60%;
+	width: 70%;
 }
 
 .createMargin {
@@ -415,4 +430,9 @@ h4{
 
 .sequenceInfoAlt {
 	background-color: orange;
+}
+
+#orange {
+	color: orange;
+	font-weight: bold;
 }

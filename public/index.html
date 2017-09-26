@@ -123,7 +123,10 @@ display: none !important;
 
 <div id="wrapper">
 
-
+<div class="center">
+<h5 ng-if="!ctrl.loggedIn" id="welcomeText"><div id="welcomeText">Welcome to <span id="orange">Yoga Bloom</span>. You are free to explore different yoga poses using the search functions. Display more or less info using the options button above. To get started building sequences, please register or sign in. Enjoy! </h5>
+</div>
+<div>
 <!-- Create a sequence form begin -->
 	<div id="makeASequence loginDiv" class="center signIn" ng-show="!ctrl.checkSequenceAuthors() && ctrl.loggedIn" ng-cloak>
 		<h4 ng-cloak class="signInHeader">Create a sequence</h4>
@@ -267,7 +270,7 @@ display: none !important;
 	<!-- <button ng-click="ctrl.checkSequenceAuthors();">get authors for sequences</button> -->
 
 
-	<div id="loginDiv" class="filterSelect">
+	<div id="originalLoginDiv" class="filterSelect">
 	<h4 class='search'> Search Poses:</h4>
 
 	<select class="selectpicker" ng-model="difficultyFilter"
