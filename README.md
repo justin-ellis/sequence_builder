@@ -34,7 +34,7 @@ In the navigation bar there is a button titled "Show Sequences." Clicking this o
 
 # Adding poses to a sequence
 
-After logging in and creating a sequence you will see an orange button that says 'Add Pose' display in each of the pose listings. Clicked this will add the selected pose to the end of your sequence. You can delete poses from your sequence by clicking on the red delete button underneath the pose picture within your sequence.
+After logging in and creating a sequence you will see an orange button that says 'Add Pose' display in each of the pose listings. Clicking button this will add the selected pose to the end of your sequence. You can delete poses from your sequence by clicking on the red delete button underneath the pose picture within your sequence.
 
 ![6](https://www.dl.dropboxusercontent.com/s/b82wu2hi4yxp3up/Screen%20Shot%202017-09-27%20at%202.48.01%20AM.png?dl=0)
 
