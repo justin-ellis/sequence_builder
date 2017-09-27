@@ -14,8 +14,7 @@ var asanas = [ {
   //   category: 'Standing / Balancing',
   //   difficulty: 'Expert',
   //   description:
-  //    [ 'From ',
-  //      'lizard',
+  //    [ 'Fromrom lizard',
   //      ' pose, the lower arm reaches back around the legs as the upper arm wraps around the back and the fingers of the respective hands eventually meet and interlace.  One foot stays rooted into the earth and straightens while the opposite leg comes up with a bent knee.  Once you are standing upright extend the leg towards the sky.  The ribcage is lifted and the heart is open in the full expression of the pose.  The gaze is forward.' ],
   //   benefits: 'Increases the flexibility of the spine and back and stretches the shoulders.  Strengthens the legs.  Increases flexibility of the hip and knee joints.  Improves balance.  Opens the groin.  Stretches the hamstrings.' },
   // { 
@@ -73,8 +72,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Backbend',
     difficulty: 'Intermediate',
     description:
-     [ 'From a prone position with the abdomen on the earth',
-       ', extend one arm forward and the opposite leg towards the back, keep the neck in line with the spine.  Bend the top knee and bring the extended hand backwards to catch the foot or toes.  Start to lift the knee and chest higher to create an arch like a bow.' ],
+     [ 'From a prone position with the abdomen on the earth, extend one arm forward and the opposite leg towards the back, keep the neck in line with the spine.  Bend the top knee and bring the extended hand backwards to catch the foot or toes.  Start to lift the knee and chest higher to create an arch like a bow.' ],
     benefits: 'Stretches the back muscles and the front body.  Stimulates the abdominal organs and lungs.  Improves balance.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/kqanq2xzavy8ka2/hands_knees.png?dl=0',
@@ -147,8 +145,7 @@ var asanas = [ {
   //   category: 'Arm+Leg Support / Balancing',
   //   difficulty: 'Intermediate',
   //   description:
-  //    [ 'From ',
-  //      'tabletop pose',
+  //    [ 'Fromrom tabletop pose',
   //      ', extend one foot towards the back, knee is straight, hips squared to the floor.  Slowly extend the opposite arm forward, keep the hand and neck in line with the spine.' ],
   //   benefits: 'Stretches the extended leg and arm.  Strengthens the hips and shoulders.  Improves flexibility and balance.' },
   // { 
@@ -168,9 +165,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Beginner',
     description:
-     [ 'From ',
-       'chair pose',
-       ', the upper body twists to one side with the heart opening towards the sky.  The bottom elbow is on the outside of the opposite knee and the upper elbow reaches towards the sky.  Gaze is towards the sky or to the earth if the neck is sensitive.' ],
+     [ 'From chair pose the upper body twists to one side with the heart opening towards the sky.  The bottom elbow is on the outside of the opposite knee and the upper elbow reaches towards the sky.  Gaze is towards the sky or to the earth if the neck is sensitive.' ],
     benefits: 'Stretches the lower back.  Increases the flexibility of the spine and back.  Stretches the shoulders.  Challenges the balance.  Powerful detoxification of toxic food, drink, thoughts, etc.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/674v41jxhxrp2cz/chair_twist_arms.png?dl=0',
@@ -194,8 +189,7 @@ var asanas = [ {
   //   category: 'Standing / Balancing',
   //   difficulty: 'Expert',
   //   description:
-  //    [ 'From ',
-  //      'lizard pose',
+  //    [ 'Fromrom lizard pose',
   //      ', one foot stays rooted into the earth and straightens while the opposite leg comes up with a bent knee.  Once you are standing upright extend the leg towards the sky.  The ribcage is lifted and the heart is open in the full expression of the pose.  The gaze is forward.' ],
   //   benefits: 'Increases the flexibility of the spine and back and stretches the shoulders.  Strengthens the legs.  Increases flexibility of the hip and knee joints.  Improves balance.  Opens the groin.  Stretches the hamstrings.' },
   // { 
@@ -210,9 +204,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'chair pose',
-       ', one arm reaches up to the sky and the other reaches down to the earth on the inside or the outside of the knee, depending upon your flexibility.  Keep the shoulder blades squeezed together and the fingers extended out.  The ribcage is lifted and the heart is open.  The gaze is towards the sky, unless it hurts your neck, then the gaze is towards the earth.' ],
+     [ 'From chair pose one arm reaches up to the sky and the other reaches down to the earth on the inside or the outside of the knee, depending upon your flexibility.  Keep the shoulder blades squeezed together and the fingers extended out.  The ribcage is lifted and the heart is open.  The gaze is towards the sky, unless it hurts your neck, then the gaze is towards the earth.' ],
     benefits: 'Increases the flexibility of the spine and back and stretches the shoulders.  Strengthens the legs.  Increases flexibility of the hip and knee joints.  Improves balance.  Opens the groin and stretches the hamstrings.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/y6tgvbkaeflvvi0/childs_pose.png?dl=0',
@@ -240,9 +232,7 @@ var asanas = [ {
     category: 'Prone / Forward Bend',
     difficulty: 'Beginner',
     description:
-     [ 'From ',
-       'balasana',
-       ', the knees are open wide and the big toes are touching with most of the weight of the body on the heels of the feet.  The forehead rests softly onto the earth.  The arms extend to the front with the fingers spread wide.  The gaze is down and inward.' ],
+     [ 'From balasana the knees are open wide and the big toes are touching with most of the weight of the body on the heels of the feet.  The forehead rests softly onto the earth.  The arms extend to the front with the fingers spread wide.  The gaze is down and inward.' ],
     benefits: 'Gently stretches the hips, thighs, and ankles.  Calms the brain and helps relieve stress and fatigue.  Relieves back and neck pain when done with head and torso supported.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/vjxyhd597wzi5xa/cobra.png?dl=0',
@@ -280,9 +270,7 @@ var asanas = [ {
     category: 'Standing / Lateral Bend',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'mountain',
-       ' pose, on the inhalation bring the hands up and interlace the fingers together.  Exhale, bend to one side, lengthening the opposite of the rib cage and stretch.' ],
+     [ 'From mountain pose, on the inhalation bring the hands up and interlace the fingers together.  Exhale, bend to one side, lengthening the opposite of the rib cage and stretch.' ],
     benefits: 'Stretches the rib cage, arms and torso.  Tones the oblique muscles.' },
   { 
     // file_reference: 'crow.html',
@@ -307,8 +295,7 @@ var asanas = [ {
   //   category: 'Arm Balance+Inversion / Balancing',
   //   difficulty: 'Expert',
   //   description:
-  //    [ 'From ',
-  //      'crow pose',
+  //    [ 'Fromrom crow pose',
   //      ', one leg lifts up and extends back as the chin lifts and reaches forward.  The gaze is down and slightly forward.' ],
   //   benefits: 'Strengthens arms and wrists.  Stretches the upper back.  Strengthens the abdominal muscles.  Opens the groin.  Tones the abdominal organs.' },
   // { 
@@ -343,9 +330,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Backbend',
     difficulty: 'Beginner',
     description:
-     [ 'From ',
-       'tabletop',
-       ', the ribcage is lifted with a gentle sway in the low back.  The tailbone lifts up into dog tilt.  The eyes are soft and the gaze is to the sky.' ],
+     [ 'From tabletop ribcage is lifted with a gentle sway in the low back.  The tailbone lifts up into dog tilt.  The eyes are soft and the gaze is to the sky.' ],
     benefits: 'Removes fatigue.  Improves breathing and the circulation of blood to the brain.  Rejuvenates the entire body.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/t1synq6j7k5wv1k/downward_dog.png?dl=0',
@@ -373,9 +358,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Twist',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'downward dog',
-       ', the legs are straight with the sits bones tilted up and reaching for the sky.  The feet are flat with the heels firmly rooted.  One palm is flat with the knuckles evenly pressed into the earth.  The other hand reaches under the body and grasps the opposite ankle.  The spine is long and the heart is open toward the sky.  The neck is loose and the crown of the head is relaxed toward the earth.  The gaze is toward the center.' ],
+     [ 'From downward dog, the legs are straight with the sits bones tilted up and reaching for the sky.  The feet are flat with the heels firmly rooted.  One palm is flat with the knuckles evenly pressed into the earth.  The other hand reaches under the body and grasps the opposite ankle.  The spine is long and the heart is open toward the sky.  The neck is loose and the crown of the head is relaxed toward the earth.  The gaze is toward the center.' ],
     benefits: 'Calms the brain and helps relieve stress and mild depression.  Energizes the body.  Stretches the shoulders, neck, hamstrings, calves, arches, and hands.  Strengthens the arms and legs.  Helps relieve the symptoms of menopause.  Relieves menstrual discomfort when done with the head supported.  Helps prevent osteoporosis.  Improves digestion.  Relieves headache, insomnia, back pain, and fatigue.  Therapeutic for high blood pressure, asthma, flat feet, sciatica, and sinusitis.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/sspw70159jbu5uo/downward_dog_leg_up.png?dl=0',
@@ -392,9 +375,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Balancing',
     difficulty: 'Beginner',
     description:
-     [ 'From ',
-       'downward dog',
-       ', one foot extends up to the sky while the opposite foot is rooted into the earth.  The hips are squared and the toes are active.  The forehead reaches for the earth as the shoulder blades rotate inward.  The gaze is towards the back.' ],
+     [ 'From downward dog one foot extends up to the sky while the opposite foot is rooted into the earth.  The hips are squared and the toes are active.  The forehead reaches for the earth as the shoulder blades rotate inward.  The gaze is towards the back.' ],
     benefits: 'Tones and strengthens the standing leg.  Improves flexibility.  Opens the hips.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/u0txxnke2cuopw3/garudasana.png?dl=0',
@@ -529,9 +510,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Neutral',
     difficulty: 'Intermediate',
     description:
-     [ 'Begin from ',
-       'balasana ', 
-       'and bring the hips and slide both hands forward at the same time, chest and forehead on the ground.  Hips can start high and then start to bring the hip in line with the knees.  Separate the feet as wide as the knees.' ],
+     [ 'Begin from balasana and bring the hips and slide both hands forward at the same time, chest and forehead on the ground.  Hips can start high and then start to bring the hip in line with the knees.  Separate the feet as wide as the knees.' ],
     benefits: 'Deep opener for the groin.  Mildly compresses the lower back and stimulates the spine.' },
   { 
     // file_reference: 'garland.html',
@@ -587,9 +566,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'half_moon',
-       ', slowly bring the top hand down to replace the bottom hand.  On the next inhalation, bring the opposite hand to the sky, twist the pelvis to the opposite side and stack the shoulders on top of each other.  Gaze is towards the sky and if not possible, gaze is downwards.' ],
+     [ 'From half_moon, slowly bring the top hand down to replace the bottom hand.  On the next inhalation, bring the opposite hand to the sky, twist the pelvis to the opposite side and stack the shoulders on top of each other.  Gaze is towards the sky and if not possible, gaze is downwards.' ],
     benefits: 'Strengthens the abdomen, ankles, thighs, buttocks and spine.  Stretches the groins, hamstrings, calves, shoulders, chest and spine.  Improves coordination and sense of balance.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/5nveguydsjlyp9j/handstand.png?dl=0',
@@ -613,9 +590,7 @@ var asanas = [ {
     category: 'Arm Balance+Inversion / Balancing',
     difficulty: 'Expert',
     description:
-     [ 'From ',
-       'handstand,',
-       ' the ribs move back, the shoulders shift down and away from the ears, the pelvis tucks under for balance as the knees bend and the feet drop towards the head.  The heart center goes forward while the crown of the head lifts up.  The gaze is down or forward depending on balance and flexibility.' ],
+     [ 'From handstand the ribs move back, the shoulders shift down and away from the ears, the pelvis tucks under for balance as the knees bend and the feet drop towards the head.  The heart center goes forward while the crown of the head lifts up.  The gaze is down or forward depending on balance and flexibility.' ],
     benefits: 'The entire front of the body is stretched, especially the chest, neck, spine and abs.  Strengthens the arms, shoulders and back.  Stimulates the abdominal organs and lungs.  Increases blood flow to the brain and circulation in the limbs.  Can increase fertility through stimulation of the reproductive organs.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/t8yeoxxfyak03o7/headstand.png?dl=0',
@@ -656,8 +631,7 @@ var asanas = [ {
     category: 'Arm Balance+Inversion / Balancing',
     difficulty: 'Expert',
     description:
-     [ 'From ',
-       'tripd headstand',
+     [ 'From tripd headstand',
        ', the legs open and extend to the sides into Side Splits and then spiral, first in one direction and then the other.  The gaze is straight.' ],
     benefits: 'Calms the brain and helps relieve stress and mild depression.  Stimulates the pituitary and pineal glands.  Strengthens the arms, legs, and spine.  Strengthens the lungs.  Tones the abdominal organs.  Improves digestion.  Helps relieve the symptoms of menopause.  Therapeutic for asthma, infertility, insomnia and sinusitis.' },
   { 
@@ -690,11 +664,7 @@ var asanas = [ {
     category: 'Supine / Neutral',
     difficulty: 'Intermediate',
     description:
-     [ 'Start from ',
-       'virasana',
-       ' and slowly transition to ',
-       'supta virasana',
-       '.  Bring the hands back and straighten the arms with palms facing up.  Roll a blanket underneath the back if needed.' ],
+     [ 'Start from virasana and slowly transition to supta virasana.  Bring the hands back and straighten the arms with palms facing up.  Roll a blanket underneath the back if needed.' ],
     benefits: 'Stretches the abdomen, shoulders, arms and thighs including hip flexors.  Strengthens the back muscles, ankles and knees.  Stimulates the abdominal organs, kidneys, lungs and rib cage.' },
   { 
     // file_reference: 'knee_pile_bind.html',
@@ -704,8 +674,7 @@ var asanas = [ {
   //   category: 'Seated / Twist',
   //   difficulty: 'Intermediate',
   //   description:
-  //    [ 'From ',
-  //      'gomukhasana',
+  //    [ 'Fromrom gomukhasana',
   //      ', one arm reaches up and back from above the shoulder while the opposite arm reaches down and back from under the shoulder and around the torso into a bind at the center of the upper back.  The gaze is forward.' ],
   //   benefits: 'Stretches the ankles, hips and thighs.  Stretches the shoulders, armpits, triceps, and chest.' },
   // { 
@@ -745,8 +714,7 @@ var asanas = [ {
     category: 'Standing / Balancing',
     difficulty: 'Expert',
     description:
-     [ 'From ',
-       'mountain pose',
+     [ 'From mountain pose',
        ' flex one knee and draw the foot up toward the hip.  Then clasp the foot with the hand on the same side of the body by rotating the elbow in and up while extending the leg back and up from the hip.  Lift the opposite arm overhead, bend the elbow and grasp the foot.  Gaze is up.  Maintain bandhas throughout the pose for stabilization.  Remember to keep the standing leg straight and strong while remaining aware of the tendency to lock the standing leg knee.  Keep the pelvis level to create symmetrical foundation for the full extension of the spine.  Press the tailbone back and down, expand the chest, press the lower tips of the shoulder blades forward and up to facilitate opening of the heart center.  If stable and at ease, release the crown of the head toward the arch of the foot and draw the elbows together.  Breathe!' ],
     benefits: 'Stretches the shoulders, the chest, the thighs, the groins, and the abdomen.  Strengthens the legs and the ankles.  Improves balance.' },
   { 
@@ -757,8 +725,7 @@ var asanas = [ {
     category: 'Seated / Neutral',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'sukhasana',
+     [ 'From sukhasana',
        ', bring the bottom ankle and place it on top of the opposite knee, both ankles will be resting on top of the thighs.' ],
     benefits: 'Opens the hips, groin and stretches the knees, ankles and thighs.  Strengthens the back and calms the mind, reduces stress and anxiety.  Improves circulation and blood flow in the pelvis.' },
   { 
@@ -782,9 +749,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Expert',
     description:
-     [ 'From ',
-       'warrior 2',
-       ', one arm is wrapped underneath the front thigh while the other hand wraps around the torso behind the back in a bind.  The ribcage is lifted and the pelvis tucked.  The heart is open.  The gaze is towards the sky.' ],
+     [ 'From warrior 2 one arm is wrapped underneath the front thigh while the other hand wraps around the torso behind the back in a bind.  The ribcage is lifted and the pelvis tucked.  The heart is open.  The gaze is towards the sky.' ],
     benefits: 'Creates flexible strength.  Promotes stability in the front and back of the torso.  Tones the lower body.  Opens the shoulders.' },
   { 
     // file_reference: 'lunge_hands_on_mat_flying.html',
@@ -810,9 +775,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'a low lunge',
-       ', slowly twist the spine to one side, hooking the elbow outside of the knee.  Stack the shoulders on top of each other, keep the heart open and gaze up towards the sky.' ],
+     [ 'From a low lunge slowly twist the spine to one side, hooking the elbow outside of the knee.  Stack the shoulders on top of each other, keep the heart open and gaze up towards the sky.' ],
     benefits: 'Lengthens and stretches the spine.  Creates flexibility in the rib cage.  Stimulates the internal abdominal organs and kidneys.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/p9latztf6u6bdmr/yin_dragon.png?dl=0',
@@ -826,9 +789,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'a lunge twist',
-       ', slowly release the hands.  Bottom hand can touch the floor or float, if needed, use a block to support.  Top hand reaches up towards the sky.  Keep both hands straight and heart remains open.  Gaze is upwards towards the top hand.' ],
+     [ 'From a lunge twist slowly release the hands.  Bottom hand can touch the floor or float, if needed, use a block to support.  Top hand reaches up towards the sky.  Keep both hands straight and heart remains open.  Gaze is upwards towards the top hand.' ],
     benefits: 'In addition to the benefits from ' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/p9latztf6u6bdmr/yin_dragon.png?dl=0',
@@ -842,9 +803,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'a lunge twist',
-       ', lower the top hand around the back with palm facing out.  Bottom hand wraps underneath the thigh.  Bend the elbow and extend the hand to reach the other hand.  Bind the hands together.  If the hands cannot reach, use a strap.  Heart is open.  The gaze is over the top shoulder.' ],
+     [ 'From a lunge twist lower the top hand around the back with palm facing out.  Bottom hand wraps underneath the thigh.  Bend the elbow and extend the hand to reach the other hand.  Bind the hands together.  If the hands cannot reach, use a strap.  Heart is open.  The gaze is over the top shoulder.' ],
     benefits: 'Deeply stretches the spine, chest, lungs, shoulders and groin.  Stimulates the internal abdominal organs and kidneys.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/5ltbrs58kmjzaxg/crescent_lunge.png?dl=0',
@@ -857,9 +816,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'crescent lunge',
-       ', slowly twist the spine to one side, hooking the elbow outside of the knee.  Stack the shoulders on top of each other, keep the heart open and gaze up towards the sky.  On the inhale, elongate the spine and on the exhale take the twist slightly deeper.' ],
+     [ 'From crescent lunge, slowly twist the spine to one side, hooking the elbow outside of the knee.  Stack the shoulders on top of each other, keep the heart open and gaze up towards the sky.  On the inhale, elongate the spine and on the exhale take the twist slightly deeper.' ],
     benefits: 'Lengthens and stretches the spine.  Creates flexibility in the rib cage.  Stimulates the internal abdominal organs and kidneys.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/5ltbrs58kmjzaxg/crescent_lunge.png?dl=0',
@@ -873,9 +830,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'a revolved crescent lunge',
-       ', slowly release the hands and extend both arms.  Bottom hand can touch the floor or float.  A block may be used for support when needed.  Top hand reaches up towards the sky.  Keep both hands straight and the heart remains open.  Gaze is upward towards the top hand.' ],
+     [ 'From a revolved crescent lunge, slowly release the hands and extend both arms.  Bottom hand can touch the floor or float.  A block may be used for support when needed.  Top hand reaches up towards the sky.  Keep both hands straight and the heart remains open.  Gaze is upward towards the top hand.' ],
     benefits: 'Lengthens and stretches the spine.  Creates flexibility in the rib cage.  Stimulates the internal abdominal organs and kidneys.  Opens the shoulders and strengthens the back muscles.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/5ltbrs58kmjzaxg/crescent_lunge.png?dl=0',
@@ -889,9 +844,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'a revolved crescent lunge',
-       ', lower the top hand around the back with palm facing out.  Bottom hand wraps underneath the thigh.  Bend the elbow and extend the hand to reach the other hand.  Bind the hands together.  If the hands cannot reach, use a strap.  Heart is open.  The gaze is over the top shoulder.' ],
+     [ 'From a revolved crescent lunge, lower the top hand around the back with palm facing out.  Bottom hand wraps underneath the thigh.  Bend the elbow and extend the hand to reach the other hand.  Bind the hands together.  If the hands cannot reach, use a strap.  Heart is open.  The gaze is over the top shoulder.' ],
     benefits: 'Deeply stretches the spine, chest, lungs, shoulders and groin.  Stimulates the internal abdominal organs and kidneys.' },
   { 
     // file_reference: 'marichi_I.html',
@@ -928,9 +881,7 @@ var asanas = [ {
     category: 'Standing / Backbend',
     difficulty: 'Beginner',
     description:
-     [ 'From ',
-       'mountain pose',
-       ', the arms are lifted up toward the sky with the elbows straight and the biceps by the ears.  The palms are open and face each other with the fingers spread wide.  The pelvis is tucked.  The ribcage is lifted.  The gaze is toward the sky.' ],
+     [ 'From mountain pose, the arms are lifted up toward the sky with the elbows straight and the biceps by the ears.  The palms are open and face each other with the fingers spread wide.  The pelvis is tucked.  The ribcage is lifted.  The gaze is toward the sky.' ],
     benefits: 'Improves posture.  Strengthens thighs, knees, and ankles.  Firms abdomen and buttocks.  Relieves sciatica.  Reduces flat feet.' },
   { 
     // file_reference: 'pigeon.html',
@@ -985,9 +936,7 @@ var asanas = [ {
     category: 'Seated / Backbend',
     difficulty: 'Expert',
     description:
-     [ 'From ',
-       'pigeon pose',
-       ', bend the back knee and bring the heel towards the back.  Bring the hands over the shoulders towards the back to catch the foot or toes.  Arch the back and drop the head slightly.  Use a strap if the hands cannot reach the foot.  Stabilize the body and keep the weight in the center line for balance.' ],
+     [ 'From pigeon pose, bend the back knee and bring the heel towards the back.  Bring the hands over the shoulders towards the back to catch the foot or toes.  Arch the back and drop the head slightly.  Use a strap if the hands cannot reach the foot.  Stabilize the body and keep the weight in the center line for balance.' ],
     benefits: 'Stretches the thighs, groins, shoulders, hip flexors, spine and opens the hips and chest.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/a3yfwyct670au8b/plank_knees_down.png?dl=0',
@@ -1040,9 +989,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Backbend',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'staff pose',
-       ' place the hands on the floor about one foot behind the hips with the fingertips pointed forward towards the hips.  On an inhale press through the hands and feet to lift the hips as high as possible.  Keep the inner line of the feet together and seal them into the mat as much as possible.  Relax the head back and gaze at the tip of your nose.' ],
+     [ 'From staff pose place the hands on the floor about one foot behind the hips with the fingertips pointed forward towards the hips.  On an inhale press through the hands and feet to lift the hips as high as possible.  Keep the inner line of the feet together and seal them into the mat as much as possible.  Relax the head back and gaze at the tip of your nose.' ],
     benefits: 'Strengthens the arms, the wrists, and the legs.  Stretches the shoulders, the chest, and the front ankles.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/pwt23ttqluyov4z/halasana.png?dl=0',
@@ -1080,9 +1027,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Forward Bend',
     difficulty: 'Beginner',
     description:
-     [ 'From ',
-       'balasana',
-       ', rest the torso onto the thighs and the forehead onto the earth.  Walk the knees up to meet the forehead, shifting some weight to the crown of the head.  Find the maximum comfortable neck stretch and then reach back and grip the base of the feet (use a strap if necessary).  To increase the stretch and come into the full expression of the pose, gradually lift or elevate your hips.  Be sure to keep your forehead as close as possible to your knees and the topmost part of your skull (crown of the head) on the earth.  Contract your abdominal muscles and gaze at your ankles.' ],
+     [ 'From balasana, rest the torso onto the thighs and the forehead onto the earth.  Walk the knees up to meet the forehead, shifting some weight to the crown of the head.  Find the maximum comfortable neck stretch and then reach back and grip the base of the feet (use a strap if necessary).  To increase the stretch and come into the full expression of the pose, gradually lift or elevate your hips.  Be sure to keep your forehead as close as possible to your knees and the topmost part of your skull (crown of the head) on the earth.  Contract your abdominal muscles and gaze at your ankles.' ],
     benefits: 'Maintains the mobility and elasticity of spine.  Nurtures the nervous system and helps with depression.  Improves digestion.  Helps cure sinus problems, colds and chronic tonsillitis.  Strengthens and firms the abdomen.  Stretches the back muscles.  Removes the tension from the upper back and the neck.  Improves posture.  Stimulates the thymus gland, improving the function of the immune system.' },
   { 
     // file_reference: 'scale.html',
@@ -1101,9 +1046,7 @@ var asanas = [ {
     category: 'Arm Balance+Inversion / Balancing',
     difficulty: 'Expert',
     description:
-     [ 'From ',
-       'formarm stand',
-       ' the knees are bent and the feet are lowered towards the head as the crown of the head lifts and the upper thoracic reaches through to the front.  To maintain balance the ribs move back and shoulders lower back and away from the ears as the forearms and palms push into the earth.  The knees may separate, but keep the toes together.  The gaze is forward or up depending on your flexibility.' ],
+     [ 'From formarm stand the knees are bent and the feet are lowered towards the head as the crown of the head lifts and the upper thoracic reaches through to the front.  To maintain balance the ribs move back and shoulders lower back and away from the ears as the forearms and palms push into the earth.  The knees may separate, but keep the toes together.  The gaze is forward or up depending on your flexibility.' ],
     benefits: 'Strengthens the shoulders, arms, abdominals and back.  Stretches the spine, hips and neck.  Improves balance and focus.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/if3xllyt7t3g80q/paschimottonasana.png?dl=0',
@@ -1122,8 +1065,7 @@ var asanas = [ {
   //   category: 'Seated / Twist',
   //   difficulty: 'Expert',
   //   description:
-  //    [ 'From ',
-  //      'a seated twist',
+  //    [ 'Fromrom a seated twist',
   //      ', bring the top arm up and around the back to meet the bottom arm that will reach under and wrap around its respective knee to be met at the wrist by the top hand.  On the inhale, elongate the spine and on the exhale take the twist slightly deeper.  Keep the heart open and the gaze should be slightly over the top shoulder. ' ],
   //   benefits: 'Strengthens arms, wrists and ankles.  Stretches the upper back.  Strengthens the abdominal muscles.' },
   // { 
@@ -1151,9 +1093,7 @@ var asanas = [ {
     category: 'Arm Balance+Inversion / Balancing',
     difficulty: 'Expert',
     description:
-     [ 'From ',
-       'shoulderstand,',
-       ' the arms lift straight up along the side body towards the sky with the fingers spread wide.  The gaze is up.' ],
+     [ 'From shoulderstand the arms lift straight up along the side body towards the sky with the fingers spread wide.  The gaze is up.' ],
     benefits: 'Calms the brain and helps relieve stress and mild depression.  Stimulates the thyroid and prostate glands and abdominal organs.  Stretches the shoulders and neck.  Tones the legs and buttocks.  Improves digestion.  Helps relieve the symptoms of menopause.  Reduces fatigue and alleviates insomnia.  Therapeutic for asthma.' },
   { 
     // file_reference: 'sphinx.html',
@@ -1223,11 +1163,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Backbend',
     difficulty: 'Expert',
     description:
-     [ 'Start with the preparatory steps of ',
-       'wheel pose',
-       '.  With the crown of the head on the floor draw the elbows to the floor shoulder-distance apart and interlace the fingers around the head as in ',
-       'supported headstand',
-       '.  Press firmly into the forearms and lift the head off the floor, extend the legs straight, draw the feet together and energize down through the legs and feet.' ],
+     [ 'Start with the preparatory steps of wheel pose.  With the crown of the head on the floor draw the elbows to the floor shoulder-distance apart and interlace the fingers around the head as in supported headstand.  Press firmly into the forearms and lift the head off the floor, extend the legs straight, draw the feet together and energize down through the legs and feet.' ],
     benefits: 'Stretches the entire front body and opens the chest.  Tones the internal organs.  Revitalizes the central nervous system.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/u3076m7ukavm5dh/forward_fold_ankle_bind.png?dl=0',
@@ -1237,9 +1173,7 @@ var asanas = [ {
     category: 'Standing / Balancing',
     difficulty: 'Expert',
     description:
-     [ 'From ',
-       'mountain',
-       ' pose, lift one foot, bend forward and catch the toes with the fingers.  Place the other hand on the hip to square the hip towards the front.  Slowly straighten the knee and lift the torso straight up.  Use a strap if necessary.  Gaze towards the front.' ],
+     [ 'From mountain pose, lift one foot, bend forward and catch the toes with the fingers.  Place the other hand on the hip to square the hip towards the front.  Slowly straighten the knee and lift the torso straight up.  Use a strap if necessary.  Gaze towards the front.' ],
     benefits: 'Stretches the hamstrings and strengthens the legs.  Improves balance.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/xdbyw7qikt3nonj/eka_pada_hasta.png?dl=0',
@@ -1253,9 +1187,7 @@ var asanas = [ {
     category: 'Standing / Balancing',
     difficulty: 'Expert',
     description:
-     [ 'From ',
-       'mountain',
-       ' pose, lift one foot.  Bend forward and catch the toes with the fingers.  Place the other hand on the hip to square the hip towards the front.  Slowly straighten the knee and the torso and open the leg to one side.  Use a strap if necessary.  Gaze towards the front or opposite of the extended leg for balance.' ],
+     [ 'From mountain pose, lift one foot.  Bend forward and catch the toes with the fingers.  Place the other hand on the hip to square the hip towards the front.  Slowly straighten the knee and the torso and open the leg to one side.  Use a strap if necessary.  Gaze towards the front or opposite of the extended leg for balance.' ],
     benefits: 'Opens the hips and groins.  Stretches the hamstrings, IT bands and legs.  Improves balance.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/oqh80iu7r0i4o1r/eka_pada_hasta_fold.png?dl=0',
@@ -1309,9 +1241,7 @@ var asanas = [ {
     category: 'Supine / Neutral',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'supta hasta padangustasana',
-       ', drop the extended leg to one side, opening the hip.  Keep the knee straight and if necessary use a strap.  Place the opposite hand on the pelvic bone to prevent the glut from lifting off the floor.  Keep the gluts grounded.' ],
+     [ 'From supta hasta padangustasana, drop the extended leg to one side, opening the hip.  Keep the knee straight and if necessary use a strap.  Place the opposite hand on the pelvic bone to prevent the glut from lifting off the floor.  Keep the gluts grounded.' ],
     benefits: 'Opens the hips and groins.  Stretches the hamstrings, IT bands and legs' },
   { 
     // file_reference: 'supine_pigeon.html',
@@ -1345,9 +1275,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Backbend',
     difficulty: 'Beginner',
     description:
-     [ 'From ',
-       'staff pose,',
-       ' place the hands on the floor about one foot behind the hips with the fingertips pointed forward towards hips.  Keep knees bent and feet close to hips while pressing through the hands and feet to lift the hips creating an inverted U with the body into Table.  Relax the head back and gaze at the tip of your nose.' ],
+     [ 'From staff pose, place the hands on the floor about one foot behind the hips with the fingertips pointed forward towards hips.  Keep knees bent and feet close to hips while pressing through the hands and feet to lift the hips creating an inverted U with the body into Table.  Relax the head back and gaze at the tip of your nose.' ],
     benefits: 'Strengthens the arms, the wrists, and the legs.  Stretches the shoulders, the chest, and the front ankles.' },
   { 
     // file_reference: 'tortoise_bind.html',
@@ -1357,8 +1285,7 @@ var asanas = [ {
   //   category: 'Standing / Forward Bend',
   //   difficulty: 'Expert',
   //   description:
-  //    [ 'From ',
-  //      'tortoise pose',
+  //    [ 'Fromrom tortoise pose',
   //      ', the hands and the elbows press thru the legs, then wrap back  around  to the opposite side of the torso into a bind at the small of the back.  The gaze is down.' ],
   //   benefits: 'Stretches the insides and backs of the legs.  Stimulates the abdominal organs.  Strengthens the spine.  Calms the brain.  Releases groin.  Releases the elbows.' },
   // { 
@@ -1450,9 +1377,7 @@ var asanas = [ {
     category: 'Standing / Lateral Bend',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'warrior II',
-       ', the lower body stays static while the upper body folds forward at the crease of the hip.  One arm is extended toward the sky while the other reaches down to the earth.  The fingers reach out as the shoulder blades squeeze together.  The gaze is towards the sky.' ],
+     [ 'From warrior II, the lower body stays static while the upper body folds forward at the crease of the hip.  One arm is extended toward the sky while the other reaches down to the earth.  The fingers reach out as the shoulder blades squeeze together.  The gaze is towards the sky.' ],
     benefits: 'Strengthens and stretches the legs, knees and ankles.  Stretches the groin, spine, waist, chest, lungs and shoulders.  Stimulates abdominal organs.  Increases stamina.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/6tgmbsqiuk3ap9v/side_angle.png?dl=0',
@@ -1466,9 +1391,7 @@ var asanas = [ {
     category: 'Standing / Lateral Bend',
     difficulty: 'Intermediate',
     description:
-     [ 'From ',
-       'warrior II',
-       ', the lower body stays static while the upper body is folded forward at the crease of the hip.  One arm is extended toward the front with the bicep by the ear and the fingers spread wide while the other reaches down to the earth on the inside of the thigh.  The upper torso and the gaze twist up towards the sky.' ],
+     [ 'From warrior II, the lower body stays static while the upper body is folded forward at the crease of the hip.  One arm is extended toward the front with the bicep by the ear and the fingers spread wide while the other reaches down to the earth on the inside of the thigh.  The upper torso and the gaze twist up towards the sky.' ],
     benefits: 'Strengthens and stretches the legs, knees, and ankles.  Stretches the groin, spine, waist, chest, lungs, and shoulders.  Stimulates abdominal organs.  Increases stamina.' },
   { 
     // file_reference: 'warrior_II_reverse.html',
@@ -1478,8 +1401,7 @@ var asanas = [ {
   //   category: 'Standing / Lateral Bend',
   //   difficulty: 'Intermediate',
   //   description:
-  //    [ 'From ',
-  //      'warrior II',
+  //    [ 'Fromrom warrior II',
   //      ', the lower body stays static while the upper body arches back in a gentle back bend.  The top arm is extended back with the bicep by the ear and the fingers spread wide.  The other arm slides down the back leg resting on the thigh or shin, but not the knee joint.  The gaze is up towards the sky.' ],
   //   benefits: 'Strengthens and stretches the legs, knees, and ankles.  Stretches the groin, spine, waist, chest, lungs, and shoulders.  Stimulates abdominal organs.  Increases stamina.  Relieves backaches, especially through second trimester of pregnancy.  Therapeutic for carpal tunnel syndrome, flat feet, infertility, osteoporosis, and sciatica.' },
   // { 
@@ -1517,9 +1439,7 @@ var asanas = [ {
     category: 'Standing / Twist',
     difficulty: 'Expert',
     description:
-     [ 'From ',
-       'warrior II',
-       ', bend the front knee and spin to the ball of the back foot as the torso lowers down onto the thigh, opening the heart center to the sky and lowering the bottom hand to the inside of the thigh with the palm planted firmly.  At the same time, reach the top arm and hand up and overhead extending in a straight line towards the front.  To take the bind then wrap the top arm around and under the backside of the torso and grasp the bottom hand at the wrist if possible.  Minimize lateral flexion of the spine while rotating the torso open.  Press the elbow and the shoulder against the bent knee in an isometric contraction to keep the knee aligned and leverage the rotation of the torso.  The gaze is to upper fingertips and the neck is relaxed.  As all twists lengthen and soften the belly, extend the spine with each inhalation, and increase the twist as you exhale.' ],
+     [ 'From warrior II, bend the front knee and spin to the ball of the back foot as the torso lowers down onto the thigh, opening the heart center to the sky and lowering the bottom hand to the inside of the thigh with the palm planted firmly.  At the same time, reach the top arm and hand up and overhead extending in a straight line towards the front.  To take the bind then wrap the top arm around and under the backside of the torso and grasp the bottom hand at the wrist if possible.  Minimize lateral flexion of the spine while rotating the torso open.  Press the elbow and the shoulder against the bent knee in an isometric contraction to keep the knee aligned and leverage the rotation of the torso.  The gaze is to upper fingertips and the neck is relaxed.  As all twists lengthen and soften the belly, extend the spine with each inhalation, and increase the twist as you exhale.' ],
     benefits: 'Strengthens and stretches the legs, the knees, and the ankles.  Stretches the groins, the spine, the chest, the lungs, and the shoulders.  Stimulates abdominal organs.  Increases stamina.  Improves digestion and aids elimination.  Improves balance.' },
   { 
     file_reference: 'https://dl.dropboxusercontent.com/s/5kt5g6uiz4xctfb/wheel.png?dl=0',
@@ -1545,9 +1465,7 @@ var asanas = [ {
     category: 'Arm+Leg Support / Balancing',
     difficulty: 'Expert',
     description:
-     [ 'From ',
-       'wheel pose',
-       ', extend one leg straight up to the sky with active toes.  The gaze is forward.' ],
+     [ 'From wheel pose, extend one leg straight up to the sky with active toes.  The gaze is forward.' ],
     benefits: 'Strengthens the arms, wrists, legs, buttocks, abs, and spine.  Stimulates the thyroid and pituitary.  Increases energy and counteracts depression.  Therapeutic for asthma, back pain, infertility, and osteoporosis.' },
   { 
     // file_reference: 'wild_thing.html',
@@ -1557,8 +1475,7 @@ var asanas = [ {
   //   category: 'Arm+Leg Support / Backbend',
   //   difficulty: 'Intermediate',
   //   description:
-  //    [ 'From ',
-  //      'downward dog',
+  //    [ 'Fromrom downward dog',
   //      ' pose, elevate one leg toward the sky and stack the corresponding hip over the other hip.  Bring the upper heel as close to the buttocks as possible.  The hips remain stacked; then bring the shoulders forward slowly over the hands.  Replace the corresponding hand to the upraised leg with the other hand and flip yourself over and extend the top hand forward.  The bottom foot is now facing toward the front of the mat and you remain on the ball of the top foot and the corresponding knee is bent.  Continue to lift hips up towards the sky and continue reaching the free hand towards the front of the room and slightly downwards.  Allow the head to curl back.' ],
   //   benefits: 'Stretches the chest, shoulders, back, and throat.  Strengthens and opens the hips, hip flexors, and thighs.' },
   // { 
