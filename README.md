@@ -32,7 +32,37 @@ In the navigation bar there is a button titled "Show Sequences." Clicking this o
 
 ![2](https://www.dl.dropboxusercontent.com/s/fstie4c8q9kdru6/Screen%20Shot%202017-09-26%20at%2011.32.49%20PM.png?dl=0)
 
+## Contributions
 
+Yoga Bloom is made possible thanks to the yoga pose icons provided by Roundicons from roundicons.com.
+
+I'm also grateful for dropbox's free image hosting.
+
+Thanks to Thom Page, Matt Huntington, Karolin Rafalski, Kristyn Bryan, Cathleen Wright, and Todd Gerdy at General Assembly for leading a fantastic and educational web development course.
+
+## Technologies Used
+
+Angular, HTML, CSS, MongoDB, Javascript
+
+## Bugs
+
+User model does not update when a sequence is deleted from sequences route.
+
+Users only able to create a single sequence because of how sequences are found using req.session.username. 
+
+Deleting a duplicate pose from a sequence doesn't specify which duplicate to delete.
+
+## Coming soon 
+
+-Getting rid of duplicate images for poses
+ 
+-Adding additional poses and pose pictures with different styling to grow the database
+
+-Pose card sizing options
+
+-Drag and drop sequence building
+
+-Slideshow mode
 
 
 
