@@ -9,7 +9,7 @@ Welcome to Yoga Bloom! The purpose of this app is to catalog information about y
 
 # Display Options
 
-The nav bar at the top of the screen has a "Display Options" button that will show what information about the poses is currently being displayed. By default, only the english name, the sanskrit name, and the picture of the poses are displayed. By choose an option within the Display Options menu, users can choose to display or withold additional information.  
+The nav bar at the top of the screen has a "Display Options" button that will show what information about the poses is currently being displayed. By default, only the english name, the sanskrit name, and the picture of the poses are displayed. By choosing an option within the Display Options menu, users can choose to display or withold additional information.  
 
 ![1](https://www.dl.dropboxusercontent.com/s/j9tfnf014vinx3y/Screen%20Shot%202017-09-26%20at%2011.34.11%20PM.png?dl=0)
 
