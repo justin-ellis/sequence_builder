@@ -1,3 +1,41 @@
+
+span {	
+font-family: 'Domine', serif;
+font-size: 1.2em;
+}
+
+li {
+font-family: 'Domine', serif;
+font-size: 1em
+}
+
+p {	
+font-family: 'Domine', serif;
+font-size: 1.2em;
+}
+
+.poseName {
+	font-size: 1.2em;
+}
+
+h1 {	
+font-family: 'Zilla Slab', serif;
+}
+h2 {	
+font-family: 'Zilla Slab', serif;
+}
+h3 {	
+font-family: 'Zilla Slab', serif;
+}
+h4 {	
+font-family: 'Zilla Slab', serif;
+font-size: 1.7em;
+}
+h5 {	
+font-family: 'Zilla Slab', serif;
+font-size: 1.3em;
+}
+
 body {
 	background-color: #4B6E8F;
 }
@@ -435,4 +473,13 @@ padding: 10px;
 #orange {
 	color: orange;
 	font-weight: bold;
+}
+
+@media (max-width: 420px){
+.poseName {
+	font-size: 1em;
+}
+#sanskrit-name {
+	font-size: 1em;
+}
 }
