@@ -70,5 +70,7 @@ Deleting a duplicate pose from a sequence doesn't specify which duplicate to del
 
 -Slideshow mode
 
+-Making mobile version show only one column of poses
+
 
 
